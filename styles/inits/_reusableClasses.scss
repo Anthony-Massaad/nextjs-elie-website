@@ -1,0 +1,21 @@
+// Class constants
+
+.d-flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.d-grid {
+  display: grid;
+  display: -moz-grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.h-inherit {
+  height: inherit;
+}
+
+.move-from-right {
+  animation: right-to-original 1000ms forwards;
+}

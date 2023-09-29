@@ -1,0 +1,21 @@
+#wrapper {
+  @extend .h-inherit;
+  transition: background-color $default_transition ease-out;
+  position: relative;
+
+  &.hidden {
+    overflow: hidden;
+  }
+
+  &.auto {
+    overflow: auto;
+  }
+
+  &.solid-background {
+    background: var(--background-color);
+  }
+
+  &.gradient-background {
+    background: linear-gradient(var(--background-gradient-color));
+  }
+}

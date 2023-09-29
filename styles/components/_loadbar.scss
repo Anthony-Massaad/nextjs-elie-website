@@ -1,0 +1,63 @@
+@keyframes load-bar {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.section-next {
+  --default-pos: 0.5rem;
+  --peek-pos: 1rem;
+  --expand-unexpand-time: 1s;
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: 500;
+  background-color: white;
+  transition: left $default_transition ease-out,
+    width $default_transition ease-out,
+    background-color $default_transition ease-out,
+    background-image $default_transition ease-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    z-index: inherit;
+    transition: left $default_transition ease-out,
+      width $default_transition ease-out,
+      background-color $default_transition ease-out,
+      background-image $default_transition ease-out;
+  }
+
+  &.load-bar {
+    &::before {
+      background-color: #ffffff;
+      width: 1rem;
+      left: -1rem;
+    }
+    transform-origin: bottom;
+    animation: load-bar 1600ms ease-in forwards;
+  }
+
+  &.custom-background-color {
+    &::before {
+      background-color: var(--section-next-color);
+    }
+  }
+
+  &.custom-gradient-background-color {
+    &::before {
+      background-image: linear-gradient(
+        var(--section-next-gradient-border-color)
+      );
+    }
+  }
+}

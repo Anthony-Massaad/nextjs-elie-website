@@ -1,0 +1,9 @@
+.container {
+  @extend .h-inherit;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 4rem;
+  max-width: 1400px;
+  position: relative;
+  height: inherit;
+}

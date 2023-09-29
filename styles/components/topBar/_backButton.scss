@@ -1,0 +1,33 @@
+.back-button {
+  a {
+    @extend .d-flex;
+    position: absolute;
+    cursor: pointer;
+    transition: color $default_transition ease;
+    top: 0.3rem;
+    z-index: 1000;
+    color: var(--initials-color);
+    align-items: center;
+
+    &:hover {
+      div {
+        transform: translateX(-0.5rem);
+      }
+    }
+
+    div {
+      position: relative;
+      top: 2px;
+      margin-right: 3px;
+      transition: transform $default_transition ease;
+    }
+
+    path {
+      transition:
+        fill $default_transition ease-in,
+        stroke $default_transition ease-in;
+      fill: var(--initials-color);
+      stroke: var(--initials-color);
+    }
+  }
+}

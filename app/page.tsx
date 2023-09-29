@@ -1,95 +1,285 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import RouterTransition from "@/animations/RouterTransition";
+import Container from "@/components/Container";
+import homeContent from "@/data/homeContent";
+import { TextAnimations } from "@/globals/interfaces";
+import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
+import { HomeContentContext } from "@/providers/HomeContentProvider";
+import { every } from "lodash";
+import React, { useState, useRef, useEffect, FC, useContext } from "react";
+import HomeContext from "@/contexts/HomeContext";
+import HomeContent from "@/components/home/HomeContent";
 
-export default function Home() {
+const Home: FC = () => {
+  const { homeContentIndex, horizontalBreakPoint, setHomeContentIndex } =
+    useContext(HomeContentContext);
+
+  const { allowHomeScroll } = useContext(AppBooleanStateContext);
+
+  // image movement block //
+  const [imagePos, setImagePos] = useState(0);
+  const [imageRotation, setImageRotation] = useState(0);
+
+  // boolean intiailization
+  const [scrollStopped, setScrollStopped] = useState(false);
+
+  // finger actions states
+  const [fingerActionPerformed, setFingerActionPerformed] = useState(false);
+
+  const timer = useRef<any>();
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  // text movement block //
+  const [textAnimations, setTextAnimations] = useState<TextAnimations>({
+    textUp: false,
+    textDown: false,
+    textRight: false,
+    textLeft: false,
+  });
+
+  useEffect(() => {
+    if (imagePos <= -75) {
+      // down downwards, swiping upwards
+      setImagePos(-75);
+    } else if (imagePos >= 75) {
+      // going up and swiping downwards
+      setImagePos(75);
+    }
+  }, [imagePos]);
+
+  // for scrollable timer
+  useEffect((): any => {
+    // wait until text animation is finished
+    if (!every(textAnimations, (state) => state === false)) return;
+    if (!allowHomeScroll) return;
+
+    const handleTouchStart = (event: any): void => {
+      if (fingerActionPerformed) return;
+      // get the starting position movement
+      touchStartX.current = event.touches[0].clientX;
+      touchStartY.current = event.touches[0].clientY;
+      setFingerActionPerformed(true);
+    };
+
+    const handleTouchMove = (event: any): void => {
+      if (!touchStartX.current || !touchStartY.current) return;
+
+      // determine the distance in which we moved as well as the direction
+      const touchEndX = event.touches[0].clientX;
+      const touchEndY = event.touches[0].clientY;
+      const deltaX = touchEndX - touchStartX.current;
+      const deltaY = touchEndY - touchStartY.current;
+
+      // Adjust sensitivity as needed for scroll speed
+      const sensitivity = 1;
+
+      // Determine the main direction of movement
+      // deltaX distance is higher, we move horiztonal, otherwise vertical
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Horizontal scrolling
+        if (window.innerWidth <= horizontalBreakPoint) {
+          let direction = deltaX * sensitivity;
+          // swiping right, moving left
+          direction =
+            direction < 0 && homeContentIndex + 1 === homeContent.length
+              ? 0
+              : direction;
+
+          // swiping left, moveing right
+          direction =
+            direction > 0 && homeContentIndex - 1 === -1 ? 0 : direction;
+          setImagePos(direction);
+        }
+      } else {
+        // Vertical scrolling
+        if (window.innerWidth > horizontalBreakPoint) {
+          let direction = deltaY * sensitivity;
+          // stop downwards scroll, move upwards
+          direction =
+            direction > 0 && homeContentIndex - 1 === -1 ? 0 : direction;
+
+          // stop upwards scroll, move downwords
+          direction =
+            direction < 0 && homeContentIndex + 1 === homeContent.length
+              ? 0
+              : direction;
+          setImagePos(direction);
+        }
+      }
+      event.preventDefault();
+    };
+
+    const handleTouchEnd = (): void => {
+      // Reset touch start positions
+      touchStartX.current = null;
+      touchStartY.current = null;
+      if (imagePos <= -75 && homeContentIndex + 1 !== homeContent.length) {
+        // go downwards
+        changeHomeIndex(-90, homeContentIndex + 1);
+      } else if (imagePos >= 75 && homeContentIndex - 1 !== -1) {
+        // go upwards
+        changeHomeIndex(90, homeContentIndex - 1);
+      } else {
+        setImagePos(0);
+      }
+      setFingerActionPerformed(false);
+    };
+
+    const handleScroll = (event: any): void => {
+      if (
+        (event.deltaY > 0 && homeContentIndex + 1 === homeContent.length) ||
+        (event.deltaY < 0 && homeContentIndex - 1 === -1)
+      ) {
+        return;
+      }
+
+      if (
+        (event.deltaX > 0 && homeContentIndex + 1 === homeContent.length) ||
+        (event.deltaX < 0 && homeContentIndex - 1 === -1)
+      ) {
+        return;
+      }
+
+      const easing = 0.5;
+      if (window.innerWidth > horizontalBreakPoint) {
+        // vertical
+        setImagePos((imagePos - event.deltaY) * easing);
+        if (imagePos >= 75) {
+          // go upwards
+          changeHomeIndex(90, homeContentIndex - 1);
+        } else if (imagePos <= -75) {
+          // go downwards
+          changeHomeIndex(-90, homeContentIndex + 1);
+        }
+      } else {
+        // horizontal
+        if (event.deltaY !== 0) {
+          setImagePos((imagePos - event.deltaY) * easing);
+        } else if (event.deltaX !== 0) {
+          setImagePos((imagePos - event.deltaX) * easing);
+        }
+
+        if (imagePos >= 50) {
+          // go left
+          changeHomeIndex(90, homeContentIndex - 1);
+        } else if (imagePos <= -50) {
+          // go right
+          changeHomeIndex(-90, homeContentIndex + 1);
+        }
+      }
+    };
+
+    const handleScrollEvent = (event: any) => {
+      clearTimeout(timer.current);
+      setScrollStopped(false);
+      handleScroll(event);
+    };
+
+    const handleSwipeEvent = (event: any) => {
+      clearTimeout(timer.current);
+      setScrollStopped(false);
+      handleTouchMove(event);
+    };
+
+    const wrapperElement = document.querySelector("#wrapper");
+    wrapperElement?.addEventListener("wheel", handleScrollEvent);
+    wrapperElement?.addEventListener("touchstart", handleTouchStart);
+    wrapperElement?.addEventListener("touchmove", handleSwipeEvent);
+    wrapperElement?.addEventListener("touchend", handleTouchEnd);
+
+    // set the scrolled stop to true when the user stopped scrolling for a certain time
+    if (!scrollStopped && !fingerActionPerformed) {
+      timer.current = setTimeout(() => {
+        setScrollStopped(true);
+      }, 300);
+    }
+
+    // user stopped scrolling mid scroll, reset image position
+    if (scrollStopped) {
+      setImagePos(0);
+    }
+
+    return () => {
+      clearTimeout(timer.current);
+      wrapperElement?.removeEventListener("wheel", handleScrollEvent);
+      wrapperElement?.removeEventListener("touchstart", handleTouchStart);
+      wrapperElement?.removeEventListener("touchmove", handleTouchMove);
+      wrapperElement?.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [
+    scrollStopped,
+    imagePos,
+    textAnimations,
+    allowHomeScroll,
+    fingerActionPerformed,
+  ]);
+
+  const indexChange = (index: number): void => {
+    //setHomeContentIndex(index);
+    // index > homeContentIndex ? setImagePos(75) : setImagePos(-75);
+    index > homeContentIndex
+      ? changeHomeIndex(90, index)
+      : changeHomeIndex(-90, index);
+  };
+
+  const changeHomeIndex = (degree: number, index: number) => {
+    setImageRotation(degree);
+
+    if (degree > 0) {
+      window.innerWidth > horizontalBreakPoint
+        ? animateTextContent(false, true, false, false)
+        : animateTextContent(false, false, true, false);
+    } else {
+      window.innerWidth > horizontalBreakPoint
+        ? animateTextContent(true, false, false, false)
+        : animateTextContent(false, false, false, true);
+    }
+
+    const timer = setTimeout(() => {
+      setImageRotation(0);
+      setImagePos(0);
+      setHomeContentIndex(index);
+    }, 500);
+
+    return (): void => clearTimeout(timer);
+  };
+
+  const resetAnimations = (): void => {
+    setTextAnimations({
+      textUp: false,
+      textDown: false,
+      textRight: false,
+      textLeft: false,
+    });
+  };
+
+  const animateTextContent = (
+    textUp: boolean,
+    textDown: boolean,
+    textRight: boolean,
+    textLeft: boolean
+  ): void => {
+    setTextAnimations({
+      textUp: textUp,
+      textDown: textDown,
+      textRight: textRight,
+      textLeft: textLeft,
+    });
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <RouterTransition>
+      <Container>
+        <HomeContext.Provider value={{ indexChange }}>
+          <HomeContent
+            resetAnimations={resetAnimations}
+            textAnimations={textAnimations}
+            imagePos={imagePos}
+            imageRotation={imageRotation}
+          />
+        </HomeContext.Provider>
+      </Container>
+    </RouterTransition>
+  );
+};
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;

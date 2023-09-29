@@ -1,0 +1,47 @@
+// Initialize css with reset and constants
+// (keyframes that are global to the application)
+@import "./inits/reset";
+@import "./inits/variables";
+@import "./inits/fonts";
+@import "./inits/reusableClasses";
+@import "./inits/keyframes";
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html {
+  font-size: $default_font_size;
+}
+
+body {
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  color: white;
+  font-family: silka, serif, Helvetica, sans-serif;
+  position: relative;
+  height: 100vh;
+  font-style: normal;
+  overflow: hidden;
+  background-color: black;
+}
+
+@import "./components/container";
+@import "./components/rootWrapper";
+@import "./components/loadBar";
+
+// top bar components
+@import "./components/topBar/backButton";
+@import "./components/topBar/initials";
+@import "./components/topBar/header";
+@import "./components/topBar/topLeft";
