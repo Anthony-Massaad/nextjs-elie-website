@@ -115,8 +115,12 @@ const HomeContent: FC<HomeContentProps> = ({
   }, [sectionImageClassStates]);
 
   useEffect(() => {
+    const routerSwitch = async (): Promise<void> => {
+      await new Promise(() => router.push(homeContent[homeContentIndex].href));
+    };
+
     if (routerSliderAnimations.isSlideReveal && switchNav) {
-      router.push(homeContent[homeContentIndex].href);
+      routerSwitch();
       setSwitchNav(false);
     }
   }, [routerSliderAnimations.isSlideReveal]);

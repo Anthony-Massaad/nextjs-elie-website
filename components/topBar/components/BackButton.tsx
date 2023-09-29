@@ -11,8 +11,11 @@ const BackButton = (): ReactElement => {
   const router = useRouter();
 
   useEffect(() => {
+    const routerSwitch = async (): Promise<void> => {
+      await new Promise(() => router.push("/"));
+    };
     if (routerSliderAnimations.isSlideReveal && switchNav) {
-      router.push("/");
+      routerSwitch();
       setSwitchNav(false);
     }
   }, [routerSliderAnimations.isSlideReveal]);
