@@ -3,10 +3,10 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
   children: JSX.Element;
-  width?: "fit-content" | "100%";
+  width?: "fit-content" | "100%" | "auto";
 }
 
-const SlideReveal: FC<Props> = ({ children, width = "100%" }) => {
+const SlideReveal: FC<Props> = ({ children, width = "auto" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -32,24 +32,6 @@ const SlideReveal: FC<Props> = ({ children, width = "100%" }) => {
       >
         {children}
       </motion.div>
-      <motion.div
-        variants={{
-          hidden: { left: 0 },
-          visible: { left: "100%" },
-        }}
-        initial="hidden"
-        animate={slideControls}
-        transition={{ duration: 0.5, ease: "easeIn", delay: 0.15 }}
-        style={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
-          background: "var(--color-theme)",
-          zIndex: 20,
-        }}
-      />
     </div>
   );
 };

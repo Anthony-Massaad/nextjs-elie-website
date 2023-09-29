@@ -33,7 +33,6 @@ body {
   height: 100vh;
   font-style: normal;
   overflow: hidden;
-  background-color: black;
 }
 
 @import "./components/container";
@@ -45,3 +44,10 @@ body {
 @import "./components/topBar/initials";
 @import "./components/topBar/header";
 @import "./components/topBar/topLeft";
+
+@import "./components/home/homeContent";
+@import "./components/home/pillsNav";
+@import "./components/home/arrowNext";
+
+@import "./pages/glamourNails";
+@import "./components/glamourNails/stats";

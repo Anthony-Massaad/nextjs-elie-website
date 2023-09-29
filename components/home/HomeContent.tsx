@@ -10,6 +10,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC, useContext, useEffect, useMemo, useState } from "react";
+import PillsNav from "./PillsNav";
+import ArrowNext from "./ArrowNext";
 
 interface HomeContentProps {
   resetAnimations?: () => void;
@@ -154,7 +156,7 @@ const HomeContent: FC<HomeContentProps> = ({
             </Link>
           </div>
         </div>
-        <Image
+        <img
           className={`section-image${sectionImageJoinedClassStates}`}
           src={homeContent[homeContentIndex].imageSrc}
           style={

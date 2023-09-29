@@ -1,0 +1,20 @@
+// Arrow Next
+.intro-arrow-next {
+  @extend .d-flex;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #363636;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  bottom: 26px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: transform 0.3s linear;
+
+  &.fade-up {
+    animation: fade-up 1000ms forwards;
+  }
+}

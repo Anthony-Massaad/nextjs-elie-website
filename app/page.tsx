@@ -1,3 +1,5 @@
+"use client";
+
 import RouterTransition from "@/animations/RouterTransition";
 import Container from "@/components/Container";
 import homeContent from "@/data/homeContent";

@@ -8,3 +8,8 @@ export interface TextAnimations {
   textRight: boolean;
   textLeft: boolean;
 }
+
+export interface StatsInterface {
+  value: string;
+  description: string;
+}

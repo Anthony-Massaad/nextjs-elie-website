@@ -1,0 +1,284 @@
+.page-container.glamour-nails {
+  $titleColor: #300319;
+  $offset-white: #fef7fb;
+  background-image: linear-gradient(
+    180deg,
+    rgba(252, 207, 229, 0) 0%,
+    rgba(252, 207, 229, 0.94) 100%
+  );
+  color: #3a041e;
+  font-style: normal;
+  font-size: 1.5rem;
+
+  ul {
+    list-style: disc;
+    padding-left: 2rem;
+  }
+
+  .layer {
+    padding: 3rem 0;
+
+    .intro {
+      margin: 3rem 0;
+    }
+  }
+
+  h1 {
+    color: $titleColor;
+    font-family: Silka;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 15;
+  }
+
+  .top-layer-container {
+    position: relative;
+    padding-top: 80px;
+
+    .top-layer {
+      position: relative;
+      background: url("/assets/glamourNails/background-nails2.png") no-repeat;
+      background-size: 424px 100%;
+      background-position: calc(100% - 7rem) calc(100%);
+
+      .intro-description {
+        @extend .d-flex;
+        z-index: 15;
+        position: relative;
+        .description {
+          max-width: 40rem;
+          width: 100%;
+        }
+
+        .additional-info {
+          @extend .d-flex;
+          justify-content: center;
+          flex-direction: column;
+          white-space: nowrap;
+          padding-left: 10rem;
+
+          div {
+            margin-bottom: 1.5rem;
+
+            p {
+              margin-top: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .example {
+    background-color: $offset-white;
+    padding: 1rem 4rem 2rem 4rem;
+
+    div.desktop {
+      width: 85%;
+      margin: auto;
+    }
+
+    div.mobile {
+      width: 20%;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      color: #000;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+  }
+
+  .row-cells {
+    .row-cell {
+      @extend .d-flex;
+      margin: 3rem 0;
+      align-items: center;
+
+      div {
+        width: 50%;
+      }
+      h3 {
+        width: 85%;
+        margin: auto;
+      }
+
+      P {
+        width: 50%;
+      }
+    }
+  }
+
+  .layer-2 {
+    @extend .layer;
+  }
+
+  .layer-3 {
+    @extend .layer;
+  }
+
+  .layer-4 {
+    @extend .layer;
+  }
+
+  .layer-5 {
+    @extend .layer;
+    background-color: $offset-white;
+  }
+
+  .layer-6 {
+    @extend .layer;
+
+    .details {
+      @extend .d-grid;
+
+      .detail {
+        h3 {
+          margin-bottom: 3rem;
+        }
+        p {
+          margin: 1.5rem 0;
+        }
+        .colors {
+          @extend .d-grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          .color-block {
+            height: 3.75rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .layer-7 {
+    @extend .d-grid;
+    .example {
+      background-color: transparent;
+    }
+
+    .more-info {
+      ul {
+        margin: 1.5rem 0;
+        li {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  .next-case-study {
+    background: #fa427a;
+  }
+
+  .more-info {
+    margin: 2rem auto;
+
+    ul {
+      margin: 3rem 0;
+    }
+  }
+
+  .side-by-side-images {
+    @extend .d-grid;
+    margin: 5rem 0;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+//   @include lg-breakpoint {
+//     .section-next {
+//       .glamour-nails {
+//         .top-layer-container {
+//           .top-layer {
+//             .intro-description {
+//               flex-direction: column;
+//               .description {
+//                 max-width: none;
+//               }
+//               .additional-info {
+//                 justify-content: space-around;
+//                 flex-direction: row;
+//                 padding-left: 0;
+//                 margin-top: 1rem;
+//                 white-space: wrap;
+//                 flex-flow: wrap;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @include md-breakpoint {
+//     .section-next {
+//       .glamour-nails {
+//         .top-layer-container {
+//           .top-layer {
+//             background-size: 250px 100%;
+//           }
+//         }
+
+//         .layer-6 {
+//           .details {
+//             display: block;
+
+//             .detail {
+//               h3 {
+//                 margin-bottom: 0rem;
+//               }
+//               p {
+//                 margin: 1.5rem 0;
+//               }
+//               .colors {
+//                 margin-top: 1.5rem;
+//               }
+//             }
+//           }
+//         }
+
+//         .row-cells {
+//           .row-cell {
+//             flex-direction: column;
+
+//             div {
+//               width: 100%;
+//               text-align: left;
+//               h3 {
+//                 width: 100%;
+//               }
+//             }
+//             p {
+//               width: 100%;
+//               margin-top: 0.5rem;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @include sm-breakpoint {
+//     .section-next {
+//       .glamour-nails {
+//         .top-layer-container {
+//           .top-layer {
+//             background-size: 200px 100%;
+//           }
+//         }
+//       }
+//     }
+//   }

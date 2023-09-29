@@ -48,7 +48,7 @@ const homeContent: HomeContentStructure[] = [
     Designing an end to end app for Pro Golfers to use an electroencephalogram device to measure their training performance.
             `,
     buttonText: `View Case Study`,
-    imageSrc: `../assets/images/sampleImage.png`,
+    imageSrc: `/assets/images/sampleImage.png`,
     colorTheme: `#2995EF`,
     titleColor: `#F7F6F6`,
     bodyTextcolor: `#F7F6F6`,
@@ -70,7 +70,7 @@ const homeContent: HomeContentStructure[] = [
     Designing a beautiful responsive website for a local business that does not have a digital presence, including a booking system.
             `,
     buttonText: `View Case Study`,
-    imageSrc: `../assets/images/sampleImage.png`,
+    imageSrc: `/assets/images/sampleImage.png`,
     colorTheme: `#FA427A`,
     titleColor: `#300319`,
     bodyTextcolor: `#300319`,
@@ -89,7 +89,7 @@ const homeContent: HomeContentStructure[] = [
     Adding a new feature for to make it easier for users to collaborate with their friends.
             `,
     buttonText: `View Case Study`,
-    imageSrc: `../assets/images/sampleImage.png`,
+    imageSrc: `/assets/images/sampleImage.png`,
     colorTheme: `#DC0038`,
     titleColor: `#ffffff`,
     bodyTextcolor: `#ffffff`,

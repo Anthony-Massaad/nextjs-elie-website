@@ -1,0 +1,30 @@
+// Right side pills
+
+.pills {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 2;
+
+  li {
+    position: relative;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .pill-text {
+    margin-right: 1rem;
+    display: none;
+  }
+
+  .pill {
+    height: 16px;
+    width: 8px;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    background-color: #c8c8c8;
+    transition: background-color 0.3s ease-out;
+  }
+}

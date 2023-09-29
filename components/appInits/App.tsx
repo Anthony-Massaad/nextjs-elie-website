@@ -14,17 +14,17 @@ interface Props {
 
 const App: FC<Props> = ({ children }) => {
   return (
-    <RootWrapper>
-      <AppBooleanStates>
-        <HomeContentProvider>
-          <ColorSchemeProvider>
-            <TransitionProvider>
+    <AppBooleanStates>
+      <HomeContentProvider>
+        <ColorSchemeProvider>
+          <TransitionProvider>
+            <RootWrapper>
               <AppContents>{children}</AppContents>
-            </TransitionProvider>
-          </ColorSchemeProvider>
-        </HomeContentProvider>
-      </AppBooleanStates>
-    </RootWrapper>
+            </RootWrapper>
+          </TransitionProvider>
+        </ColorSchemeProvider>
+      </HomeContentProvider>
+    </AppBooleanStates>
   );
 };
 
