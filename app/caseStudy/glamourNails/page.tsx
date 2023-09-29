@@ -8,6 +8,7 @@ import PageContainer from "@/components/PageContainer";
 import Information from "@/components/glamourNails/Information";
 import RowCell from "@/components/glamourNails/RowCell";
 import Stats from "@/components/glamourNails/Stats";
+import Image from "next/image";
 import {
   colors,
   enhanceBookingSystemStats,

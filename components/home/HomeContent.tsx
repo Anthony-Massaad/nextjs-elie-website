@@ -160,9 +160,13 @@ const HomeContent: FC<HomeContentProps> = ({
             </Link>
           </div>
         </div>
-        <img
+        <Image
           className={`section-image${sectionImageJoinedClassStates}`}
           src={homeContent[homeContentIndex].imageSrc}
+          alt=""
+          width={500} // Set the image width
+          height={400} // Set the image height
+          loading="lazy" // Enable lazy loading
           style={
             window.innerWidth > horizontalBreakPoint
               ? {
@@ -174,7 +178,6 @@ const HomeContent: FC<HomeContentProps> = ({
                   transform: `rotateY(${imageRotation}deg)`,
                 }
           }
-          alt=""
         />
       </section>
       <ArrowNext />
