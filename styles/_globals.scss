@@ -38,6 +38,7 @@ body {
 @import "./components/container";
 @import "./components/rootWrapper";
 @import "./components/loadBar";
+@import "./components/pageContainer";
 
 // top bar components
 @import "./components/topBar/backButton";
@@ -45,9 +46,11 @@ body {
 @import "./components/topBar/header";
 @import "./components/topBar/topLeft";
 
+// home content
 @import "./components/home/homeContent";
 @import "./components/home/pillsNav";
 @import "./components/home/arrowNext";
 
+// glamourNails
 @import "./pages/glamourNails";
 @import "./components/glamourNails/stats";

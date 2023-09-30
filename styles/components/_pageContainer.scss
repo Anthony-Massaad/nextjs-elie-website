@@ -1,0 +1,39 @@
+.page-container {
+  .next-case-study {
+    @extend .d-flex;
+    color: #ffffff;
+    padding: 1rem 3rem 1rem 1rem;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    max-width: 400px;
+    width: 100%;
+    margin: 6rem auto;
+
+    div {
+      left: 1.25rem;
+      position: relative;
+      margin-top: -0.2rem;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+      div {
+        transform: translateX(1rem);
+      }
+
+      i {
+        left: 0.5rem;
+      }
+    }
+
+    &.pointer-none {
+      pointer-events: none;
+    }
+
+    svg {
+      width: 1.1rem;
+      fill: currentcolor;
+      vertical-align: middle;
+    }
+  }
+}
