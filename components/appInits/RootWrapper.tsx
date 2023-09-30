@@ -1,8 +1,11 @@
 import { colorStylingNames } from "@/globals/constants";
+import { ClassStates } from "@/globals/interfaces";
+import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
 import { ColorSchemeContext } from "@/providers/ColorSchemeProvider";
+import { joinClassStates } from "@/utils/helper";
 import { isEmpty } from "lodash";
 import { usePathname } from "next/navigation";
-import { FC, ReactNode, useContext, useEffect, useState } from "react";
+import { FC, ReactNode, useContext, useEffect, useMemo, useState } from "react";
 
 interface Props {
   children: ReactNode;
@@ -10,8 +13,21 @@ interface Props {
 
 const RootWrapper: FC<Props> = ({ children }) => {
   const [overflowCss, setOverflowCSS] = useState("hidden");
+  const [joinedClassStates, setJoinedClassStates] = useState("");
   const { colorScheme } = useContext(ColorSchemeContext);
+  const { appIsFullyLoaded } = useContext(AppBooleanStateContext);
   const pathName = usePathname();
+
+  const classStates: ClassStates = useMemo((): ClassStates => {
+    return {
+      customBackgroundColor: colorScheme[
+        colorStylingNames.backgroundGradientColor
+      ]
+        ? "gradient-background"
+        : "solid-background",
+      preLoadColor: !appIsFullyLoaded ? "bg-black" : "",
+    };
+  }, [appIsFullyLoaded, colorScheme]);
 
   useEffect(() => {
     if (!isEmpty(pathName)) {
@@ -21,18 +37,15 @@ const RootWrapper: FC<Props> = ({ children }) => {
       // flip for initials
       setOverflowCSS("hidden");
     }
-    console.log(pathName);
   }, [pathName]);
 
+  useEffect(() => {
+    const classes = joinClassStates(classStates);
+    setJoinedClassStates(classes ? " " + classes : classes);
+  }, [classStates]);
+
   return (
-    <div
-      id="wrapper"
-      className={`${
-        colorScheme[colorStylingNames.backgroundGradientColor]
-          ? "gradient-background"
-          : "solid-background"
-      } ${overflowCss}`}
-    >
+    <div id="wrapper" className={`${overflowCss}${joinedClassStates}`}>
       {children}
     </div>
   );

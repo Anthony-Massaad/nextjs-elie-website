@@ -1,11 +1,16 @@
+import useStorage from "@/hooks/useStorage";
+import { isNumber, toNumber, toString } from "lodash";
 import {
   Dispatch,
   FC,
   ReactNode,
   SetStateAction,
   createContext,
+  useContext,
+  useEffect,
   useState,
 } from "react";
+import { AppBooleanStateContext } from "./AppBooleanStates";
 
 interface Props {
   children: ReactNode;
@@ -24,6 +29,20 @@ export const HomeContentContext = createContext<ProviderContextProps>(
 const HomeContentProvider: FC<Props> = ({ children }) => {
   const horizontalBreakPoint = 960;
   const [homeContentIndex, setHomeContentIndex] = useState(0);
+  const { getItem, setItem } = useStorage();
+  const { appIsFullyLoaded } = useContext(AppBooleanStateContext);
+
+  useEffect(() => {
+    if (appIsFullyLoaded) {
+      setItem("homeIndex", toString(homeContentIndex), "session");
+    } else {
+      const idx = getItem("homeIndex", "session");
+      if (idx) {
+        setHomeContentIndex(toNumber(idx));
+      }
+    }
+    console.log("homecontentindex: ", homeContentIndex);
+  }, [homeContentIndex]);
 
   return (
     <HomeContentContext.Provider

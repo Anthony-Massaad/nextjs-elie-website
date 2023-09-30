@@ -11,6 +11,8 @@ const TopLeft: FC = () => {
   const {
     moveInitials,
     appIsFullyLoaded,
+    setAllowButtonClick,
+    setAllowHomeScroll,
     setMoveInitials,
     setIntroFadeContent,
     setAppIsFullyLoaded,
@@ -53,6 +55,8 @@ const TopLeft: FC = () => {
           setMoveInitials(false);
           setAppIsFullyLoaded(true);
           setIntroFadeContent(true);
+          setAllowButtonClick(true);
+          setAllowHomeScroll(true);
         }
       }}
     >

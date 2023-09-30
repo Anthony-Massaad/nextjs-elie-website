@@ -16,8 +16,8 @@
   width: 0;
   height: 100%;
   z-index: 500;
-  background-color: white;
-  transition: left $default_transition ease-out,
+  transition:
+    left $default_transition ease-out,
     width $default_transition ease-out,
     background-color $default_transition ease-out,
     background-image $default_transition ease-out;
@@ -31,7 +31,8 @@
     top: 0;
     background-color: #ffffff;
     z-index: inherit;
-    transition: left $default_transition ease-out,
+    transition:
+      left $default_transition ease-out,
       width $default_transition ease-out,
       background-color $default_transition ease-out,
       background-image $default_transition ease-out;
@@ -39,25 +40,10 @@
 
   &.load-bar {
     &::before {
-      background-color: #ffffff;
       width: 1rem;
       left: -1rem;
     }
     transform-origin: bottom;
     animation: load-bar 1600ms ease-in forwards;
-  }
-
-  &.custom-background-color {
-    &::before {
-      background-color: var(--section-next-color);
-    }
-  }
-
-  &.custom-gradient-background-color {
-    &::before {
-      background-image: linear-gradient(
-        var(--section-next-gradient-border-color)
-      );
-    }
   }
 }

@@ -16,6 +16,7 @@ const Initials = (): ReactElement => {
   const classStates: ClassStates = useMemo((): ClassStates => {
     return {
       fadeInInitials: !appIsFullyLoaded ? "fade-in-initials" : "",
+      preLoadColor: !appIsFullyLoaded ? "white-fill" : "",
     };
   }, [appIsFullyLoaded]);
 

@@ -7,6 +7,13 @@
     stroke: var(--initials-color);
   }
 
+  &.white-fill {
+    path {
+      fill: transparent;
+      stroke: #ffffff;
+    }
+  }
+
   &.fade-in-initials {
     path {
       fill: transparent;

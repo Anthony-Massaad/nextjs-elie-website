@@ -3,6 +3,10 @@
   transition: background-color $default_transition ease-out;
   position: relative;
 
+  &.bg-black {
+    background: #0e0e0e !important;
+  }
+
   &.hidden {
     overflow: hidden;
   }

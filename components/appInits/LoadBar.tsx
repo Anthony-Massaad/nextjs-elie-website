@@ -24,14 +24,6 @@ const LoadBar = (): ReactElement => {
   const classStates: ClassStates = useMemo((): ClassStates => {
     return {
       loadBar: !appIsFullyLoaded ? "load-bar" : "",
-      customBackgroundColor: colorScheme[colorStylingNames.sectionNextColor]
-        ? "custom-background-color"
-        : "",
-      customGradientColor: colorScheme[
-        colorStylingNames.sectionNextGradientBorderColor
-      ]
-        ? "custom-gradient-background-color"
-        : "",
     };
   }, [appIsFullyLoaded, colorScheme]);
 

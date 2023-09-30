@@ -14,7 +14,8 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.195",
