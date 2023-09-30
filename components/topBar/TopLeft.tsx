@@ -21,8 +21,7 @@ const TopLeft: FC = () => {
   const [topLeftFlip, setTopLeftFlip] = useState(false);
   const [joinedClassStates, setJoinedClassStates] = useState("");
   const pathname = usePathname();
-  // Use useMemo to compute classStates only when its dependencies change
-  // this allows for one render and change dynamically. instead of multiple
+
   const classStates: ClassStates = useMemo((): ClassStates => {
     return {
       fadeInInitials: !appIsFullyLoaded ? "fade-in-initials" : "",

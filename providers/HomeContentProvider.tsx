@@ -8,6 +8,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import { AppBooleanStateContext } from "./AppBooleanStates";
@@ -27,7 +28,9 @@ export const HomeContentContext = createContext<ProviderContextProps>(
 );
 
 const HomeContentProvider: FC<Props> = ({ children }) => {
-  const horizontalBreakPoint = 960;
+  const horizontalBreakPoint = useMemo((): number => {
+    return 960;
+  }, []);
   const [homeContentIndex, setHomeContentIndex] = useState(0);
   const { getItem, setItem } = useStorage();
   const { appIsFullyLoaded } = useContext(AppBooleanStateContext);
@@ -41,7 +44,6 @@ const HomeContentProvider: FC<Props> = ({ children }) => {
         setHomeContentIndex(toNumber(idx));
       }
     }
-    console.log("homecontentindex: ", homeContentIndex);
   }, [homeContentIndex]);
 
   return (
