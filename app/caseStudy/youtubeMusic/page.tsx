@@ -3,9 +3,10 @@ import RouterTransition from "@/animations/RouterTransition";
 import SlideReveal from "@/animations/SlideReveal";
 import Container from "@/components/Container";
 import PageContainer from "@/components/PageContainer";
+import BeforeAfter from "@/components/caseStudyCommons/BeforeAfter";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import RowCell from "@/components/caseStudyCommons/RowCell";
-import { informations, userNeeds } from "@/data/youtubeMusic";
+import { beforeAfter, informations, userNeeds } from "@/data/youtubeMusic";
 import { FC } from "react";
 
 const YoutubeMusic: FC = () => {
@@ -56,6 +57,14 @@ const YoutubeMusic: FC = () => {
               </p>
             </SlideReveal>
             <RowCell rowCells={userNeeds} />
+          </Container>
+        </div>
+        <div className="layer features-container">
+          <Container>
+            <SlideReveal>
+              <h1>Screen Redesigns and adding collaborative feature</h1>
+            </SlideReveal>
+            <BeforeAfter beforeAfterLst={beforeAfter} />
           </Container>
         </div>
       </RouterTransition>

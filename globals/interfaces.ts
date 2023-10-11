@@ -23,3 +23,14 @@ export interface RowCellInterface {
   problem: string;
   description: string;
 }
+
+export interface BeforeAfterInterface {
+  problem: {
+    text: string;
+    imgSrc: string;
+  };
+  solution: {
+    text: string;
+    imgSrc: string;
+  };
+}

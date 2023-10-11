@@ -1,4 +1,8 @@
-import { InformationInterface, RowCellInterface } from "@/globals/interfaces";
+import {
+  BeforeAfterInterface,
+  InformationInterface,
+  RowCellInterface,
+} from "@/globals/interfaces";
 
 export const informations: InformationInterface[] = [
   {
@@ -31,5 +35,68 @@ export const userNeeds: RowCellInterface[] = [
   {
     problem: "Lyrics Improvement",
     description: `Lyrics are either missing or hard to read. Users want live lyrrics like the competitors.`,
+  },
+];
+
+export const beforeAfter: BeforeAfterInterface[] = [
+  {
+    problem: {
+      text: `Having the search action at the top right corner makes it hard for users to use app with one hand.`,
+      imgSrc: `/assets/youtubeMusic/problem1.png`,
+    },
+    solution: {
+      text: `Solution: Search is one of the most used actions on the app; therefore having it in the navigation is more beneficial for users.`,
+      imgSrc: `/assets/youtubeMusic/solution1.png`,
+    },
+  },
+  {
+    problem: {
+      text: `Users want a simple way to find and add other users. Also, currently when you search for something, search recommendations are not categorised.`,
+      imgSrc: `/assets/youtubeMusic/problem2.png`,
+    },
+    solution: {
+      text: `Using consistent industry design pattern to add quick filter options in the search menu to make it easy for users to filter by category.`,
+      imgSrc: `/assets/youtubeMusic/solution2.png`,
+    },
+  },
+  {
+    problem: {
+      text: `Users are unable to add friends, limiting collaboration and community growth.`,
+      imgSrc: `/assets/youtubeMusic/problem3.png`,
+    },
+    solution: {
+      text: `There is now an add friend option, which opens new collaboration features as well as AI generated playlists between friends.`,
+      imgSrc: `/assets/youtubeMusic/solution3.png`,
+    },
+  },
+  {
+    problem: {
+      text: `The current library is unorganised,  lacks structure, hierarchy and customisation. Users can’t pin their favourite music and they are concerned with mixing music and podcasts.`,
+      imgSrc: `/assets/youtubeMusic/problem4.png`,
+    },
+    solution: {
+      text: `Designing proper structure with each category having it’s own folder. Users can also pin their favourite music and Podcast is segregated from Music Library.`,
+      imgSrc: `/assets/youtubeMusic/solution4.png`,
+    },
+  },
+  {
+    problem: {
+      text: `Users have to send the playlist link to their fiends to add them as collaborates them. This is tedious as a link has to be sent to each user and sometimes it does not work properly.`,
+      imgSrc: `/assets/youtubeMusic/problem5.png`,
+    },
+    solution: {
+      text: `I have added a collaborations action to the playlist creation menu making it easy for users to add their their friends as collaborators quickly.`,
+      imgSrc: `/assets/youtubeMusic/solution5.png`,
+    },
+  },
+  {
+    problem: {
+      text: `The current playlist screen was missing key features that users want such as, an internal search function, a quick filter to rearrange the playlist, and  having the shuffle action on the screen.`,
+      imgSrc: `/assets/youtubeMusic/problem6.png`,
+    },
+    solution: {
+      text: `The playlist screen was slightly redesigned to add all of the missing features without taking away from the orginal look and feel.`,
+      imgSrc: `/assets/youtubeMusic/solution6.png`,
+    },
   },
 ];
