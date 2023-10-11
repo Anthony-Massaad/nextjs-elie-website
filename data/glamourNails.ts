@@ -1,14 +1,8 @@
-import { StatsInterface } from "@/globals/interfaces";
-
-export interface RowCellInterface {
-  problem: string;
-  description: string;
-}
-
-export interface InformationInterface {
-  title: string;
-  infos: string[];
-}
+import {
+  InformationInterface,
+  RowCellInterface,
+  StatsInterface,
+} from "@/globals/interfaces";
 
 export interface ColorStructure {
   gradient?: boolean;

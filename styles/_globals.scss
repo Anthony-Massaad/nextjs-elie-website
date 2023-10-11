@@ -40,6 +40,10 @@ body {
 @import "./components/loadBar";
 @import "./components/pageContainer";
 
+@import "./components/caseStudyCommons/introduction";
+@import "./components/caseStudyCommons/common";
+@import "./components/caseStudyCommons/rowCells";
+
 // top bar components
 @import "./components/topBar/backButton";
 @import "./components/topBar/initials";
@@ -51,6 +55,7 @@ body {
 @import "./components/home/pillsNav";
 @import "./components/home/arrowNext";
 
-// glamourNails
+// pages
 @import "./pages/glamourNails";
+@import "./pages/youtubeMusic";
 @import "./components/glamourNails/stats";

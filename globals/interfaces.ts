@@ -13,3 +13,13 @@ export interface StatsInterface {
   value: string;
   description: string;
 }
+
+export interface InformationInterface {
+  title: string;
+  infos: string[];
+}
+
+export interface RowCellInterface {
+  problem: string;
+  description: string;
+}

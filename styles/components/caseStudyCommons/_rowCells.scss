@@ -1,0 +1,19 @@
+.row-cells {
+  .row-cell {
+    @extend .d-flex;
+    margin: 3rem 0;
+    align-items: center;
+
+    div {
+      width: 50%;
+    }
+    h3 {
+      width: 85%;
+      margin: auto;
+    }
+
+    P {
+      width: 50%;
+    }
+  }
+}

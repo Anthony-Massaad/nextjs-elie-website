@@ -1,12 +1,13 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, ReactNode, useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
 interface Props {
-  children: JSX.Element;
+  children: ReactNode;
   width?: "fit-content" | "100%" | "auto";
+  delay?: number;
 }
 
-const SlideReveal: FC<Props> = ({ children, width = "auto" }) => {
+const SlideReveal: FC<Props> = ({ children, width = "auto", delay = 0.25 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -28,7 +29,7 @@ const SlideReveal: FC<Props> = ({ children, width = "auto" }) => {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 0.5, delay: delay }}
       >
         {children}
       </motion.div>

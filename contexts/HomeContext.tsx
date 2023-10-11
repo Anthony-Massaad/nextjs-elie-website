@@ -4,10 +4,6 @@ interface HomeContentInterface {
   indexChange: (index: number) => void;
 }
 
-interface Props {
-  children: ReactNode;
-}
-
 const HomeContext = createContext<HomeContentInterface>(
   {} as HomeContentInterface
 );

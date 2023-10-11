@@ -1,0 +1,50 @@
+.page-container.youtube-music {
+  $titleColor: #ffffff;
+  $offset-white: #fef7fb;
+  background: #030303;
+  color: #ffffff;
+  font-style: normal;
+  font-size: 1.5rem;
+
+  ul {
+    list-style: disc;
+    padding-left: 2rem;
+  }
+
+  .layer {
+    padding: 3rem 0;
+
+    .intro {
+      margin: 3rem 0;
+    }
+  }
+
+  h1 {
+    color: $titleColor;
+  }
+
+  .music-mobile-app-ex {
+    background-color: $offset-white;
+    padding: 2rem 0 10rem 0px;
+    .ex-container {
+      @extend .d-flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+
+      .img-container {
+        position: relative;
+        &:nth-child(2) {
+          top: 3rem;
+        }
+        &:nth-child(3) {
+          top: 6rem;
+        }
+        img {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}

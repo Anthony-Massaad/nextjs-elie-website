@@ -5,8 +5,7 @@ import SlideReveal from "@/animations/SlideReveal";
 import Container from "@/components/Container";
 import LinkPage from "@/components/LinkPage";
 import PageContainer from "@/components/PageContainer";
-import Information from "@/components/glamourNails/Information";
-import RowCell from "@/components/glamourNails/RowCell";
+import RowCell from "@/components/caseStudyCommons/RowCell";
 import Stats from "@/components/glamourNails/Stats";
 import Image from "next/image";
 import {
@@ -21,6 +20,7 @@ import homeContent from "@/data/homeContent";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
 import { map } from "lodash";
 import { FC, useContext } from "react";
+import Introduction from "@/components/caseStudyCommons/Introduction";
 
 const GlamourNails: FC = () => {
   const { homeContentIndex } = useContext(HomeContentContext);
@@ -28,38 +28,17 @@ const GlamourNails: FC = () => {
     <>
       <PageContainer pageTitle="glamour-nails">
         <RouterTransition>
-          <div className="top-layer-container">
-            <Container>
-              <div className="top-layer">
-                <SlideReveal>
-                  <h1>Designing a beautiful Website and booking experience</h1>
-                </SlideReveal>
-
-                <div className="intro-description">
-                  <SlideReveal>
-                    <p className="description">
-                      Glamour Nails and Salon, a small local nail salon business
+          <Introduction
+            title={`Designing a beautiful Website and booking experience`}
+            description={`Glamour Nails and Salon, a small local nail salon business
                       in Ottawa, Ontario, does not have a digital website. Their
                       operation is mostly manual, taking appointments by phone
                       and recording customer appointments using a paper book
                       calendar. I reached out to them to design and develop a
-                      website that will meet their business and user needs.
-                    </p>
-                  </SlideReveal>
-                  <div className="additional-info">
-                    {map(informations, (information, idx) => (
-                      <SlideReveal key={idx}>
-                        <Information
-                          title={information.title}
-                          infos={information.infos}
-                        />
-                      </SlideReveal>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Container>
-          </div>
+                      website that will meet their business and user needs.`}
+            informations={informations}
+          />
+
           <div className="example">
             <SlideReveal>
               <div className="desktop">
@@ -81,16 +60,7 @@ const GlamourNails: FC = () => {
                   owners and 2 of their staff.
                 </p>
               </SlideReveal>
-              <div className="row-cells">
-                {map(problems, (problem, idx) => (
-                  <SlideReveal key={idx}>
-                    <RowCell
-                      problem={problem.problem}
-                      description={problem.description}
-                    />
-                  </SlideReveal>
-                ))}
-              </div>
+              <RowCell rowCells={problems} />
             </Container>
           </div>
           <div className="example">
@@ -113,17 +83,7 @@ const GlamourNails: FC = () => {
                   booking experience.
                 </p>
               </SlideReveal>
-
-              <div className="row-cells">
-                {map(userNeeds, (needs, idx) => (
-                  <SlideReveal key={idx}>
-                    <RowCell
-                      problem={needs.problem}
-                      description={needs.description}
-                    />
-                  </SlideReveal>
-                ))}
-              </div>
+              <RowCell rowCells={userNeeds} />
             </Container>
           </div>
           <div className="example">
