@@ -3,7 +3,6 @@
 import RouterTransition from "@/animations/RouterTransition";
 import SlideReveal from "@/animations/SlideReveal";
 import Container from "@/components/Container";
-import LinkPage from "@/components/LinkPage";
 import PageContainer from "@/components/PageContainer";
 import RowCell from "@/components/caseStudyCommons/RowCell";
 import Stats from "@/components/glamourNails/Stats";
@@ -21,6 +20,7 @@ import { HomeContentContext } from "@/providers/HomeContentProvider";
 import { map } from "lodash";
 import { FC, useContext } from "react";
 import Introduction from "@/components/caseStudyCommons/Introduction";
+import LinkPage from "@/components/LinkPage";
 
 const GlamourNails: FC = () => {
   const { homeContentIndex } = useContext(HomeContentContext);
@@ -331,11 +331,9 @@ const GlamourNails: FC = () => {
                   </ul>
                 </SlideReveal>
               </div>
-              {homeContentIndex + 1 !== homeContent.length ? (
-                <LinkPage link={homeContent[homeContentIndex + 1].href}>
-                  Check out the next Case Study
-                </LinkPage>
-              ) : null}
+              <LinkPage link={"/caseStudy/youtubeMusic"}>
+                Check out the next Case Study
+              </LinkPage>
             </Container>
           </div>
         </RouterTransition>

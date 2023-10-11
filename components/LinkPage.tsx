@@ -1,5 +1,14 @@
+import { HomeContentContext } from "@/providers/HomeContentProvider";
+import { TransitionContext } from "@/providers/TransitionProvider";
 import Link from "next/link";
-import { ReactElement, ReactNode, useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  ReactElement,
+  ReactNode,
+  useState,
+  useContext,
+  useEffect,
+} from "react";
 
 interface Props {
   link: string;
@@ -9,13 +18,38 @@ interface Props {
 const LinkPage = ({ link, children }: Props): ReactElement => {
   const [disabled, setDisabled] = useState(false);
 
+  const { routerSliderAnimations, triggerTransition } =
+    useContext(TransitionContext);
+  const { setHomeContentIndex, homeContentIndex } =
+    useContext(HomeContentContext);
+
+  const [switchNav, setSwitchNav] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const routerSwitch = async (): Promise<void> => {
+      await new Promise(() => router.push(link));
+    };
+
+    if (routerSliderAnimations.isSlideReveal && switchNav) {
+      routerSwitch();
+      setSwitchNav(false);
+    }
+  }, [routerSliderAnimations.isSlideReveal]);
+
+  const handleNavChange = (e: any) => {
+    e.preventDefault();
+    setHomeContentIndex(homeContentIndex + 1);
+    setDisabled(true);
+    triggerTransition();
+    setSwitchNav(true);
+  };
+
   return (
     <Link
       href={link}
       className={`next-case-study${disabled ? " pointer-none" : ""}`}
-      onClick={() => {
-        setDisabled(true);
-      }}
+      onClick={handleNavChange}
     >
       <span>{children}</span>
       <div>

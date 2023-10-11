@@ -6,7 +6,15 @@ import PageContainer from "@/components/PageContainer";
 import BeforeAfter from "@/components/caseStudyCommons/BeforeAfter";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import RowCell from "@/components/caseStudyCommons/RowCell";
-import { beforeAfter, informations, userNeeds } from "@/data/youtubeMusic";
+import SideBySideImg from "@/components/caseStudyCommons/SideBySideImg";
+import {
+  beforeAfter,
+  featuresExample,
+  informations,
+  learned,
+  musicMobileAppEx,
+  userNeeds,
+} from "@/data/youtubeMusic";
 import { FC } from "react";
 
 const YoutubeMusic: FC = () => {
@@ -21,27 +29,10 @@ const YoutubeMusic: FC = () => {
           This project adds a new feature to improve Youtube Music as well as make screen redesigns.`}
           informations={informations}
         />
-        <div className="music-mobile-app-ex">
-          <Container>
-            <div className="ex-container">
-              <div className="img-container">
-                <SlideReveal>
-                  <img src="/assets/youtubeMusic/musicApp.png" alt="" />
-                </SlideReveal>
-              </div>
-              <div className="img-container">
-                <SlideReveal delay={0.3}>
-                  <img src="/assets/youtubeMusic/musicApp.png" alt="" />
-                </SlideReveal>
-              </div>
-              <div className="img-container">
-                <SlideReveal delay={0.35}>
-                  <img src="/assets/youtubeMusic/musicApp.png" alt="" />
-                </SlideReveal>
-              </div>
-            </div>
-          </Container>
-        </div>
+        <SideBySideImg
+          sideBySideLst={musicMobileAppEx}
+          classname="music-mobile-app-ex"
+        />
 
         <div className="layer user-needs">
           <Container>
@@ -65,6 +56,73 @@ const YoutubeMusic: FC = () => {
               <h1>Screen Redesigns and adding collaborative feature</h1>
             </SlideReveal>
             <BeforeAfter beforeAfterLst={beforeAfter} />
+
+            <SlideReveal>
+              <h1>Prototype and Testing</h1>
+            </SlideReveal>
+            <SlideReveal>
+              <p>
+                The same 10 reddit users that were interviewed at the start of
+                the project, were also used for testing. Three work flows were
+                tested:
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <ul className="testing">
+                <li>Adding a new friend</li>
+                <li>Finding your current friends</li>
+                <li>Making a new playlist and adding collaborators</li>
+              </ul>
+            </SlideReveal>
+            <SlideReveal>
+              <p>
+                It was important that the users complete the flows quickly, with
+                no errors, and that they liked the redesigns and new feature.
+              </p>
+            </SlideReveal>
+          </Container>
+          <SideBySideImg
+            sideBySideLst={featuresExample}
+            classname="feature-example"
+          />
+          <div className="results-container">
+            <Container>
+              <SlideReveal>
+                <h3>Testing Results:</h3>
+              </SlideReveal>
+              <SlideReveal>
+                <ul className="results">
+                  <li>
+                    Users communicated that they like the collaborative feature
+                    as many other music streaming apps have had it, especially
+                    Spotify.
+                  </li>
+                  <li>
+                    Users provided positive feedback to the library redesign.
+                    They appreciate the folder structure and also you can
+                    customise and pin music.
+                  </li>
+                  <li>
+                    Users completed creating the collaborative playlist without
+                    error and easily. Users also provided positive feedback on
+                    adding users directly instead of needing to send a link.
+                  </li>
+                  <li>
+                    Users want to keep the search icon in the navigation bar
+                    instead of the top right corner of the screen as it makes it
+                    easier to use the app with one hand.
+                  </li>
+                </ul>
+              </SlideReveal>
+            </Container>
+          </div>
+        </div>
+        <div className="layer learned">
+          <Container>
+            <SlideReveal>
+              <h1>What I have Learned</h1>
+            </SlideReveal>
+            <RowCell rowCells={learned} />
           </Container>
         </div>
       </RouterTransition>

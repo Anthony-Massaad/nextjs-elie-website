@@ -1,6 +1,6 @@
 .page-container.youtube-music {
   $titleColor: #ffffff;
-  $offset-white: #fef7fb;
+  $offset-white: #ffffff;
   background: #030303;
   color: #ffffff;
   font-style: normal;
@@ -25,27 +25,6 @@
 
   .music-mobile-app-ex {
     background-color: $offset-white;
-    padding: 2rem 0 10rem 0px;
-    .ex-container {
-      @extend .d-flex;
-      align-items: center;
-      text-align: center;
-      justify-content: space-between;
-
-      .img-container {
-        position: relative;
-        &:nth-child(2) {
-          top: 3rem;
-        }
-        &:nth-child(3) {
-          top: 6rem;
-        }
-        img {
-          width: 100%;
-          max-width: 300px;
-        }
-      }
-    }
   }
 
   .features-container {
@@ -54,5 +33,34 @@
       color: #030303;
     }
     color: #030303 !important;
+
+    .results-container {
+      padding: 3rem;
+    }
+
+    ul {
+      margin: 2rem 0;
+
+      &.results {
+        li {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &.testing {
+        list-style-type: decimal;
+      }
+
+      li {
+        margin-bottom: 0.2rem;
+      }
+    }
+
+    .feature-example {
+      margin-top: 1.5rem;
+      img {
+        max-width: 200px;
+      }
+    }
   }
 }

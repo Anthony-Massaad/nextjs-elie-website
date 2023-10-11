@@ -2,6 +2,7 @@ import {
   BeforeAfterInterface,
   InformationInterface,
   RowCellInterface,
+  SideBySideImgInterface,
 } from "@/globals/interfaces";
 
 export const informations: InformationInterface[] = [
@@ -98,5 +99,51 @@ export const beforeAfter: BeforeAfterInterface[] = [
       text: `The playlist screen was slightly redesigned to add all of the missing features without taking away from the orginal look and feel.`,
       imgSrc: `/assets/youtubeMusic/solution6.png`,
     },
+  },
+];
+
+export const musicMobileAppEx: SideBySideImgInterface[] = [
+  {
+    imgSrc: "/assets/youtubeMusic/musicApp.png",
+  },
+  {
+    imgSrc: "/assets/youtubeMusic/musicApp.png",
+  },
+  {
+    imgSrc: "/assets/youtubeMusic/musicApp.png",
+  },
+];
+
+export const featuresExample: SideBySideImgInterface[] = [
+  {
+    text: "1. Adding a new friend",
+    imgSrc: "/assets/youtubeMusic/musicApp.png",
+  },
+  {
+    text: "2. Finding your friends",
+    imgSrc: "/assets/youtubeMusic/musicApp.png",
+  },
+  {
+    text: "3. adding collaborators",
+    imgSrc: "/assets/youtubeMusic/musicApp.png",
+  },
+];
+
+export const learned: RowCellInterface[] = [
+  {
+    problem: "Using consistent design patterns is important",
+    description: `Sometimes as Designers, we have this need to try and reinvent the wheel and design something 
+    different, but sometimes, we must use consistent design patterns across 
+    products and make it easier for users.`,
+  },
+  {
+    problem: "Getting users to interview is not always that hard",
+    description: `I was shocked with the amount of reddit users that were happy to get interviewed and provide feedback. 
+    Many of these users have experimented and used most streaming apps, so their feedback is valuable.`,
+  },
+  {
+    problem: "The Minimal Viable Product must have basic features",
+    description: `Youtube Music was released with missing basic features  that are still not included to this day. 
+    This frustrated many users, which resulted in them going to the competitors. .`,
   },
 ];

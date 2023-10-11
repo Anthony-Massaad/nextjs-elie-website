@@ -34,3 +34,8 @@ export interface BeforeAfterInterface {
     imgSrc: string;
   };
 }
+
+export interface SideBySideImgInterface {
+  text?: string;
+  imgSrc: string;
+}
