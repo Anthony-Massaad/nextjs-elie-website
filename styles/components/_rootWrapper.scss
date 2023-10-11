@@ -2,6 +2,9 @@
   @extend .h-inherit;
   transition: background-color $default_transition ease-out;
   position: relative;
+  scroll-snap-type: y mandatory;
+
+  overflow-y: scroll;
 
   &.bg-black {
     background: #0e0e0e !important;
