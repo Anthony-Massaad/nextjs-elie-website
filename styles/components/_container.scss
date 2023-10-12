@@ -7,4 +7,8 @@
   position: relative;
   height: inherit;
   padding-right: 1rem;
+
+  @include lg-breakpoint {
+    padding-left: 1rem;
+  }
 }

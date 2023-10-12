@@ -27,4 +27,12 @@
     background-color: #c8c8c8;
     transition: background-color 0.3s ease-out;
   }
+
+  @include lg-breakpoint {
+    position: absolute;
+    transform: rotate(-90deg) translateX(-50%);
+    left: 50%;
+    top: 0.5rem;
+    right: auto;
+  }
 }

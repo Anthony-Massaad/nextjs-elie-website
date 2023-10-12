@@ -21,6 +21,14 @@
 
 html {
   font-size: $default_font_size;
+
+  @include lg-breakpoint {
+    font-size: $default_font_size - 4px;
+  }
+
+  @include md-breakpoint {
+    font-size: $default_font_size - 6px;
+  }
 }
 
 body {

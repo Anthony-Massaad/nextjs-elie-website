@@ -1,4 +1,23 @@
 // Arrow Next
+@keyframes fade-up {
+  0% {
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .intro-arrow-next {
   @extend .d-flex;
   position: absolute;
@@ -15,6 +34,12 @@
   transition: transform 0.3s linear;
 
   &.fade-up {
-    animation: fade-up 1000ms forwards;
+    animation: fade-up 1000ms;
+  }
+
+  svg {
+    @include lg-breakpoint {
+      transform: rotate(-90deg);
+    }
   }
 }

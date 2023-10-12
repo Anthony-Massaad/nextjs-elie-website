@@ -1,4 +1,6 @@
 .name-initials {
+  transform: scale(0.9);
+
   path {
     transition:
       fill $default_transition ease-in,

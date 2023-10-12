@@ -30,7 +30,7 @@ const RootWrapper: FC<Props> = ({ children }) => {
   }, [appIsFullyLoaded, colorScheme]);
 
   useEffect(() => {
-    if (!isEmpty(pathName)) {
+    if (pathName !== "/") {
       // flip for backbutton
       setOverflowCSS("auto");
     } else {

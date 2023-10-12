@@ -77,12 +77,25 @@
   position: relative;
   z-index: 0;
 
+  @include lg-breakpoint {
+    flex-direction: column-reverse;
+    padding-top: 8rem;
+    height: auto;
+    padding-right: 0;
+  }
+
   &.fade-in {
     animation: fade-in 1000ms forwards;
   }
 
   .section-info {
-    padding-right: 3rem;
+    // padding-right: 3rem;
+
+    @include lg-breakpoint {
+      padding: 0;
+      min-height: auto;
+      margin-top: 2rem;
+    }
   }
 
   .section-info-wrapper {
@@ -131,7 +144,6 @@
     font-size: 2.6rem;
     font-weight: 700;
     margin-bottom: 2.5rem;
-    letter-spacing: 0.4rem;
     color: var(--title-color);
   }
 
@@ -188,17 +200,28 @@
     &.disable-pointer {
       pointer-events: none;
     }
+
+    @include lg-breakpoint {
+      margin-top: 1rem;
+    }
   }
 
   .section-image {
     border: 4px solid var(--color-theme);
     border-radius: 10px;
-    width: 100%;
-    max-width: 31.25rem;
     position: relative;
+    max-width: 31.25rem;
+    max-height: 25rem;
+    height: 100%;
+    width: 100%;
+    margin-left: 1rem;
     transition:
       top 0.3s ease,
       transform 0.5s ease;
+
+    @include lg-breakpoint {
+      margin-left: 0;
+    }
   }
 
   .section-image.custom-border-color {
