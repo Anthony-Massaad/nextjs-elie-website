@@ -1,0 +1,33 @@
+.content-example {
+  padding: 1rem 4rem 2rem 4rem;
+
+  div {
+    width: fit-content;
+    margin: auto;
+    img,
+    p {
+      width: 100%;
+    }
+
+    &.desktop {
+      img,
+      p {
+        max-width: 1200px;
+      }
+    }
+
+    &.mobile {
+      img,
+      p {
+        max-width: 300px;
+      }
+    }
+  }
+
+  p {
+    color: #000;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+  }
+}

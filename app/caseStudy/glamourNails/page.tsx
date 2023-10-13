@@ -21,6 +21,7 @@ import { map } from "lodash";
 import { FC, useContext } from "react";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import LinkPage from "@/components/LinkPage";
+import ContentExample from "@/components/caseStudyCommons/ContentExample";
 
 const GlamourNails: FC = () => {
   const { homeContentIndex } = useContext(HomeContentContext);
@@ -38,15 +39,11 @@ const GlamourNails: FC = () => {
                       website that will meet their business and user needs.`}
             informations={informations}
           />
-
-          <div className="example">
-            <SlideReveal>
-              <div className="desktop">
-                <img src="/assets/glamourNails/desktop-image.png" alt="" />
-                <p>*Final Desktop Design</p>
-              </div>
-            </SlideReveal>
-          </div>
+          <ContentExample
+            media="desktop"
+            imgSrc="/assets/glamourNails/desktop-image.png"
+            text="Final Desktop Design"
+          />
           <div className="layer-2">
             <Container>
               <SlideReveal>
@@ -63,14 +60,11 @@ const GlamourNails: FC = () => {
               <RowCell rowCells={problems} />
             </Container>
           </div>
-          <div className="example">
-            <SlideReveal>
-              <div className="mobile">
-                <img src="/assets/glamourNails/mobile-image.png" alt="" />
-                <p>*Final mobile Design</p>
-              </div>
-            </SlideReveal>
-          </div>
+          <ContentExample
+            imgSrc="/assets/glamourNails/mobile-image.png"
+            text="Final mobile Design"
+            media="mobile"
+          />
           <div className="layer-3">
             <Container>
               <SlideReveal>
@@ -86,17 +80,12 @@ const GlamourNails: FC = () => {
               <RowCell rowCells={userNeeds} />
             </Container>
           </div>
-          <div className="example">
-            <SlideReveal>
-              <div className="desktop">
-                <img src="/assets/glamourNails/desktop-image.png" alt="" />
-                <p>
-                  *Designing a clear easy and simple way to for customers to see
-                  the nail salons services
-                </p>
-              </div>
-            </SlideReveal>
-          </div>
+          <ContentExample
+            media="desktop"
+            imgSrc="/assets/glamourNails/desktop-image.png"
+            text="Designing a clear easy and simple way to for customers to see
+            the nail salons services"
+          />
           <div className="layer-4">
             <Container>
               <SlideReveal>
@@ -207,17 +196,12 @@ const GlamourNails: FC = () => {
               </div>
             </Container>
           </div>
-          <div className="example">
-            <SlideReveal>
-              <div className="mobile">
-                <img src="/assets/glamourNails/mobile-image.png" alt="" />
-                <p>
-                  *Designing a clear easy and simple way to for customers to see
-                  the nail salons services on the mobile website
-                </p>
-              </div>
-            </SlideReveal>
-          </div>
+          <ContentExample
+            imgSrc="/assets/glamourNails/mobile-image.png"
+            text="Designing a clear easy and simple way to for customers to see
+            the nail salons services on the mobile website"
+            media="mobile"
+          />
           <div className="layer-5">
             <Container>
               <SlideReveal>
@@ -290,18 +274,13 @@ const GlamourNails: FC = () => {
               <SlideReveal>
                 <h1>Prototype and Testing</h1>
               </SlideReveal>
-              <div className="example">
-                <SlideReveal>
-                  <div className="mobile">
-                    <img src="/assets/glamourNails/mobile-image.png" alt="" />
-                    <p>
-                      *Testing the mobile booking system using Square’s booking
-                      flow. I designed it so it matches exactly how it would be
-                      using square’s booking extension.{" "}
-                    </p>
-                  </div>
-                </SlideReveal>
-              </div>
+              <ContentExample
+                imgSrc="/assets/glamourNails/mobile-image.png"
+                text={`Testing the mobile booking system using Square’s booking
+            flow. I designed it so it matches exactly how it would be
+            using square’s booking extension.`}
+                media="mobile"
+              />
               <div className="more-info">
                 <SlideReveal>
                   <h3>Testing Results:</h3>

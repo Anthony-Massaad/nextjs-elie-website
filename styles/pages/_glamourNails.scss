@@ -31,30 +31,8 @@
     }
   }
 
-  .example {
+  .content-example {
     background-color: $offset-white;
-    padding: 1rem 4rem 2rem 4rem;
-
-    div.desktop {
-      width: 85%;
-      margin: auto;
-    }
-
-    div.mobile {
-      width: 20%;
-      margin: auto;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    p {
-      color: #000;
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-top: 0.2rem;
-    }
   }
 
   .layer-2 {
@@ -102,7 +80,7 @@
 
   .layer-7 {
     @extend .d-grid;
-    .example {
+    .content-example {
       background-color: transparent;
     }
 
@@ -131,6 +109,7 @@
   .side-by-side-images {
     @extend .d-grid;
     margin: 5rem 0;
+    row-gap: 2rem;
     img {
       width: 100%;
     }
