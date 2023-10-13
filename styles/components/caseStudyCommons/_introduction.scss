@@ -10,6 +10,9 @@
       .description {
         max-width: 40rem;
         width: 100%;
+        @include sm-breakpoint {
+          max-width: fit-content;
+        }
       }
 
       .additional-info {
@@ -26,6 +29,14 @@
             margin-top: 0.5rem;
           }
         }
+        @include sm-breakpoint {
+          padding-left: 0;
+          margin-top: 1rem;
+        }
+      }
+
+      @include sm-breakpoint {
+        display: block;
       }
     }
   }

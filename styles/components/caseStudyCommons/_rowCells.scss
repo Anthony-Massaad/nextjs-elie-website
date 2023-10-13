@@ -15,5 +15,19 @@
     P {
       width: 50%;
     }
+
+    @include sm-breakpoint {
+      flex-direction: column;
+      margin: 1rem 0;
+      div,
+      h3,
+      p {
+        width: 100%;
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 }
