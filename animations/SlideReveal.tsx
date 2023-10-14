@@ -21,11 +21,15 @@ const SlideReveal: FC<Props> = ({ children, width = "auto", delay = 0.25 }) => {
   }, [isInView]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div
+      ref={ref}
+      style={{ position: "relative", width, overflow: "hidden" }}
+      className="fade-up-reveal"
+    >
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 50, visibility: "hidden" },
+          visible: { opacity: 1, y: 0, visibility: "visible" },
         }}
         initial="hidden"
         animate={mainControls}

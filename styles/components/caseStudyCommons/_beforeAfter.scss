@@ -1,9 +1,9 @@
 .before-after-container {
-  margin: 3rem;
   .before-after {
     @extend .d-grid;
     grid-template-columns: 1fr 0.2fr 1fr !important;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
 
     .sect {
       @extend .d-flex;
@@ -21,7 +21,25 @@
       }
       &.arrow {
         align-self: center;
+        @include md-breakpoint {
+          svg {
+            transform: rotate(90deg);
+          }
+        }
       }
+    }
+
+    .divider {
+      position: absolute;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -2rem;
+    }
+
+    @include md-breakpoint {
+      display: block;
     }
   }
 }
