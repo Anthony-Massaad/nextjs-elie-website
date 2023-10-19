@@ -1,0 +1,9 @@
+TODOS: 
+
+
+- introduction padding on mobile
+- header text color change for sections 
+- padding for row cell on mobile 
+- youtubeMusic next case study goes back to the beginning 
+- glamourNails image padding, reduce 
+- stack side by side image for mobile as they will be videos 
