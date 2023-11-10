@@ -3,5 +3,9 @@
 
   .intro {
     margin: 3rem 0;
+
+    @include sm-breakpoint {
+      margin: 0 0 1rem 0;
+    }
   }
 }

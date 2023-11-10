@@ -28,13 +28,17 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  bottom: 26px;
+  bottom: 1.625rem;
   left: 50%;
   transform: translate(-50%, 0);
   transition: transform 0.3s linear;
 
   &.fade-up {
     animation: fade-up 1000ms;
+  }
+
+  @include lg-breakpoint {
+    bottom: 8rem;
   }
 
   svg {
