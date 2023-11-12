@@ -1,38 +1,42 @@
 import {
+  BrandDetailsInterface,
   InformationInterface,
   RowCellInterface,
   StatsInterface,
 } from "@/globals/interfaces";
 
-export interface ColorStructure {
-  gradient?: boolean;
-  color: string;
-}
-
-export const colors: ColorStructure[] = [
+export const brandDetailsLayer: BrandDetailsInterface[] = [
   {
-    color: "#FCCFE5",
-  },
-  {
-    color: "#FA427A",
-  },
-  {
-    color: "#BF407E",
-  },
-  {
-    color: "#A32965",
-  },
-  {
-    color: "#300319",
-  },
-  {
-    color: "#CFE4FC",
-  },
-  {
-    color: "#7DAFE8",
-  },
-  {
-    color: "#031830",
+    typography: {
+      title: "Typography",
+      body: ["Headers: Playfair Display", "Body Text: Silka"],
+    },
+    colors: [
+      {
+        color: "#FCCFE5",
+      },
+      {
+        color: "#FA427A",
+      },
+      {
+        color: "#BF407E",
+      },
+      {
+        color: "#A32965",
+      },
+      {
+        color: "#300319",
+      },
+      {
+        color: "#CFE4FC",
+      },
+      {
+        color: "#7DAFE8",
+      },
+      {
+        color: "#031830",
+      },
+    ],
   },
 ];
 
@@ -127,6 +131,29 @@ export const userNeeds: RowCellInterface[] = [
     description: `Customers want to easily view the range of services available, from classic manicures to fancy 
     nail art, and know what they're getting into before booking. This includes detailed descriptions, 
     prices, and an estimate of how long each service takes to complete.`,
+  },
+];
+
+export const glamourNailsLearned: RowCellInterface[] = [
+  {
+    problem: `Design is iterative`,
+    description: `Design is iterative: it is okay not having the final design right away. 
+    Having a low-mid wireframe early on is a great way to flush out and test concept quickly.`,
+  },
+  {
+    problem: `Color theory is not complicated`,
+    description: `I read Steve Schoge book on refactoring UI to improve my UI skill. 
+    It provided me the foundation to create a Colour system for my designs.`,
+  },
+  {
+    problem: `Product design matters`,
+    description: `Good product design can enhance user satisfaction and convey the message that a business 
+    is committed to delivering quality services, which can build trust, differentiate it from competitors, and create a loyal customer base.`,
+  },
+  {
+    problem: `Developing design on Weblfow, setting up square booking, and tracking results`,
+    description: `I will  develop the webpage on Web flow, set up the square booking system, and provide 
+    training to staff and owners. We'll measure progress to address business challenges outlined above such as reducing no shows, human error, and administrative burden.`,
   },
 ];
 

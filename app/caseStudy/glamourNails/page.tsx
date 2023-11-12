@@ -8,8 +8,9 @@ import RowCell from "@/components/caseStudyCommons/RowCell";
 import Stats from "@/components/glamourNails/Stats";
 import Image from "next/image";
 import {
-  colors,
+  brandDetailsLayer,
   enhanceBookingSystemStats,
+  glamourNailsLearned,
   informations,
   problems,
   userNeeds,
@@ -22,6 +23,7 @@ import { FC, useContext } from "react";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import LinkPage from "@/components/LinkPage";
 import ContentExample from "@/components/caseStudyCommons/ContentExample";
+import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
 
 const GlamourNails: FC = () => {
   const { homeContentIndex } = useContext(HomeContentContext);
@@ -232,35 +234,7 @@ const GlamourNails: FC = () => {
               <SlideReveal>
                 <h1>Creating a Brand and putting it all together</h1>
               </SlideReveal>
-              <div className="details">
-                <div className="detail">
-                  <SlideReveal>
-                    <h3>Typography</h3>
-                  </SlideReveal>
-                  <SlideReveal>
-                    <p>Headers: Playfair Display</p>
-                  </SlideReveal>
-                  <SlideReveal>
-                    <p>Body Text: Silka</p>
-                  </SlideReveal>
-                </div>
-                <div className="detail">
-                  <SlideReveal>
-                    <h3>Colors</h3>
-                  </SlideReveal>
-                  <SlideReveal>
-                    <div className="colors">
-                      {map(colors, (color, idx) => (
-                        <div
-                          key={idx}
-                          style={{ backgroundColor: color.color }}
-                          className="color-block"
-                        ></div>
-                      ))}
-                    </div>
-                  </SlideReveal>
-                </div>
-              </div>
+              <BrandDetails brandDetails={brandDetailsLayer} />
               <SlideReveal>
                 <div className="side-by-side-images">
                   <img src="/assets/glamourNails/fullDesktop.png" alt="" />
@@ -310,6 +284,10 @@ const GlamourNails: FC = () => {
                   </ul>
                 </SlideReveal>
               </div>
+              <SlideReveal>
+                <h1>What I Learned and Next Steps</h1>
+              </SlideReveal>
+              <RowCell rowCells={glamourNailsLearned} />
               <LinkPage link={"/caseStudy/youtubeMusic"}>
                 Check out the next Case Study
               </LinkPage>

@@ -1,0 +1,17 @@
+.page-container.pursuit {
+  background: #030303;
+  color: #ffffff;
+  font-style: normal;
+  font-size: 1.5rem;
+
+  .layer {
+    &.white {
+      background-color: #ffffff;
+      color: #030303;
+    }
+  }
+
+  .next-case-study {
+    background-color: #50b3f7;
+  }
+}

@@ -2,11 +2,26 @@ export interface ClassStates {
   [key: string]: string;
 }
 
+export interface ColorStructure {
+  gradient?: boolean;
+  color: string;
+}
+
+export interface TypographyStructure {
+  title: string;
+  body: string[];
+}
+
 export interface TextAnimations {
   textUp: boolean;
   textDown: boolean;
   textRight: boolean;
   textLeft: boolean;
+}
+
+export interface BrandDetailsInterface {
+  typography: TypographyStructure;
+  colors: ColorStructure[];
 }
 
 export interface StatsInterface {
