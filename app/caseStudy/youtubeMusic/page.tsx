@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import PageContainer from "@/components/PageContainer";
 import BeforeAfter from "@/components/caseStudyCommons/BeforeAfter";
 import Introduction from "@/components/caseStudyCommons/Introduction";
+import Layer from "@/components/caseStudyCommons/Layer";
 import RowCell from "@/components/caseStudyCommons/RowCell";
 import SideBySideImg from "@/components/caseStudyCommons/SideBySideImg";
 import {
@@ -15,26 +16,29 @@ import {
   musicMobileAppEx,
   userNeeds,
 } from "@/data/youtubeMusic";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 const YoutubeMusic: FC = () => {
   return (
     <PageContainer pageTitle="youtube-music">
       <RouterTransition>
-        <Introduction
-          title={`Designing a collaborative feature for Youtube Music`}
-          description={`Youtube Music was released to replace Google Play Music in November 12, 2015. 
+        <Layer headerTxtColor="#ffffff" threshold={0.9}>
+          <Introduction
+            title={`Designing a collaborative feature for Youtube Music`}
+            description={`Youtube Music was released to replace Google Play Music in November 12, 2015. 
           Even though it was released as Google Play Music successor, it lacks so many features 
           that users loved with Google Play and other Music Streaming apps. 
           This project adds a new feature to improve Youtube Music as well as make screen redesigns.`}
-          informations={informations}
-        />
-        <SideBySideImg
-          sideBySideLst={musicMobileAppEx}
-          classname="music-mobile-app-ex"
-        />
-
-        <div className="layer user-needs">
+            informations={informations}
+          />
+        </Layer>
+        <Layer headerTxtColor="#000000" threshold={0.8}>
+          <SideBySideImg
+            sideBySideLst={musicMobileAppEx}
+            classname="music-mobile-app-ex"
+          />
+        </Layer>
+        <Layer classnames="user-needs" headerTxtColor="#ffffff">
           <Container>
             <SlideReveal>
               <h1>Discovering User Needs</h1>
@@ -49,8 +53,8 @@ const YoutubeMusic: FC = () => {
             </SlideReveal>
             <RowCell rowCells={userNeeds} />
           </Container>
-        </div>
-        <div className="layer features-container">
+        </Layer>
+        <Layer classnames="features-container">
           <Container>
             <SlideReveal>
               <h1>Screen Redesigns and adding collaborative feature</h1>
@@ -116,15 +120,15 @@ const YoutubeMusic: FC = () => {
               </SlideReveal>
             </Container>
           </div>
-        </div>
-        <div className="layer learned">
+        </Layer>
+        <Layer classnames="learned">
           <Container>
             <SlideReveal>
               <h1>What I have Learned</h1>
             </SlideReveal>
             <RowCell rowCells={learned} />
           </Container>
-        </div>
+        </Layer>
       </RouterTransition>
     </PageContainer>
   );
