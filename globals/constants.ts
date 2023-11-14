@@ -43,7 +43,7 @@ export const pathNames: PathNames = {
   glamourNails: "glamourNails",
   pursuit: "pursuit",
   youtubeMusic: "youtubeMusic",
-  aboutMe: "aboutMe",
+  aboutMe: "about",
 };
 
 export const relativePathDirectories: RelativePathDirectories = {

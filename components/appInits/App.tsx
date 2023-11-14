@@ -7,6 +7,7 @@ import HomeContentProvider from "@/providers/HomeContentProvider";
 import ColorSchemeProvider from "@/providers/ColorSchemeProvider";
 import TransitionProvider from "@/providers/TransitionProvider";
 import AppBooleanStates from "@/providers/AppBooleanStates";
+import RouterTransition from "@/animations/RouterTransition";
 
 interface Props {
   children: ReactNode;
@@ -18,9 +19,11 @@ const App: FC<Props> = ({ children }) => {
       <HomeContentProvider>
         <ColorSchemeProvider>
           <TransitionProvider>
-            <RootWrapper>
-              <AppContents>{children}</AppContents>
-            </RootWrapper>
+            <RouterTransition>
+              <RootWrapper>
+                <AppContents>{children}</AppContents>
+              </RootWrapper>
+            </RouterTransition>
           </TransitionProvider>
         </ColorSchemeProvider>
       </HomeContentProvider>

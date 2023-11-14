@@ -1,0 +1,28 @@
+.page-container.about {
+  padding-top: 60px;
+  background-color: #0e0e0e;
+  color: white;
+
+  .about-container {
+    @extend .d-flex;
+    padding: 2.5rem;
+    align-items: center;
+    min-height: 100vh;
+
+    .content {
+      @extend .d-flex;
+      gap: 2rem;
+    }
+
+    h2 {
+      @extend .d-flex;
+      font-size: 2.25rem;
+      font-weight: bold;
+    }
+
+    h2,
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}

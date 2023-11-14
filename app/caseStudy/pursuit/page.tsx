@@ -23,88 +23,86 @@ import { FC } from "react";
 const Pursuit: FC = () => {
   return (
     <PageContainer pageTitle="pursuit">
-      <RouterTransition>
-        <Introduction
-          title={`Designing a mobile app to Improver Golf players’ mental State`}
-          description={`Pursuit is a startup company that wants to use an Electroencephalography (EEG) device for Golf 
+      <Introduction
+        title={`Designing a mobile app to Improver Golf players’ mental State`}
+        description={`Pursuit is a startup company that wants to use an Electroencephalography (EEG) device for Golf 
           Coach’s and Golf players to track how focused and relaxed they are while training. 
           The goal is to help players create a system to improve their performance by improving their mental state. 
           Currently, EEG devices are not used in the sports industry.`}
-          informations={informations}
+        informations={informations}
+      />
+
+      <div className="layer white">
+        <SideBySideImg
+          sideBySideLst={sideBySideExample}
+          classname="side-by-side-app-ex"
         />
-
-        <div className="layer white">
-          <SideBySideImg
-            sideBySideLst={sideBySideExample}
-            classname="side-by-side-app-ex"
-          />
-          <Container>
-            <SlideReveal>
-              <h1>
-                Discovering Business Requirements for Minimum Viable Product
-              </h1>
-            </SlideReveal>
-            <SlideReveal>
-              <p className="intro">
-                To ensure the success of the Minimum Viable Product (MVP), the
-                business owners and I have prioritised and defined the following
-                requirements for the product with product owners:
-              </p>
-            </SlideReveal>
-            {map(businessRequirementsImages, (requirement, idx) => (
-              <SideBySideImg
-                sideBySideLst={requirement}
-                key={idx}
-                classname="business-requirement"
-              />
-            ))}
-          </Container>
-        </div>
-
-        <div className="layer">
-          <Container>
-            <SlideReveal>
-              <h1>Discovering User Needs</h1>
-            </SlideReveal>
-            <SlideReveal>
-              <p className="intro">
-                About 20 Pro Golf Coaches and Players were interviewed and these
-                users required:
-              </p>
-            </SlideReveal>
-            <RowCell rowCells={userNeeds} />
-          </Container>
-        </div>
-
-        <div className="layer white">
-          {map(userNeedsImages, (needs, idx) => (
+        <Container>
+          <SlideReveal>
+            <h1>
+              Discovering Business Requirements for Minimum Viable Product
+            </h1>
+          </SlideReveal>
+          <SlideReveal>
+            <p className="intro">
+              To ensure the success of the Minimum Viable Product (MVP), the
+              business owners and I have prioritised and defined the following
+              requirements for the product with product owners:
+            </p>
+          </SlideReveal>
+          {map(businessRequirementsImages, (requirement, idx) => (
             <SideBySideImg
-              sideBySideLst={needs}
+              sideBySideLst={requirement}
               key={idx}
-              classname="business-needs"
+              classname="business-requirement"
             />
           ))}
+        </Container>
+      </div>
 
-          <Container>
-            <SlideReveal>
-              <h1>Creating a Brand and putting it all together</h1>
-            </SlideReveal>
-            <BrandDetails brandDetails={brandDetailsLayer} />
-          </Container>
-        </div>
+      <div className="layer">
+        <Container>
+          <SlideReveal>
+            <h1>Discovering User Needs</h1>
+          </SlideReveal>
+          <SlideReveal>
+            <p className="intro">
+              About 20 Pro Golf Coaches and Players were interviewed and these
+              users required:
+            </p>
+          </SlideReveal>
+          <RowCell rowCells={userNeeds} />
+        </Container>
+      </div>
 
-        <div className="layer learned">
-          <Container>
-            <SlideReveal>
-              <h1>What I have Learned</h1>
-            </SlideReveal>
-            <RowCell rowCells={pursuitLearned} />
-            <LinkPage link={"/caseStudy/glamourNails"}>
-              Check out the next Case Study
-            </LinkPage>
-          </Container>
-        </div>
-      </RouterTransition>
+      <div className="layer white">
+        {map(userNeedsImages, (needs, idx) => (
+          <SideBySideImg
+            sideBySideLst={needs}
+            key={idx}
+            classname="business-needs"
+          />
+        ))}
+
+        <Container>
+          <SlideReveal>
+            <h1>Creating a Brand and putting it all together</h1>
+          </SlideReveal>
+          <BrandDetails brandDetails={brandDetailsLayer} />
+        </Container>
+      </div>
+
+      <div className="layer learned">
+        <Container>
+          <SlideReveal>
+            <h1>What I have Learned</h1>
+          </SlideReveal>
+          <RowCell rowCells={pursuitLearned} />
+          <LinkPage link={"/caseStudy/glamourNails"}>
+            Check out the next Case Study
+          </LinkPage>
+        </Container>
+      </div>
     </PageContainer>
   );
 };

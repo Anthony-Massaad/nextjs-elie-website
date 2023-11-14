@@ -269,18 +269,16 @@ const Home: FC = () => {
   };
 
   return (
-    <RouterTransition>
-      <Container>
-        <HomeContext.Provider value={{ indexChange }}>
-          <HomeContent
-            resetAnimations={resetAnimations}
-            textAnimations={textAnimations}
-            imagePos={imagePos}
-            imageRotation={imageRotation}
-          />
-        </HomeContext.Provider>
-      </Container>
-    </RouterTransition>
+    <Container>
+      <HomeContext.Provider value={{ indexChange }}>
+        <HomeContent
+          resetAnimations={resetAnimations}
+          textAnimations={textAnimations}
+          imagePos={imagePos}
+          imageRotation={imageRotation}
+        />
+      </HomeContext.Provider>
+    </Container>
   );
 };
 
