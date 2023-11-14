@@ -9,9 +9,21 @@
     align-items: center;
     min-height: 100vh;
 
+    @include breakpoint-700 {
+      min-height: auto;
+      align-items: start;
+    }
+
     .content {
       @extend .d-flex;
       gap: 2rem;
+
+      @include breakpoint-700 {
+        flex-direction: column;
+        img {
+          align-self: center;
+        }
+      }
     }
 
     h2 {
@@ -23,6 +35,12 @@
     h2,
     p {
       margin-bottom: 1rem;
+    }
+
+    .next-case-study {
+      background: #dc0038;
+      margin: 0;
+      max-width: 265px;
     }
   }
 }

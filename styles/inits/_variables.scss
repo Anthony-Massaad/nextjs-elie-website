@@ -20,6 +20,12 @@ $default_font_size: 16px !default;
   }
 }
 
+@mixin breakpoint-700 {
+  @media only screen and (max-width: 700px) {
+    @content;
+  }
+}
+
 @mixin md-lg-breakpoint {
   @media only screen and (max-width: 600px) {
     @content;

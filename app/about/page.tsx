@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "@/components/Container";
+import LinkPage from "@/components/LinkPage";
 import PageContainer from "@/components/PageContainer";
 import Image from "next/image";
 import { FC } from "react";
@@ -54,6 +55,7 @@ const About: FC = () => {
                 taught me, it’s important to sometimes break patterns to
                 creatively design a product that is unique, but still works.
               </p>
+              <LinkPage link="/contact">Let's Connect!</LinkPage>
             </div>
           </div>
         </div>
