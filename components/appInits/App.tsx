@@ -8,7 +8,7 @@ import ColorSchemeProvider from "@/providers/ColorSchemeProvider";
 import TransitionProvider from "@/providers/TransitionProvider";
 import AppBooleanStates from "@/providers/AppBooleanStates";
 import RouterTransition from "@/animations/RouterTransition";
-
+import { Toaster } from "react-hot-toast";
 interface Props {
   children: ReactNode;
 }
@@ -22,6 +22,7 @@ const App: FC<Props> = ({ children }) => {
             <RouterTransition>
               <RootWrapper>
                 <AppContents>{children}</AppContents>
+                <Toaster position="top-center" />
               </RootWrapper>
             </RouterTransition>
           </TransitionProvider>

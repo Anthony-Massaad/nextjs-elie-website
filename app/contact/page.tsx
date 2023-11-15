@@ -2,14 +2,83 @@
 
 import Container from "@/components/Container";
 import PageContainer from "@/components/PageContainer";
+import { isEmpty, trim } from "lodash";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, createElement, useState } from "react";
+import toast, { ToastOptions } from "react-hot-toast";
+import { VscError, VscCheck } from "react-icons/vsc";
 
 const Contact: FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const handleSubmit = async (e: any) => {};
+  const [sendingEmail, setSendingEmail] = useState(false);
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const toastOptions: ToastOptions = {
+      duration: 2500,
+      icon: createElement(VscError),
+      style: {
+        border: "2px solid red",
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    };
+
+    setSendingEmail(true);
+
+    if (isEmpty(trim(e.target.message.value))) {
+      setSendingEmail(false);
+      toast.error("Please fill the message field", toastOptions);
+      return;
+    }
+
+    if (isEmpty(trim(e.target.name.value))) {
+      setSendingEmail(false);
+      toast.error("Please fill the name field", toastOptions);
+      return;
+    }
+
+    const data = {
+      email: e.target.email.value,
+      name: e.target.name.value,
+      message: e.target.message.value,
+    };
+
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/sendEmail";
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    };
+
+    const response = await fetch(endpoint, options);
+
+    if (response.status === 200) {
+      setSendingEmail(false);
+      setEmail("");
+      setMessage("");
+      setName("");
+      toast.success("Successfully Sent Email!", {
+        duration: 2500,
+        icon: createElement(VscCheck),
+        style: {
+          border: "2px solid red",
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    } else {
+      toast.error("Oops something went wrong!", toastOptions);
+    }
+  };
 
   return (
     <PageContainer pageTitle="contact">
@@ -88,7 +157,9 @@ const Contact: FC = () => {
                     />
                   </div>
                 </div>
-                <button type="submit">Submit Now</button>
+                <button type="submit" disabled={sendingEmail}>
+                  Submit Now
+                </button>
               </form>
             </div>
           </div>
