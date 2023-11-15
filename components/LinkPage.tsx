@@ -13,9 +13,14 @@ import {
 interface Props {
   link: string;
   children: ReactNode;
+  changeHomeContentIndex?: boolean;
 }
 
-const LinkPage = ({ link, children }: Props): ReactElement => {
+const LinkPage = ({
+  link,
+  children,
+  changeHomeContentIndex = true,
+}: Props): ReactElement => {
   const [disabled, setDisabled] = useState(false);
 
   const { routerSliderAnimations, triggerTransition } =
@@ -39,6 +44,7 @@ const LinkPage = ({ link, children }: Props): ReactElement => {
 
   const handleNavChange = (e: any) => {
     e.preventDefault();
+    changeHomeContentIndex && setHomeContentIndex(homeContentIndex + 1);
     setDisabled(true);
     triggerTransition();
     setSwitchNav(true);

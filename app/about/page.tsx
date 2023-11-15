@@ -55,7 +55,9 @@ const About: FC = () => {
                 taught me, it’s important to sometimes break patterns to
                 creatively design a product that is unique, but still works.
               </p>
-              <LinkPage link="/contact">Let's Connect!</LinkPage>
+              <LinkPage link="/contact" changeHomeContentIndex={false}>
+                Let's Connect!
+              </LinkPage>
             </div>
           </div>
         </div>
