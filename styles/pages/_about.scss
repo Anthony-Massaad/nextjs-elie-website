@@ -37,10 +37,15 @@
       margin-bottom: 1rem;
     }
 
+    P {
+      font-size: 1.25rem;
+    }
+
     .next-case-study {
       background: #dc0038;
       margin: 0;
-      max-width: 265px;
+      width: fit-content;
+      padding-right: 4rem;
     }
   }
 }

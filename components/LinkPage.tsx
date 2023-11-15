@@ -39,7 +39,6 @@ const LinkPage = ({ link, children }: Props): ReactElement => {
 
   const handleNavChange = (e: any) => {
     e.preventDefault();
-    setHomeContentIndex(homeContentIndex + 1);
     setDisabled(true);
     triggerTransition();
     setSwitchNav(true);

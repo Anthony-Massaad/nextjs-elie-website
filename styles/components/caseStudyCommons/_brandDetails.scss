@@ -2,14 +2,12 @@
   @extend .d-grid;
 
   .detail {
-    h3 {
-      margin-bottom: 3rem;
-    }
     p {
       margin: 1.5rem 0;
     }
     .colors {
       @extend .d-grid;
+      margin-top: 1.5rem;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       .color-block {
         height: 3.75rem;

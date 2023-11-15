@@ -6,6 +6,10 @@
     text-align: center;
     justify-content: space-between;
 
+    @include md-lg-breakpoint {
+      flex-direction: column;
+    }
+
     .img-container {
       position: relative;
       margin: 0.5rem;

@@ -12,17 +12,13 @@
     div {
       left: 1.25rem;
       position: relative;
-      margin-top: -0.2rem;
+      top: -0.3rem;
       transition: transform 0.3s ease-in-out;
     }
 
     &:hover {
       div {
         transform: translateX(1rem);
-      }
-
-      i {
-        left: 0.5rem;
       }
     }
 
