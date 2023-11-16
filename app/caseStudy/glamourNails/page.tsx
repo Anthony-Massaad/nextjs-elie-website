@@ -29,11 +29,7 @@ const GlamourNails: FC = () => {
     headerStyle(
       "var(--body-text-color)",
       "var(--color-theme)",
-      `linear-gradient(
-      180deg,
-      rgba(252, 207, 229, 0) 0%,
-      rgba(252, 207, 229, 0.94) 100%
-    );`
+      `rgba(252, 207, 229, 1)`
     );
     topLeftStyle("var(--body-text-color)");
   }, []);
