@@ -1,5 +1,4 @@
 "use client";
-import RouterTransition from "@/animations/RouterTransition";
 import SlideReveal from "@/animations/SlideReveal";
 import Container from "@/components/Container";
 import LinkPage from "@/components/LinkPage";
@@ -17,10 +16,18 @@ import {
   userNeedsImages,
   pursuitLearned,
 } from "@/data/pursuit";
+import headingStyling from "@/hooks/headerStyling";
 import { map } from "lodash";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 const Pursuit: FC = () => {
+  const { headerStyle, topLeftStyle } = headingStyling();
+
+  useEffect(() => {
+    headerStyle("#fff", "var(--color-theme)", "#030303");
+    topLeftStyle("#fff");
+  }, []);
+
   return (
     <PageContainer pageTitle="pursuit">
       <Introduction

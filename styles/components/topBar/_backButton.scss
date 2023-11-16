@@ -1,4 +1,5 @@
 .back-button {
+  --path-fill: var(--initials-color);
   a {
     @extend .d-flex;
     position: absolute;
@@ -6,7 +7,7 @@
     transition: color $default_transition ease;
     top: -6.6px;
     z-index: 1000;
-    color: var(--initials-color);
+    color: var(--path-fill);
     align-items: center;
     font-size: 16px;
 
@@ -27,8 +28,8 @@
       transition:
         fill $default_transition ease-in,
         stroke $default_transition ease-in;
-      fill: var(--initials-color);
-      stroke: var(--initials-color);
+      fill: var(--path-fill);
+      stroke: var(--path-fill);
     }
   }
 }

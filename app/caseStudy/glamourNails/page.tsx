@@ -6,7 +6,6 @@ import Container from "@/components/Container";
 import PageContainer from "@/components/PageContainer";
 import RowCell from "@/components/caseStudyCommons/RowCell";
 import Stats from "@/components/glamourNails/Stats";
-import Image from "next/image";
 import {
   brandDetailsLayer,
   enhanceBookingSystemStats,
@@ -16,17 +15,29 @@ import {
   userNeeds,
   websiteBuilderStats,
 } from "@/data/glamourNails";
-import homeContent from "@/data/homeContent";
-import { HomeContentContext } from "@/providers/HomeContentProvider";
-import { map } from "lodash";
-import { FC, useContext } from "react";
+import { FC, useEffect } from "react";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import LinkPage from "@/components/LinkPage";
 import ContentExample from "@/components/caseStudyCommons/ContentExample";
 import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
+import headingStyling from "@/hooks/headerStyling";
 
 const GlamourNails: FC = () => {
-  const { homeContentIndex } = useContext(HomeContentContext);
+  const { headerStyle, topLeftStyle } = headingStyling();
+
+  useEffect(() => {
+    headerStyle(
+      "var(--body-text-color)",
+      "var(--color-theme)",
+      `linear-gradient(
+      180deg,
+      rgba(252, 207, 229, 0) 0%,
+      rgba(252, 207, 229, 0.94) 100%
+    );`
+    );
+    topLeftStyle("var(--body-text-color)");
+  }, []);
+
   return (
     <>
       <PageContainer pageTitle="glamour-nails">

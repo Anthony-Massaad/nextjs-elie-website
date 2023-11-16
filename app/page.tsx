@@ -10,6 +10,7 @@ import { every } from "lodash";
 import React, { useState, useRef, useEffect, FC, useContext } from "react";
 import HomeContext from "@/contexts/HomeContext";
 import HomeContent from "@/components/home/HomeContent";
+import headingStyling from "@/hooks/headerStyling";
 
 const Home: FC = () => {
   const { homeContentIndex, horizontalBreakPoint, setHomeContentIndex } =
@@ -37,6 +38,13 @@ const Home: FC = () => {
     textRight: false,
     textLeft: false,
   });
+
+  const { headerStyle, topLeftStyle } = headingStyling();
+
+  useEffect(() => {
+    headerStyle("var(--body-text-color)", "var(--color-theme)", "transparent");
+    topLeftStyle("var(--initials-color)");
+  }, []);
 
   useEffect(() => {
     if (imagePos <= -75) {

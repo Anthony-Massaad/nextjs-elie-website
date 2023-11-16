@@ -1,12 +1,13 @@
 .name-initials {
+  --path-fill: var(--initials-color);
   transform: scale(0.9);
 
   path {
     transition:
       fill $default_transition ease-in,
       stroke $default_transition ease-in;
-    fill: var(--initials-color);
-    stroke: var(--initials-color);
+    fill: var(--path-fill);
+    stroke: var(--path-fill);
   }
 
   &.white-fill {

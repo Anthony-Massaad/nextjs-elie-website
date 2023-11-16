@@ -27,7 +27,7 @@ const BackButton = (): ReactElement => {
   };
 
   return (
-    <div className="back-button">
+    <div className="back-button" id="nav-back">
       <Link href="/" onClick={handleNavChange}>
         <div>
           <svg viewBox="0 0 17 14" width="30" height="15">

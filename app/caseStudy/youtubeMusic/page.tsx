@@ -1,7 +1,7 @@
 "use client";
-import RouterTransition from "@/animations/RouterTransition";
 import SlideReveal from "@/animations/SlideReveal";
 import Container from "@/components/Container";
+import Layer from "@/components/Layer";
 import PageContainer from "@/components/PageContainer";
 import BeforeAfter from "@/components/caseStudyCommons/BeforeAfter";
 import Introduction from "@/components/caseStudyCommons/Introduction";
@@ -15,25 +15,37 @@ import {
   musicMobileAppEx,
   userNeeds,
 } from "@/data/youtubeMusic";
-import { FC } from "react";
+import headingStyling from "@/hooks/headerStyling";
+import { FC, useEffect } from "react";
 
 const YoutubeMusic: FC = () => {
+  const { headerStyle, topLeftStyle } = headingStyling();
+
+  useEffect(() => {
+    headerStyle("#fff", "var(--color-theme)", "#030303");
+    topLeftStyle("#fff");
+  }, []);
+
   return (
     <PageContainer pageTitle="youtube-music">
-      <Introduction
-        title={`Designing a collaborative feature for Youtube Music`}
-        description={`Youtube Music was released to replace Google Play Music in November 12, 2015. 
-          Even though it was released as Google Play Music successor, it lacks so many features 
-          that users loved with Google Play and other Music Streaming apps. 
-          This project adds a new feature to improve Youtube Music as well as make screen redesigns.`}
-        informations={informations}
-      />
-      <SideBySideImg
-        sideBySideLst={musicMobileAppEx}
-        classname="music-mobile-app-ex"
-      />
+      <Layer>
+        <Introduction
+          title={`Designing a collaborative feature for Youtube Music`}
+          description={`Youtube Music was released to replace Google Play Music in November 12, 2015. 
+            Even though it was released as Google Play Music successor, it lacks so many features 
+            that users loved with Google Play and other Music Streaming apps. 
+            This project adds a new feature to improve Youtube Music as well as make screen redesigns.`}
+          informations={informations}
+        />
+      </Layer>
+      <Layer>
+        <SideBySideImg
+          sideBySideLst={musicMobileAppEx}
+          classname="music-mobile-app-ex"
+        />
+      </Layer>
 
-      <div className="layer user-needs">
+      <Layer classnames="user-needs">
         <Container>
           <SlideReveal>
             <h1>Discovering User Needs</h1>
@@ -48,7 +60,7 @@ const YoutubeMusic: FC = () => {
           </SlideReveal>
           <RowCell rowCells={userNeeds} />
         </Container>
-      </div>
+      </Layer>
       <div className="layer features-container">
         <Container>
           <SlideReveal>

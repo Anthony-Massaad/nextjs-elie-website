@@ -26,7 +26,7 @@ const Initials = (): ReactElement => {
   }, [classStates]);
 
   return (
-    <div className={`name-initials${joinedClassStates}`}>
+    <div className={`name-initials${joinedClassStates}`} id="em-initials">
       <svg
         width="75"
         height="30"

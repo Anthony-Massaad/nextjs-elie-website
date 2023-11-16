@@ -3,10 +3,18 @@
 import Container from "@/components/Container";
 import LinkPage from "@/components/LinkPage";
 import PageContainer from "@/components/PageContainer";
+import headingStyling from "@/hooks/headerStyling";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 const About: FC = () => {
+  const { headerStyle, topLeftStyle } = headingStyling();
+
+  useEffect(() => {
+    headerStyle("#fff", "#DC0038", "#0e0e0e");
+    topLeftStyle("#fff");
+  }, []);
+
   return (
     <PageContainer pageTitle="about">
       <Container>

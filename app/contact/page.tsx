@@ -2,9 +2,10 @@
 
 import Container from "@/components/Container";
 import PageContainer from "@/components/PageContainer";
+import headingStyling from "@/hooks/headerStyling";
 import { isEmpty, trim } from "lodash";
 import Image from "next/image";
-import { FC, createElement, useState } from "react";
+import { FC, createElement, useEffect, useState } from "react";
 import toast, { ToastOptions } from "react-hot-toast";
 import { VscError, VscCheck } from "react-icons/vsc";
 
@@ -13,6 +14,13 @@ const Contact: FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sendingEmail, setSendingEmail] = useState(false);
+
+  const { headerStyle, topLeftStyle } = headingStyling();
+
+  useEffect(() => {
+    headerStyle("#fff", "#dc0038", "#0E0E0E;");
+    topLeftStyle("#fff");
+  }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
