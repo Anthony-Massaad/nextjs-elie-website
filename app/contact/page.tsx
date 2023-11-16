@@ -18,7 +18,7 @@ const Contact: FC = () => {
   const { headerStyle, topLeftStyle } = headingStyling();
 
   useEffect(() => {
-    headerStyle("#fff", "#dc0038", "#0E0E0E;");
+    headerStyle("#fff", "#dc0038", "#0E0E0E");
     topLeftStyle("#fff");
   }, []);
 
