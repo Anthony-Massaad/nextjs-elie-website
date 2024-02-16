@@ -21,6 +21,7 @@ import LinkPage from "@/components/LinkPage";
 import ContentExample from "@/components/caseStudyCommons/ContentExample";
 import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
 import headingStyling from "@/hooks/headerStyling";
+import VideoExample from "@/components/caseStudyCommons/VideoExample";
 
 const GlamourNails: FC = () => {
   const { headerStyle, topLeftStyle } = headingStyling();
@@ -47,10 +48,10 @@ const GlamourNails: FC = () => {
                       website that will meet their business and user needs.`}
           informations={informations}
         />
-        <ContentExample
+        <VideoExample
+          videoSrc="/assets/glamourNails/glamour-nails-full-desktop-designs-(1).mp4"
+          text="Final mobile Design"
           media="desktop"
-          imgSrc="/assets/glamourNails/desktop-image.png"
-          text="Final Desktop Design"
         />
         <div className="layer-2">
           <Container>

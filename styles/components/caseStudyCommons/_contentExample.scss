@@ -5,20 +5,28 @@
     width: fit-content;
     margin: auto;
     img,
-    p {
+    p,
+    video {
       width: 100%;
+    }
+
+    video,
+    img {
+      border: 2px solid var(--color-theme);
     }
 
     &.desktop {
       img,
-      p {
+      p,
+      video {
         max-width: 1200px;
       }
     }
 
     &.mobile {
       img,
-      p {
+      p,
+      video {
         max-width: 300px;
       }
     }
