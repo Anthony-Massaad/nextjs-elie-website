@@ -3,7 +3,6 @@ import { ClassStates } from "@/globals/interfaces";
 import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
 import { ColorSchemeContext } from "@/providers/ColorSchemeProvider";
 import { joinClassStates } from "@/utils/helper";
-import { isEmpty } from "lodash";
 import { usePathname } from "next/navigation";
 import { FC, ReactNode, useContext, useEffect, useMemo, useState } from "react";
 
