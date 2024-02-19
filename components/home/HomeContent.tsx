@@ -6,10 +6,9 @@ import { ColorSchemeContext } from "@/providers/ColorSchemeProvider";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
 import { TransitionContext } from "@/providers/TransitionProvider";
 import { joinClassStates } from "@/utils/helper";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { FC, useContext, useEffect, useMemo, useRef, useState } from "react";
 import PillsNav from "./PillsNav";
 import ArrowNext from "./ArrowNext";
 
@@ -39,6 +38,7 @@ const HomeContent: FC<HomeContentProps> = ({
   const { appIsFullyLoaded, introFadeContent, allowButtonClick } = useContext(
     AppBooleanStateContext
   );
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const [sectionInfoJoinedClassStates, setSectionInfoJoinedClassStates] =
     useState("");
@@ -52,8 +52,6 @@ const HomeContent: FC<HomeContentProps> = ({
   const [switchNav, setSwitchNav] = useState(false);
   const router = useRouter();
 
-  // Use useMemo to compute classStates only when its dependencies change
-  // this allows for one render and change dynamically. instead of multiple
   const sectionInfoClassStates: ClassStates = useMemo((): ClassStates => {
     return {
       textUp: textAnimations.textUp ? "animate-up" : "",
@@ -131,6 +129,13 @@ const HomeContent: FC<HomeContentProps> = ({
     setSwitchNav(true);
   };
 
+  useEffect(() => {
+    // Update the video source when homeContentIndex changes
+    if (videoRef.current) {
+      videoRef.current.src = homeContent[homeContentIndex].vidSrc;
+    }
+  }, [homeContentIndex]);
+
   return (
     <>
       <PillsNav />
@@ -160,13 +165,14 @@ const HomeContent: FC<HomeContentProps> = ({
             </Link>
           </div>
         </div>
-        <Image
+        <video
+          ref={videoRef}
           className={`section-image${sectionImageJoinedClassStates}`}
-          src={homeContent[homeContentIndex].imageSrc}
-          alt=""
-          width={500} // Set the image width
-          height={400} // Set the image height
-          loading="lazy" // Enable lazy loading
+          width={500}
+          height={400}
+          autoPlay
+          loop
+          muted
           style={
             window.innerWidth > horizontalBreakPoint
               ? {
@@ -178,7 +184,10 @@ const HomeContent: FC<HomeContentProps> = ({
                   transform: `rotateY(${imageRotation}deg)`,
                 }
           }
-        />
+        >
+          <source src={homeContent[homeContentIndex].vidSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </section>
       <ArrowNext />
     </>

@@ -4,7 +4,7 @@ interface HomeContentStructure {
   title: string;
   bodyDescription: string;
   buttonText: string;
-  imageSrc: string;
+  vidSrc: string;
   colorTheme: string;
   titleColor: string;
   bodyTextcolor: string;
@@ -24,8 +24,9 @@ interface HomeContentStructure {
   href: string;
 }
 
-const homeContent: HomeContentStructure[] = [
-  {
+/*
+
+ {
     title: `UX/Product Designer`,
     bodyDescription: `
                 Hi! I am Elie Massaad! I am a Designer that love solving complex 
@@ -33,7 +34,7 @@ const homeContent: HomeContentStructure[] = [
                 people’s lives easier.
             `,
     buttonText: `Let's Connect!`,
-    imageSrc: `/assets/images/sampleImage.png`,
+    vidSrc: `/assets/images/sampleImage.png`,
     colorTheme: `#DC0038`,
     titleColor: `#ffffff`,
     bodyTextcolor: `#ffffff`,
@@ -42,13 +43,16 @@ const homeContent: HomeContentStructure[] = [
     smileyColor: `#363636`,
     href: `${pathNames.aboutMe}`,
   },
+  */
+
+const homeContent: HomeContentStructure[] = [
   {
     title: `Pursuit`,
     bodyDescription: `
     Designing an end to end app for Pro Golfers to use an electroencephalogram device to measure their training performance.
             `,
     buttonText: `View Case Study`,
-    imageSrc: `/assets/images/sampleImage.png`,
+    vidSrc: `/assets/pursuit-front-cover.mp4`,
     colorTheme: `#2995EF`,
     titleColor: `#F7F6F6`,
     bodyTextcolor: `#F7F6F6`,
@@ -70,7 +74,7 @@ const homeContent: HomeContentStructure[] = [
     Designing a beautiful responsive website for a local business that does not have a digital presence, including a booking system.
             `,
     buttonText: `View Case Study`,
-    imageSrc: `/assets/images/sampleImage.png`,
+    vidSrc: `/assets/glamour-nails-front-cover.mp4`,
     colorTheme: `#FA427A`,
     titleColor: `#300319`,
     bodyTextcolor: `#300319`,
@@ -89,7 +93,7 @@ const homeContent: HomeContentStructure[] = [
     Adding a new feature for to make it easier for users to collaborate with their friends.
             `,
     buttonText: `View Case Study`,
-    imageSrc: `/assets/images/sampleImage.png`,
+    vidSrc: `/assets/youtube-music-front-cover.mp4`,
     colorTheme: `#DC0038`,
     titleColor: `#ffffff`,
     bodyTextcolor: `#ffffff`,
