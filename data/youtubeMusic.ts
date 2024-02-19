@@ -2,7 +2,7 @@ import {
   BeforeAfterInterface,
   InformationInterface,
   RowCellInterface,
-  SideBySideImgInterface,
+  SideBySideImgVidInterface,
 } from "@/globals/interfaces";
 
 export const informations: InformationInterface[] = [
@@ -102,30 +102,30 @@ export const beforeAfter: BeforeAfterInterface[] = [
   },
 ];
 
-export const musicMobileAppEx: SideBySideImgInterface[] = [
+export const musicMobileAppEx: SideBySideImgVidInterface[] = [
   {
-    imgSrc: "/assets/youtubeMusic/musicApp.png",
+    src: "/assets/youtubeMusic/youtube-music-video-1.mp4",
   },
   {
-    imgSrc: "/assets/youtubeMusic/musicApp.png",
+    src: "/assets/youtubeMusic/youtube-music-video-2.mp4",
   },
   {
-    imgSrc: "/assets/youtubeMusic/musicApp.png",
+    src: "/assets/youtubeMusic/youtube-music-video-3.mp4",
   },
 ];
 
-export const featuresExample: SideBySideImgInterface[] = [
+export const featuresExample: SideBySideImgVidInterface[] = [
   {
     text: "1. Adding a new friend",
-    imgSrc: "/assets/youtubeMusic/musicApp.png",
+    src: "/assets/youtubeMusic/youtube-music-video-1.mp4",
   },
   {
     text: "2. Finding your friends",
-    imgSrc: "/assets/youtubeMusic/musicApp.png",
+    src: "/assets/youtubeMusic/youtube-music-video-2.mp4",
   },
   {
     text: "3. adding collaborators",
-    imgSrc: "/assets/youtubeMusic/musicApp.png",
+    src: "/assets/youtubeMusic/youtube-music-video-3.mp4",
   },
 ];
 

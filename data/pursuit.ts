@@ -1,10 +1,8 @@
 import {
-  BeforeAfterInterface,
   BrandDetailsInterface,
-  ColorStructure,
   InformationInterface,
   RowCellInterface,
-  SideBySideImgInterface,
+  SideBySideImgVidInterface,
 } from "@/globals/interfaces";
 
 export const informations: InformationInterface[] = [
@@ -22,79 +20,79 @@ export const informations: InformationInterface[] = [
   },
 ];
 
-export const sideBySideExample: SideBySideImgInterface[] = [
+export const sideBySideExample: SideBySideImgVidInterface[] = [
   {
-    imgSrc: "/assets/pursuit/sidebyside1.png",
+    src: "/assets/pursuit/pursuit-video-1.mp4",
   },
   {
-    imgSrc: "/assets/pursuit/sidebyside2.png",
+    src: "/assets/pursuit/pursuit-video-2.mp4",
   },
   {
-    imgSrc: "/assets/pursuit/sidebyside3.png",
+    src: "/assets/pursuit/pursuit-video-3.mp4",
   },
   {
-    imgSrc: "/assets/pursuit/sidebyside4.png",
+    src: "/assets/pursuit/pursuit-video-4.mp4",
   },
 ];
 
-export const businessRequirementsImages: SideBySideImgInterface[][] = [
+export const businessRequirementsImages: SideBySideImgVidInterface[][] = [
   [
     {
       text: `1. A simple onboarding experience`,
-      imgSrc: "/assets/pursuit/requirement1.png",
+      src: "/assets/pursuit/pursuit-video-1.mp4",
     },
     {
       text: `2. A simple way for coaches to add players they coach`,
-      imgSrc: "/assets/pursuit/requirement2.png",
+      src: "/assets/pursuit/pursuit-video-2.mp4",
     },
   ],
   [
     {
       text: `3. Start a practice match with 3 training types`,
-      imgSrc: "/assets/pursuit/requirement3.png",
+      src: "/assets/pursuit/pursuit-video-3.mp4",
     },
     {
       text: `4. A visually appealing and simple dashboard that users can understand`,
-      imgSrc: "/assets/pursuit/requirement4.png",
+      src: "/assets/pursuit/pursuit-video-4.mp4",
     },
   ],
   [
     {
       text: `5. Start a practice match with 3 training types`,
-      imgSrc: "/assets/pursuit/requirement5.png",
+      src: "/assets/pursuit/pursuit-video-9.mp4",
     },
   ],
 ];
 
-export const userNeedsImages: SideBySideImgInterface[][] = [
+export const userNeedsImages: SideBySideImgVidInterface[][] = [
   [
     {
       text: `1. Creating a simple scoring system for users to quickly identify their focus and relaxation levels`,
-      imgSrc: "/assets/pursuit/needs1.png",
+      src: "/assets/pursuit/pursuit-video-9.mp4",
     },
     {
       text: `2. Both coaches and players want statistics through last shot, current round, and entire hole`,
-      imgSrc: "/assets/pursuit/needs2.png",
+      src: "/assets/pursuit/pursuit-video-10.mp4",
     },
   ],
   [
     {
       text: `3. Adding a quick way for coaches to see their Player’s last training session`,
-      imgSrc: "/assets/pursuit/needs3.png",
+      src: "/assets/pursuit/pursuit-video-11.mp4",
     },
     {
       text: `4. Creating an easy to use filter hierarchy to zero in on specific training sessions such as. club type`,
-      imgSrc: "/assets/pursuit/needs4.png",
+      src: "/assets/pursuit/pursuit-video-12.mp4",
     },
   ],
   [
     {
       text: `5. Quick way for Coaches to flip through their players`,
-      imgSrc: "/assets/pursuit/needs5.png",
+      src: "/assets/pursuit/pursuit-video-13.mp4",
     },
     {
       text: `5. Quick way for Coaches to flip through their players`,
-      imgSrc: "/assets/pursuit/needs6.png",
+      src: "/assets/pursuit/pursuit-video-14.mp4",
     },
   ],
 ];

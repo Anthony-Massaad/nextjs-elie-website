@@ -1,11 +1,11 @@
-import { SideBySideImgInterface } from "@/globals/interfaces";
+import { SideBySideImgVidInterface } from "@/globals/interfaces";
 import { FC } from "react";
 import Container from "../Container";
 import SlideReveal from "@/animations/SlideReveal";
 import { map } from "lodash";
 
 interface Props {
-  sideBySideLst: SideBySideImgInterface[];
+  sideBySideLst: SideBySideImgVidInterface[];
   classname?: string;
 }
 
@@ -22,7 +22,7 @@ const SideBySideImg: FC<Props> = ({ sideBySideLst, classname = "" }) => {
             >
               <SlideReveal>
                 {item.text && <p>{item.text}</p>}
-                <img src={item.imgSrc} alt="" />
+                <img src={item.src} alt="" />
               </SlideReveal>
             </div>
           ))}

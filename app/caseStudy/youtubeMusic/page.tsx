@@ -6,7 +6,7 @@ import PageContainer from "@/components/PageContainer";
 import BeforeAfter from "@/components/caseStudyCommons/BeforeAfter";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import RowCell from "@/components/caseStudyCommons/RowCell";
-import SideBySideImg from "@/components/caseStudyCommons/SideBySideImg";
+import SideBySideVideo from "@/components/caseStudyCommons/SideBySideVideo";
 import {
   beforeAfter,
   featuresExample,
@@ -39,7 +39,7 @@ const YoutubeMusic: FC = () => {
         />
       </Layer>
       <Layer>
-        <SideBySideImg
+        <SideBySideVideo
           sideBySideLst={musicMobileAppEx}
           classname="music-mobile-app-ex"
         />
@@ -91,7 +91,7 @@ const YoutubeMusic: FC = () => {
             </p>
           </SlideReveal>
         </Container>
-        <SideBySideImg
+        <SideBySideVideo
           sideBySideLst={featuresExample}
           classname="feature-example"
         />

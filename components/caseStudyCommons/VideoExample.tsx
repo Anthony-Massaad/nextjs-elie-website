@@ -1,5 +1,5 @@
 import SlideReveal from "@/animations/SlideReveal";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 
 interface Props {
   classname?: string;
@@ -9,12 +9,17 @@ interface Props {
 }
 
 const VideoExample: FC<Props> = ({ classname = "", videoSrc, text, media }) => {
+  const memoizedSource = useMemo(
+    () => <source src={videoSrc} type="video/mp4" />,
+    [videoSrc]
+  );
+
   return (
     <div className={`content-example ${classname}`}>
       <SlideReveal>
         <div className={media}>
           <video autoPlay loop muted>
-            <source src={videoSrc} type="video/mp4" />
+            {memoizedSource}
             Your browser does not support the video tag.
           </video>
           {text && <p>*{text}</p>}

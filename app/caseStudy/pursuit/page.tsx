@@ -6,7 +6,7 @@ import PageContainer from "@/components/PageContainer";
 import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import RowCell from "@/components/caseStudyCommons/RowCell";
-import SideBySideImg from "@/components/caseStudyCommons/SideBySideImg";
+import SideBySideVideo from "@/components/caseStudyCommons/SideBySideVideo";
 import {
   brandDetailsLayer,
   businessRequirementsImages,
@@ -40,7 +40,7 @@ const Pursuit: FC = () => {
       />
 
       <div className="layer white">
-        <SideBySideImg
+        <SideBySideVideo
           sideBySideLst={sideBySideExample}
           classname="side-by-side-app-ex"
         />
@@ -58,7 +58,7 @@ const Pursuit: FC = () => {
             </p>
           </SlideReveal>
           {map(businessRequirementsImages, (requirement, idx) => (
-            <SideBySideImg
+            <SideBySideVideo
               sideBySideLst={requirement}
               key={idx}
               classname="business-requirement"
@@ -84,7 +84,7 @@ const Pursuit: FC = () => {
 
       <div className="layer white">
         {map(userNeedsImages, (needs, idx) => (
-          <SideBySideImg
+          <SideBySideVideo
             sideBySideLst={needs}
             key={idx}
             classname="business-needs"

@@ -50,7 +50,7 @@ export interface BeforeAfterInterface {
   };
 }
 
-export interface SideBySideImgInterface {
+export interface SideBySideImgVidInterface {
   text?: string;
-  imgSrc: string;
+  src: string;
 }

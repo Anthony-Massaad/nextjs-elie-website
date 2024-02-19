@@ -69,8 +69,8 @@ const GlamourNails: FC = () => {
             <RowCell rowCells={problems} />
           </Container>
         </div>
-        <ContentExample
-          imgSrc="/assets/glamourNails/mobile-image.png"
+        <VideoExample
+          videoSrc="/assets/glamourNails/glamour-nails-full-mobile-(2).mp4"
           text="Final mobile Design"
           media="mobile"
         />
@@ -89,9 +89,9 @@ const GlamourNails: FC = () => {
             <RowCell rowCells={userNeeds} />
           </Container>
         </div>
-        <ContentExample
+        <VideoExample
           media="desktop"
-          imgSrc="/assets/glamourNails/desktop-image.png"
+          videoSrc="/assets/glamourNails/glamour-nails-desktop-screen-recording-(3).mp4"
           text="Designing a clear easy and simple way to for customers to see
             the nail salons services"
         />
@@ -203,8 +203,8 @@ const GlamourNails: FC = () => {
             </div>
           </Container>
         </div>
-        <ContentExample
-          imgSrc="/assets/glamourNails/mobile-image.png"
+        <VideoExample
+          videoSrc="/assets/glamourNails/glamour-nails-mobile-services-(4).mp4"
           text="Designing a clear easy and simple way to for customers to see
             the nail salons services on the mobile website"
           media="mobile"
