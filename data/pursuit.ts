@@ -68,28 +68,24 @@ export const userNeedsImages: SideBySideImgVidInterface[][] = [
   [
     {
       text: `1. Creating a simple scoring system for users to quickly identify their focus and relaxation levels`,
-      src: "/assets/pursuit/pursuit-video-9.mp4",
+      src: "/assets/pursuit/pursuit-video-10.mp4",
     },
     {
       text: `2. Both coaches and players want statistics through last shot, current round, and entire hole`,
-      src: "/assets/pursuit/pursuit-video-10.mp4",
+      src: "/assets/pursuit/pursuit-video-11.mp4",
     },
   ],
   [
     {
       text: `3. Adding a quick way for coaches to see their Player’s last training session`,
-      src: "/assets/pursuit/pursuit-video-11.mp4",
+      src: "/assets/pursuit/pursuit-video-12.mp4",
     },
     {
       text: `4. Creating an easy to use filter hierarchy to zero in on specific training sessions such as. club type`,
-      src: "/assets/pursuit/pursuit-video-12.mp4",
+      src: "/assets/pursuit/pursuit-video-13.mp4",
     },
   ],
   [
-    {
-      text: `5. Quick way for Coaches to flip through their players`,
-      src: "/assets/pursuit/pursuit-video-13.mp4",
-    },
     {
       text: `5. Quick way for Coaches to flip through their players`,
       src: "/assets/pursuit/pursuit-video-14.mp4",
