@@ -24,14 +24,12 @@ interface HomeContentStructure {
   href: string;
 }
 
-/*
-
- {
-    title: `UX/Product Designer`,
+const homeContent: HomeContentStructure[] = [
+  {
+    title: `Hello!`,
     bodyDescription: `
-                Hi! I am Elie Massaad! I am a Designer that love solving complex 
-                problems into simple, intuitive, and beautiful designs that make 
-                people’s lives easier.
+                My name is Elie. I am a product designer Designer that love solving complex problems into simple, 
+                intuitive, and beautiful designs that stands out and make users lives easier. 
             `,
     buttonText: `Let's Connect!`,
     vidSrc: `/assets/images/sampleImage.png`,
@@ -43,9 +41,6 @@ interface HomeContentStructure {
     smileyColor: `#363636`,
     href: `${pathNames.aboutMe}`,
   },
-  */
-
-const homeContent: HomeContentStructure[] = [
   {
     title: `Pursuit`,
     bodyDescription: `

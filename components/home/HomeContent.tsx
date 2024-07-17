@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC, useContext, useEffect, useMemo, useRef, useState } from "react";
 import PillsNav from "./PillsNav";
-import ArrowNext from "./ArrowNext";
+import { map } from "lodash";
 
 interface HomeContentProps {
   resetAnimations?: () => void;
@@ -165,31 +165,33 @@ const HomeContent: FC<HomeContentProps> = ({
             </Link>
           </div>
         </div>
-        <video
-          ref={videoRef}
-          className={`section-image${sectionImageJoinedClassStates}`}
-          width={500}
-          height={400}
-          autoPlay
-          loop
-          muted
-          style={
-            window.innerWidth > horizontalBreakPoint
-              ? {
-                  top: `${imagePos}px`,
-                  transform: `rotateX(${imageRotation}deg)`,
-                }
-              : {
-                  left: `${imagePos}px`,
-                  transform: `rotateY(${imageRotation}deg)`,
-                }
-          }
-        >
-          <source src={homeContent[homeContentIndex].vidSrc} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div className="video-container">
+          {map([0, 1, 2, 3], (item, index) => (
+            <video
+              id={`video-${index}`}
+              key={index}
+              ref={videoRef}
+              className={`section-image${sectionImageJoinedClassStates}`}
+              width={500}
+              height={400}
+              autoPlay
+              loop
+              muted
+              style={{
+                position: "absolute",
+                top: `calc(50% * ${index + 1} + ${imagePos}px)`,
+                transform: "translateY(-50%)",
+              }}
+            >
+              <source
+                src={homeContent[homeContentIndex].vidSrc}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          ))}
+        </div>
       </section>
-      <ArrowNext />
     </>
   );
 };
