@@ -13,10 +13,12 @@ interface HomeContentStructure {
   backgroundColor?: string;
   imageBorderColor?: string;
   sectionNextColor?: string;
+  headerBackgroundColor?: string;
   gradient?: {
     backgroundColor?: string;
     buttonColor?: string;
     sectionNextColor?: string;
+    headerBackgroundColor?: string;
   };
   shadows?: {
     buttonColor?: string;
@@ -38,6 +40,7 @@ const homeContent: HomeContentStructure[] = [
     bodyTextcolor: `#ffffff`,
     initialsFill: `#ffffff`,
     backgroundColor: `#0E0E0E`,
+    headerBackgroundColor: `#363636`,
     smileyColor: `#363636`,
     href: `${pathNames.aboutMe}`,
   },
@@ -55,6 +58,7 @@ const homeContent: HomeContentStructure[] = [
     backgroundColor: `#1B1E22`,
     smileyColor: `#01BEBE`,
     gradient: {
+      headerBackgroundColor: `144deg, #76D0FF 15.29%, #1586EA 84.81%`,
       buttonColor: `144deg, #76D0FF 15.29%, #1586EA 84.81%`,
       sectionNextColor: `144deg, #76D0FF 15.29%, #1586EA 84.81%`,
     },
@@ -77,6 +81,7 @@ const homeContent: HomeContentStructure[] = [
     smileyColor: `#C7519D`,
     imageBorderColor: `#FA427A`,
     sectionNextColor: `#7DAFE8`,
+    headerBackgroundColor: `#FB3773`,
     gradient: {
       backgroundColor: `180deg, #fccfe500 0%, #fccfe5f0 100%`,
     },
@@ -94,6 +99,7 @@ const homeContent: HomeContentStructure[] = [
     bodyTextcolor: `#ffffff`,
     initialsFill: `#ffffff`,
     backgroundColor: `#0E0E0E`,
+    headerBackgroundColor: `#1A1A1A`,
     smileyColor: `#363636`,
     href: `${relativePathDirectories.caseStudy}${pathNames.youtubeMusic}`,
   },

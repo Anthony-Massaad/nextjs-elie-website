@@ -1,4 +1,11 @@
 .page-container {
+  margin: 0 auto;
+  padding-left: 4rem;
+  max-width: 1400px;
+  padding-right: 1rem;
+  @include lg-breakpoint {
+    padding-left: 1rem;
+  }
   .next-case-study {
     @extend .d-flex;
     color: #ffffff;

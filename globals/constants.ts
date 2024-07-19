@@ -11,6 +11,8 @@ interface StylingNames {
   imageBorderColor: string;
   sectionNextColor: string;
   sectionNextGradientBorderColor: string;
+  headerBackgroundColor: string;
+  headerGradientBackgroundColor: string;
 }
 
 interface PathNames {
@@ -37,6 +39,8 @@ export const colorStylingNames: StylingNames = {
   imageBorderColor: "--image-border-color",
   sectionNextGradientBorderColor: "--section-next-gradient-border-color",
   sectionNextColor: "--section-next-color",
+  headerBackgroundColor: "--header-background-color",
+  headerGradientBackgroundColor: "--header-gradient-background-color",
 };
 
 export const pathNames: PathNames = {

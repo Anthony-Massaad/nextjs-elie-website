@@ -11,17 +11,31 @@ header {
 
   ul {
     @extend .d-flex;
-    justify-content: end;
+    margin: 0.5rem 12rem;
+    border-radius: 2rem;
     height: inherit;
     align-items: center;
+    justify-items: center;
+    background-color: var(--color-theme);
+    transition: background-color $default_transition ease-out;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 0px 4px 10px 0px #00000040;
+
+    &.gradient-background {
+      background: linear-gradient(var(--header-gradient-background-color));
+    }
+
+    &.solid-background {
+      background: var(--header-background-color);
+    }
   }
 
   a {
     color: var(--txt-color);
     font-size: 16px;
-    margin-right: 4rem;
     transition: color 0.3s ease;
-
+    margin: 0 1.5rem;
     &:hover {
       color: var(--txt-hover-color);
     }
