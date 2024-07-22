@@ -1,0 +1,11 @@
+.progress-stats {
+  @extend .d-grid;
+  text-align: center;
+  .stat {
+    padding: 0.5rem;
+    min-width: 22%;
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

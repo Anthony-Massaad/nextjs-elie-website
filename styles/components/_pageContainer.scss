@@ -1,4 +1,8 @@
 .page-container {
+  .blue-link {
+    color: #0073ca;
+    text-decoration: underline;
+  }
   .next-case-study {
     @extend .d-flex;
     color: #ffffff;
