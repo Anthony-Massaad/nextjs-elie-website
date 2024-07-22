@@ -137,6 +137,9 @@ const HomeContent: FC<HomeContentProps> = ({
   useEffect(() => {
     if (!every(textAnimations, (state: boolean) => state === false)) return;
     if (!allowHomeScroll) return;
+    let timeoutId: any = null;
+    let lastScrolledSection: any = null;
+
     const handleWheel = (event: WheelEvent) => {
       if (
         (event.deltaY > 0 && homeContentIndex + 1 === homeContent.length) ||
@@ -154,14 +157,26 @@ const HomeContent: FC<HomeContentProps> = ({
         return;
       }
 
-      if (event.deltaY > 0) {
-        // Scrolling down
-        console.log("Scrolling down...");
-        setHomeContentIndex((prev) => prev + 1);
-      } else {
-        // Scrolling up
-        console.log("Scrolling up...");
-        setHomeContentIndex((prev) => prev - 1);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      if (!parentSectionsRef.current) {
+        console.error("Could not find parent sections");
+        return;
+      }
+      const sections = parentSectionsRef.current.children;
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const rect = section.getBoundingClientRect();
+        const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+        if (isInView) {
+          if (lastScrolledSection !== i) {
+            setHomeContentIndex(i);
+            lastScrolledSection = i;
+          }
+          break;
+        }
       }
     };
 
@@ -174,7 +189,7 @@ const HomeContent: FC<HomeContentProps> = ({
         parentSectionsRef.current.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [homeContentIndex]);
+  }, [homeContentIndex, allowHomeScroll]);
 
   return (
     <>
