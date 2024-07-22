@@ -3,50 +3,55 @@
   padding-left: 4rem;
   max-width: 1400px;
   padding-right: 1rem;
+  .blue-link {
+    color: #0073ca;
+    text-decoration: underline;
+  }
   @include lg-breakpoint {
     padding-left: 1rem;
-  }
-  .next-case-study {
-    @extend .d-flex;
-    color: #ffffff;
-    padding: 1rem 3rem 1rem 1rem;
-    border-radius: 10px;
-    font-size: 1.25rem;
-    max-width: 400px;
-    width: 100%;
-    margin: 6rem auto;
 
-    div {
-      left: 1.25rem;
-      position: relative;
-      top: -0.3rem;
-      transition: transform 0.3s ease-in-out;
-    }
+    .next-case-study {
+      @extend .d-flex;
+      color: #ffffff;
+      padding: 1rem 3rem 1rem 1rem;
+      border-radius: 10px;
+      font-size: 1.25rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 6rem auto;
 
-    &:hover {
       div {
-        transform: translateX(1rem);
+        left: 1.25rem;
+        position: relative;
+        top: -0.3rem;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        div {
+          transform: translateX(1rem);
+        }
+      }
+
+      &.pointer-none {
+        pointer-events: none;
+      }
+
+      svg {
+        width: 1.1rem;
+        fill: currentcolor;
+        vertical-align: middle;
       }
     }
 
-    &.pointer-none {
-      pointer-events: none;
+    h1 {
+      font-family: Silka;
+      font-size: 4rem;
+      font-style: normal;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 15;
     }
-
-    svg {
-      width: 1.1rem;
-      fill: currentcolor;
-      vertical-align: middle;
-    }
-  }
-
-  h1 {
-    font-family: Silka;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 15;
   }
 }

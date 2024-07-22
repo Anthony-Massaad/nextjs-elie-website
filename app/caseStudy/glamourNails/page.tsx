@@ -22,6 +22,10 @@ import ContentExample from "@/components/caseStudyCommons/ContentExample";
 import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
 import headingStyling from "@/hooks/headerStyling";
 import VideoExample from "@/components/caseStudyCommons/VideoExample";
+import PostItNotes from "@/components/caseStudyCommons/PostItNotes";
+import Link from "next/link";
+import DesignConcept from "@/components/caseStudyCommons/DesignConcept";
+import CircularProgressBar from "@/components/caseStudyCommons/CircularProgressBar";
 
 const GlamourNails: FC = () => {
   const { headerStyle, topLeftStyle } = headingStyling();
@@ -40,12 +44,10 @@ const GlamourNails: FC = () => {
       <PageContainer pageTitle="glamour-nails">
         <Introduction
           title={`Designing a beautiful Website and booking experience`}
-          description={`Glamour Nails and Salon, a small local nail salon business
-                      in Ottawa, Ontario, does not have a digital website. Their
-                      operation is mostly manual, taking appointments by phone
-                      and recording customer appointments using a paper book
-                      calendar. I reached out to them to design and develop a
-                      website that will meet their business and user needs.`}
+          description={`Glamour Nails and Salon, a small local nail salon business in Ottawa, 
+            Ontario, does not have a digital website. Their operation is mostly manual, 
+            taking appointments by phone and recording customer appointments using a paper book calendar. 
+            I reached out to them to design and develop a website that will meet their business and user needs.`}
           informations={informations}
         />
         <VideoExample
@@ -66,6 +68,11 @@ const GlamourNails: FC = () => {
                 and 2 of their staff.
               </p>
             </SlideReveal>
+            <PostItNotes
+              src="/assets/glamourNails/businessNeedsNotes.png"
+              link="https://www.figma.com/board/2uhShKN3aPNBeGx7RvmmWX/Affinity-diagram-for-Glamour-Nails?node-id=0-1&t=cziCDVdUIH0iW4Ib-0"
+              linkText="*Click here to the complete affinity from all of my interviews"
+            />
             <RowCell rowCells={problems} />
           </Container>
         </div>
@@ -86,6 +93,11 @@ const GlamourNails: FC = () => {
                 experience.
               </p>
             </SlideReveal>
+            <PostItNotes
+              src="/assets/glamourNails/userNeedsNotes.png"
+              link="https://www.figma.com/board/2uhShKN3aPNBeGx7RvmmWX/Affinity-diagram-for-Glamour-Nails?node-id=0-1&t=cziCDVdUIH0iW4Ib-0"
+              linkText="*Click here to the complete affinity from all of my interviews"
+            />
             <RowCell rowCells={userNeeds} />
           </Container>
         </div>
@@ -136,12 +148,37 @@ const GlamourNails: FC = () => {
                 </SlideReveal>
                 <SlideReveal>
                   <p>
-                    I analysed a few booking system and recommended Square Up as
-                    it meets all these requirements, is familiar to users who
-                    have used it with other self-care businesses and found it
-                    convenient, and the business already uses square up’s
-                    services to process payments.
+                    Zoho bookings completed a{" "}
+                    <Link
+                      className="blue-link"
+                      target="_blank"
+                      href="https://www.zoho.com/bookings/alternatives-comparisons/the-best-appointment-scheduling-apps.html"
+                    >
+                      comprehensive analysis
+                    </Link>{" "}
+                    on the major 8 booking systems in the market. There are many
+                    great options; however, I recommended square to the owner
+                    for the following reasons:
                   </p>
+                </SlideReveal>
+                <SlideReveal>
+                  <ul>
+                    <li>
+                      We can customise the services, prices, and employees
+                      selection
+                    </li>
+                    <li>
+                      The business already uses square services for their
+                      payments
+                    </li>
+                    <li>
+                      Automatic reminders and rebooking options are included
+                    </li>
+                    <li>
+                      I consulted multiple nail salon and beauty service owners
+                      that use it and love it
+                    </li>
+                  </ul>
                 </SlideReveal>
               </div>
             </div>
@@ -151,87 +188,242 @@ const GlamourNails: FC = () => {
               </SlideReveal>
               <SlideReveal>
                 <p className="intro">
-                  Choosing the website builder before designing was important as
-                  website builders differ in technical and design constraints.
+                  Website builders vary in technical and design constraints, as
+                  such choosing the website builder before designing was
+                  important. WebFX collects and reports on{" "}
+                  <Link
+                    className="blue-link"
+                    href="https://www.webfx.com/web-design/statistics/#"
+                    target="_blank"
+                  >
+                    website statistics
+                  </Link>
+                  , and I extracted have extracted (4) statistics that are
+                  important:
                 </p>
               </SlideReveal>
               <SlideReveal>
-                <Stats stats={websiteBuilderStats} />
+                <CircularProgressBar stats={websiteBuilderStats} />
               </SlideReveal>
               <div className="more-info">
                 <SlideReveal>
-                  <p>We wanted a website builder that:</p>
+                  <p>This means we want a website builder:</p>
                 </SlideReveal>
                 <SlideReveal>
                   <ul>
-                    <li>Integrates with booking systems</li>
-                    <li>Has fast loading times and is responsive </li>
                     <li>
-                      Has the most design flexibility as we wanted to design
-                      something unique
+                      Has the most design flexibility as we wanted to design a
+                      unique website
+                    </li>
+                    <li>Integrates with Square booking system</li>
+                    <li>
+                      Has fast loading times, is responsive, and mobile friendly
                     </li>
                   </ul>
                 </SlideReveal>
               </div>
+              <SlideReveal>
+                <h2>The website Competitive Analysis</h2>
+              </SlideReveal>
+              <SlideReveal>
+                <img
+                  src="/assets/glamourNails/websiteBuilderAnalysisTable.png"
+                  alt=""
+                  className="website-builder-analysis intro"
+                />
+              </SlideReveal>
               <div className="more-info">
                 <SlideReveal>
                   <p>
-                    I analysed the four main website builders: Webflow,
-                    Squarespace, Wix, and Wordpress. I recommended Webflow
-                    because:
+                    I recommended weblflow because it has everything to
+                    business, design and user requirements:
                   </p>
                 </SlideReveal>
                 <SlideReveal>
                   <ul>
-                    <li>Complete control of in design customisation</li>
+                    <li>We get complete control of in design customisation</li>
                     <li>
                       Faster loading speeds than all the other website builder
                       as it has the cleanest background code
                     </li>
                     <li>
-                      <u>Guaranteed uptime of 99.9%</u> (higher than any other
-                      website builder)
+                      <Link
+                        href="https://www.tooltester.com/en/reviews/webflow-review/"
+                        target="_blank"
+                        className="blue-link"
+                      >
+                        Guaranteed uptime of 99.9%
+                      </Link>{" "}
+                      (higher than any other website builder)
                     </li>
+                    <li>Mobile friendly</li>
                     <li>
                       SEO is already good out of the box (they also have ways to
                       make it even better)
                     </li>
                     <li>Create thoughtful animations and interactions</li>
+                    <li>Square space booking integration</li>
                   </ul>
                 </SlideReveal>
               </div>
             </div>
           </Container>
         </div>
-        <VideoExample
-          videoSrc="/assets/glamourNails/glamour-nails-mobile-services-(4).mp4"
-          text="Designing a clear easy and simple way to for customers to see
-            the nail salons services on the mobile website"
-          media="mobile"
-        />
         <div className="layer-5">
           <Container>
             <SlideReveal>
               <h1>Designing the initial Concept</h1>
             </SlideReveal>
-
-            <div className="side-by-side-images">
-              <SlideReveal>
-                <img src="/assets/glamourNails/design1.png" alt="" />
-              </SlideReveal>
-              <SlideReveal>
-                <img src="/assets/glamourNails/design2.png" alt="" />
-              </SlideReveal>
-            </div>
             <SlideReveal>
-              <p>
-                Initial user testing loved the one page design to show all of
-                Glamour Nails information; however, users were confused about
-                service category headers before the our service’s services and
-                they communicated the the services section, although clear, was
-                not engaging. Updates were made based on initial feedback.
+              <p className="intro">
+                Websites now follow similar design patterns. Even though it’s
+                important to design a unique website, it is also important to
+                follow critical design patterns to make users’ lives easier.
+                Hubspot has out lines these critical elements to design a
+                website with purpose. I used most of these critical elements as
+                well adding a few additions. that I followed and used throughout
+                that website:
               </p>
             </SlideReveal>
+            <DesignConcept
+              headerTitle="Initial Wireframe"
+              src="/assets/glamourNails/initialWireframe.png"
+            />
+
+            <div className="more-info design-rational">
+              <SlideReveal>
+                <p>Design Rational:</p>
+              </SlideReveal>
+              <SlideReveal>
+                <ul>
+                  <li>
+                    <strong>Headline</strong> - tell visitors what the business
+                    has to offer within 3 seconds of opening the website
+                  </li>
+                  <li>
+                    <strong>Sub-headline</strong> - supplement the headline by
+                    offering a brief description of what you do or what you
+                    offer
+                  </li>
+                  <li>
+                    primary call to action - the primary action you want
+                    visitors to take. In tis case, we want our visitors to book
+                    an appointment.
+                  </li>
+                  <li>
+                    <strong>Supporting image</strong> - most people are visual.
+                    This image completes the hero section. The image should
+                    capture emotion, drive action, and visually tell the story
+                    you’re writing about.
+                  </li>
+                  <li>
+                    <strong>Navigation</strong> - the navigation at the top of
+                    the page is a consistent design principle and most websites.
+                    This has to be clear for users to navigate the website
+                  </li>
+                  <li>
+                    <strong>Services</strong> - Provide information on the
+                    services we are offering. In this case, we will provide our
+                    list of services, their description, and their price. I have
+                    also put it right under the hero section because it is the
+                    second most important information for users.
+                  </li>
+                  <li>
+                    <strong>Social Proof</strong> - social proof is a powerful
+                    indication of trust. For this business, I am using reviews
+                    from previous clients and linking the business instagram to
+                    show their work, giving new users a look on how this
+                    business performs.
+                  </li>
+                </ul>
+              </SlideReveal>
+            </div>
+
+            <div className="more-info">
+              <SlideReveal>
+                <p>Additional additions:</p>
+              </SlideReveal>
+              <SlideReveal>
+                <ul>
+                  <li>
+                    About us section: I wanted to give visitors a glimpse about
+                    the store and the owners. Like many Canadians, the owners
+                    are immigrants who came to start a better life and they are
+                    now providing services to the community in ottawa.
+                  </li>
+                  <li>
+                    The team - I added a section on the team so that the users
+                    can see who are providing the services and their specialty.
+                    It’s important ofr users to choose what employee can do
+                    their nails.
+                  </li>
+                </ul>
+              </SlideReveal>
+            </div>
+
+            <SlideReveal>
+              <h2>Initial Feedback</h2>
+            </SlideReveal>
+            <SlideReveal>
+              <p className="intro">
+                I sought out initial feedback as it’s important to make design
+                changes now rather than later. It is more time consuming and
+                expensive to make design changes on a high fidelity concept.
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <p>
+                Initial feedback loved the one overall page design as it’s
+                simple and easy to navigate. They also mentioned how all but one
+                of the sections are there - the location section is missing.
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <p className="intro">They also had feedback on the following:</p>
+            </SlideReveal>
+            <DesignConcept src="/assets/glamourNails/feedback1.png" />
+            <SlideReveal>
+              <ul className="bad-listing intro">
+                <li>
+                  Users were confused about the pellets design. They didn’t know
+                  if it had a function to filter the page or why it was there.
+                </li>
+                <li>
+                  Users thought the services section is basic, uninteresting and
+                  always used.
+                </li>
+              </ul>
+            </SlideReveal>
+            <DesignConcept
+              src="/assets/glamourNails/updatedWireframe.png"
+              headerTitle="Updated Wireframe"
+            />
+            <div className="more-info">
+              <SlideReveal>
+                <p>
+                  I have updated wireframes to reflect the initial feedback:
+                </p>
+              </SlideReveal>
+              <SlideReveal>
+                <ul>
+                  <li>
+                    Removed the pellets from the design as it served no purpose
+                  </li>
+                  <li>
+                    Updated the services section with service cards, visuals,
+                    the description, cost, time it would take, and a book now
+                    call to action. This speaks to the users needs of providing
+                    a better understanding about the service. The section also
+                    has quick filters to filter through the different services.
+                    This is consistent with other design principles that google
+                    uses.
+                  </li>
+                  <li>
+                    Added the location, hours of operation, and phone number.
+                  </li>
+                </ul>
+              </SlideReveal>
+            </div>
           </Container>
         </div>
         <div className="layer-6">
@@ -253,6 +445,23 @@ const GlamourNails: FC = () => {
             <SlideReveal>
               <h1>Prototype and Testing</h1>
             </SlideReveal>
+            <div className="more-info">
+              <SlideReveal>
+                <h3>Methodology</h3>
+              </SlideReveal>
+              <SlideReveal>
+                <ul>
+                  <li>
+                    I tested the mobile booking system experience with the same
+                    8 users I have interviewed at the start of this project.
+                  </li>
+                  <li>
+                    3 scenarios were asked on using the overall website at
+                    negating from start to finish of the booking experience
+                  </li>
+                </ul>
+              </SlideReveal>
+            </div>
             <ContentExample
               imgSrc="/assets/glamourNails/mobile-image.png"
               text={`Testing the mobile booking system using Square’s booking
@@ -281,6 +490,12 @@ const GlamourNails: FC = () => {
                     Users loved the colours and communicated how it aligns with
                     a nail salon’s brand (I thought pink would throw off some
                     men, but it didn’t! They loved it)
+                  </li>
+                  <li>
+                    Many users thought that this design gives them the
+                    impression that the nail salon really cares about their
+                    business and they would give them a shot just from the
+                    website alone.
                   </li>
                   <li>
                     All the information needed for a nail salon was there and

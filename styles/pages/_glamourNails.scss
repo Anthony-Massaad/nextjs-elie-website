@@ -71,15 +71,6 @@
     .content-example {
       background-color: transparent;
     }
-
-    .more-info {
-      ul {
-        margin: 1.5rem 0;
-        li {
-          margin-bottom: 2rem;
-        }
-      }
-    }
   }
 
   .next-case-study {
@@ -100,6 +91,46 @@
     row-gap: 2rem;
     img {
       width: 100%;
+    }
+  }
+
+  .website-builder-analysis {
+    width: 100%;
+  }
+
+  .design-rational {
+    list-style-type: decimal;
+  }
+
+  .bad-listing {
+    padding-left: 0;
+    li {
+      @extend .d-flex;
+      background: url(/assets/RedX.png) no-repeat left top;
+      list-style: none;
+      padding-left: 4rem;
+      min-height: 60px;
+      align-items: center;
+    }
+    // li {
+    //   position: relative;
+    //   &::before {
+    //     content: "";
+    //     position: absolute;
+    //     width: 3rem;
+    //     height: 3rem;
+    //     background: url("/assets/RedX.png");
+    //     background-size: cover;
+    //   }
+    // }
+  }
+
+  .more-info {
+    ul {
+      margin: 1.5rem 0;
+      li {
+        margin-bottom: 2rem;
+      }
     }
   }
 }
