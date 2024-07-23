@@ -61,6 +61,8 @@ const ColorSchemeProvider: FC<Props> = ({ children }) => {
         homeContent[homeContentIndex].headerBackgroundColor,
       [colorStylingNames.headerGradientBackgroundColor]:
         homeContent[homeContentIndex].gradient?.headerBackgroundColor,
+      [colorStylingNames.blurWrapperBackground]:
+        homeContent[homeContentIndex].gradient?.blurBackground,
     };
   }, [homeContentIndex]);
 

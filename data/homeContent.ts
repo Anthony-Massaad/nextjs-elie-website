@@ -1,6 +1,6 @@
 import { pathNames, relativePathDirectories } from "@/globals/constants";
 
-interface HomeContentStructure {
+export interface HomeContentStructure {
   title: string;
   bodyDescription: string;
   buttonText: string;
@@ -19,6 +19,7 @@ interface HomeContentStructure {
     buttonColor?: string;
     sectionNextColor?: string;
     headerBackgroundColor?: string;
+    blurBackground?: string;
   };
   shadows?: {
     buttonColor?: string;
@@ -43,6 +44,11 @@ const homeContent: HomeContentStructure[] = [
     headerBackgroundColor: `#363636`,
     smileyColor: `#363636`,
     href: `${pathNames.aboutMe}`,
+    gradient: {
+      blurBackground: `45deg,
+      rgba(220, 0, 56, 0.1) 0%,
+      rgba(14, 14, 14, 0.1) 100%`,
+    },
   },
   {
     title: `Pursuit`,
@@ -61,6 +67,9 @@ const homeContent: HomeContentStructure[] = [
       headerBackgroundColor: `144deg, #76D0FF 15.29%, #1586EA 84.81%`,
       buttonColor: `144deg, #76D0FF 15.29%, #1586EA 84.81%`,
       sectionNextColor: `144deg, #76D0FF 15.29%, #1586EA 84.81%`,
+      blurBackground: `45deg,
+      rgba(41, 149, 239, 0.1) 0%,
+      rgba(27, 30, 34, 0.1) 100%`,
     },
     shadows: {
       buttonColor: `0 0 4px 0px #76D0FF`,
@@ -84,6 +93,9 @@ const homeContent: HomeContentStructure[] = [
     headerBackgroundColor: `#FB3773`,
     gradient: {
       backgroundColor: `180deg, #fccfe500 0%, #fccfe5f0 100%`,
+      blurBackground: `45deg,
+      rgba(226, 0, 70, 0.1) 0%,
+      rgba(252, 207, 229, 0.1) 100%`,
     },
     href: `${relativePathDirectories.caseStudy}${pathNames.glamourNails}`,
   },
@@ -102,6 +114,11 @@ const homeContent: HomeContentStructure[] = [
     headerBackgroundColor: `#1A1A1A`,
     smileyColor: `#363636`,
     href: `${relativePathDirectories.caseStudy}${pathNames.youtubeMusic}`,
+    gradient: {
+      blurBackground: `45deg,
+      rgba(220, 0, 56, 0.1) 0%,
+      rgba(14, 14, 14, 0.1) 100%`,
+    },
   },
 ];
 

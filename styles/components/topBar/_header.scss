@@ -9,6 +9,14 @@ header {
   width: 100%;
   background: var(--header-bg-color);
 
+  &.block {
+    display: block;
+  }
+
+  &.none {
+    display: none;
+  }
+
   ul {
     @extend .d-flex;
     margin: 0.5rem 12rem;
@@ -34,10 +42,26 @@ header {
   a {
     color: var(--txt-color);
     font-size: 16px;
-    transition: color 0.3s ease;
     margin: 0 1.5rem;
+    position: relative;
+
     &:hover {
-      color: var(--txt-hover-color);
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.3rem;
+      width: 100%;
+      height: 2px;
+      background-color: var(--txt-color);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease; /* Ensure smooth transition */
     }
   }
 }

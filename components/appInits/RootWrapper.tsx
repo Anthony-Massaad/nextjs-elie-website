@@ -45,6 +45,7 @@ const RootWrapper: FC<Props> = ({ children }) => {
 
   return (
     <div id="wrapper" className={`${overflowCss}${joinedClassStates}`}>
+      <div className="bottom-left-blur"></div>
       {children}
     </div>
   );

@@ -9,6 +9,7 @@ import TransitionProvider from "@/providers/TransitionProvider";
 import AppBooleanStates from "@/providers/AppBooleanStates";
 import RouterTransition from "@/animations/RouterTransition";
 import { Toaster } from "react-hot-toast";
+import NavigationProvider from "@/providers/NavigationProvider";
 interface Props {
   children: ReactNode;
 }
@@ -21,8 +22,10 @@ const App: FC<Props> = ({ children }) => {
           <TransitionProvider>
             <RouterTransition>
               <RootWrapper>
-                <AppContents>{children}</AppContents>
-                <Toaster position="top-center" />
+                <NavigationProvider>
+                  <AppContents>{children}</AppContents>
+                  <Toaster position="top-center" />
+                </NavigationProvider>
               </RootWrapper>
             </RouterTransition>
           </TransitionProvider>

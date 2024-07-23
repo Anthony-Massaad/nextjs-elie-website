@@ -13,6 +13,7 @@ interface StylingNames {
   sectionNextGradientBorderColor: string;
   headerBackgroundColor: string;
   headerGradientBackgroundColor: string;
+  blurWrapperBackground: string;
 }
 
 interface PathNames {
@@ -41,6 +42,7 @@ export const colorStylingNames: StylingNames = {
   sectionNextColor: "--section-next-color",
   headerBackgroundColor: "--header-background-color",
   headerGradientBackgroundColor: "--header-gradient-background-color",
+  blurWrapperBackground: "--blur-wrapper-background",
 };
 
 export const pathNames: PathNames = {
