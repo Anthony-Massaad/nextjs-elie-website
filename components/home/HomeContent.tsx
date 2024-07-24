@@ -184,6 +184,9 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
         className={`section${sectionJoinedClassStates}`}
         id={`panel-${index}`}
         key={index}
+        style={{
+          border: `${inView ? "2px solid green" : "2px solid red"}`,
+        }}
         ref={ref}
       >
         <div className="section-info">

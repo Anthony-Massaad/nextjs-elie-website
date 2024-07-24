@@ -1,5 +1,5 @@
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useSectionInView = (
   index: number,
@@ -7,11 +7,27 @@ const useSectionInView = (
   isNavToSection: boolean,
   threshold: number = 1
 ) => {
+  const calculateRootMargin = () => {
+    const windowHeight = window.innerHeight;
+    const margin = (windowHeight / 1440) * -200;
+    return `${margin}px 0px ${margin}px 0px`;
+  };
+
+  const [rootMargin, setRootMargin] = useState(calculateRootMargin());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setRootMargin(calculateRootMargin());
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const { ref, inView } = useInView({
     threshold: threshold,
-    rootMargin: `${window.innerHeight / 2}px 0px ${
-      window.innerHeight / 2
-    }px 0px`,
+    rootMargin: rootMargin,
     root: null,
   });
 
@@ -20,7 +36,7 @@ const useSectionInView = (
     if (inView) {
       setHomeContentIndex(index);
     }
-  }, [inView, isNavToSection]);
+  }, [inView, isNavToSection, rootMargin]);
 
   return { ref, inView };
 };
