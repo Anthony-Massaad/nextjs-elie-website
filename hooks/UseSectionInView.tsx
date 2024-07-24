@@ -9,7 +9,9 @@ const useSectionInView = (
 ) => {
   const { ref, inView } = useInView({
     threshold: threshold,
-    rootMargin: "-200px 0px -200px 0px", // 400px height
+    rootMargin: `${window.innerHeight / 2}px 0px ${
+      window.innerHeight / 2
+    }px 0px`,
     root: null,
   });
 
