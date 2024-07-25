@@ -75,14 +75,6 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   height: 100%;
-
-  margin: 0 auto;
-  padding-left: 4rem;
-  max-width: 1400px;
-  padding-right: 1rem;
-  @include lg-breakpoint {
-    padding-left: 1rem;
-  }
 }
 
 .section {
