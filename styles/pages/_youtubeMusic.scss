@@ -5,6 +5,30 @@
   color: #ffffff;
   font-style: normal;
   font-size: 1.5rem;
+  img {
+    width: 100%;
+  }
+
+  .margin {
+    margin: 1.5rem 0;
+  }
+
+  .reddit-post-img-container {
+    @extend .d-flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 500px;
+      width: 100%;
+    }
+  }
+
+  .carousel-wrapper {
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+  }
 
   ul {
     list-style: disc;
@@ -22,9 +46,9 @@
   h1 {
     color: $titleColor;
   }
-
-  .music-mobile-app-ex {
+  .layer-2 {
     background-color: $offset-white;
+    color: #030303 !important;
   }
 
   .features-container {

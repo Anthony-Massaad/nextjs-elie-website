@@ -4,9 +4,11 @@ import Container from "@/components/Container";
 import Layer from "@/components/Layer";
 import PageContainer from "@/components/PageContainer";
 import BeforeAfter from "@/components/caseStudyCommons/BeforeAfter";
+import ImageCarousel from "@/components/caseStudyCommons/ImageCarousel";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import RowCell from "@/components/caseStudyCommons/RowCell";
 import SideBySideVideo from "@/components/caseStudyCommons/SideBySideVideo";
+import { journeyMapImages } from "@/data/glamourNails";
 import {
   beforeAfter,
   featuresExample,
@@ -38,11 +40,66 @@ const YoutubeMusic: FC = () => {
           informations={informations}
         />
       </Layer>
-      <Layer>
+      <Layer classnames="layer-2">
         <SideBySideVideo
           sideBySideLst={musicMobileAppEx}
           classname="music-mobile-app-ex"
         />
+        <Container>
+          <SlideReveal>
+            <h2>
+              Exploring YouTube Music's Position in the Music Streaming Service
+              Market
+            </h2>
+          </SlideReveal>
+          <SlideReveal>
+            <img
+              src="/assets/youtubeMusic/youtubeMusicPosition.png"
+              className="margin"
+            />
+          </SlideReveal>
+          <SlideReveal>
+            <p>
+              As of Q3 2023, YouTube Music holds only 8.9% of the total market
+              share. Historically, this figure has seen minimal growth over
+              time. Considering that YouTube Music is bundled with YouTube
+              Premium, this market share appears relatively low.
+            </p>
+          </SlideReveal>
+          <SlideReveal>
+            <p className="margin">
+              To gain deeper insights, I conducted a feature analysis to compare
+              the streaming service offerings of YouTube Music with its
+              competitors.
+            </p>
+          </SlideReveal>
+
+          <SlideReveal>
+            <h2 className="marginy-t">
+              Feature Analysis: YouTube Music vs. Competing Streaming Services
+            </h2>
+          </SlideReveal>
+          <SlideReveal>
+            <img
+              src="/assets/youtubeMusic/ytMusicFeatures.png"
+              className="margin"
+            />
+          </SlideReveal>
+          <SlideReveal>
+            <p className="margin">
+              <strong>Feature Analysis Conclusion:</strong> YouTube Music lacks
+              several essential features that its competitors offer and that
+              users demand. This limitation impairs its ability to attract and
+              retain a larger user base.
+            </p>
+          </SlideReveal>
+          <SlideReveal>
+            <h2>Youtube Music’s SWOT Analysis</h2>
+          </SlideReveal>
+          <SlideReveal>
+            <img src="/assets/youtubeMusic/SWOT.png" className="margin" />
+          </SlideReveal>
+        </Container>
       </Layer>
 
       <Layer classnames="user-needs">
@@ -52,19 +109,94 @@ const YoutubeMusic: FC = () => {
           </SlideReveal>
           <SlideReveal>
             <p className="intro">
-              I interviewed 10 Youtube Music Users around the world to
-              understand their needs and their current challenges with youtube
-              music. To do this, I posted on reddit for users that are
-              interested in this project and conducted interviews via Zoom.
+              To gain deeper insights into user experiences, I posted on Reddit
+              inviting current users to participate in interviews for this
+              project. Surprisingly, I received a lot of interest! More that I
+              expected. I conducted in-depth interviews with 10 YouTube Music
+              users from around the world, each lasting between 30 minutes to an
+              hour, conducted via Zoom.
             </p>
           </SlideReveal>
+          <SlideReveal>
+            <p>My Reddit post to get user interviewers for this Project</p>
+            <div className="reddit-post-img-container">
+              <img
+                src="/assets/youtubeMusic/redditPost.png"
+                className="margin"
+              />
+            </div>
+          </SlideReveal>
+          <SlideReveal>
+            <p>Synthesizing interview Results using an affinity diagram</p>
+          </SlideReveal>
+          <SlideReveal>
+            <img
+              src="/assets/youtubeMusic/interviewResults.png"
+              className="margin"
+            />
+          </SlideReveal>
+          <SlideReveal>
+            <p>User's needs:</p>
+          </SlideReveal>
           <RowCell rowCells={userNeeds} />
+          <SlideReveal>
+            <p>
+              <strong>Discovering users needs conclusion:</strong> the
+              interviews echo the findings of the feature analysis, illustrating
+              how YouTube Music's deficiency in basic features is perceived as
+              crucial by users.
+            </p>
+          </SlideReveal>
         </Container>
       </Layer>
       <div className="layer features-container">
         <Container>
           <SlideReveal>
-            <h1>Screen Redesigns and adding collaborative feature</h1>
+            <h1>Exploring the user’s Journey and designing low-fidelity</h1>
+          </SlideReveal>
+          <div>
+            <SlideReveal>
+              <p className="margin">
+                Having identified user pain points and deficiencies in YouTube
+                Music's features, I proceeded to create a user journey map. This
+                map explores different scenarios and pain points, pinpointing
+                where issues arise and identifying potential opportunities for
+                improvement.
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <p>
+                I scoped and prioritized features that could be addressed
+                through design solutions, focusing particularly on those
+                available on the mobile app. Many of these mobile app features
+                hold significant potential for enhancing user value. It's worth
+                noting that at the time of the project, YouTube was in the
+                process of testing and rolling out live lyrics , which was not
+                included in this project's design considerations.
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <h2 className="marginy-t">User's Journey Map</h2>
+            </SlideReveal>
+            <ImageCarousel images={journeyMapImages} />
+            <SlideReveal>
+              <p className="margin">
+                After identifying and prioritizing the features to implement, I
+                used low-fidelity wireframes for design exploration. This
+                approach allowed for quicker iteration, leveraging YouTube
+                Music's existing design system and structure to maintain
+                consistency without the need for redesign.
+              </p>
+            </SlideReveal>
+            <SlideReveal>
+              <h2 className="marginy-t">Low-Fidelity Sketches</h2>
+            </SlideReveal>
+            <ImageCarousel images={journeyMapImages} />
+          </div>
+          <SlideReveal>
+            <h1 className="marginy-t">
+              Final designs addressing user pain points
+            </h1>
           </SlideReveal>
           <BeforeAfter beforeAfterLst={beforeAfter} />
 

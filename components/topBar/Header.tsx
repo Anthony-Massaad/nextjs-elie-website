@@ -84,12 +84,8 @@ const Header: FC = () => {
   }, [introFadeContent, appIsFullyLoaded]);
 
   return (
-    <header
-      className={`${moveFromRight ? "move-from-right" : ""} ${
-        display ? "block" : "none"
-      }`}
-    >
-      <ul className={navigationClasses}>
+    <header className={`${moveFromRight ? "move-from-right" : ""} `}>
+      <ul className={`${!display ? "none " : ""}${navigationClasses}`}>
         {Object.entries(links).map(([name, link], index) => (
           <li key={index}>
             <Link

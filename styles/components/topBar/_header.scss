@@ -9,14 +9,6 @@ header {
   width: 100%;
   background: var(--header-bg-color);
 
-  &.block {
-    display: block;
-  }
-
-  &.none {
-    display: none;
-  }
-
   ul {
     @extend .d-flex;
     margin: 0.5rem 12rem;
@@ -29,6 +21,10 @@ header {
     width: fit-content;
     text-align: center;
     box-shadow: 0px 4px 10px 0px #00000040;
+
+    &.none {
+      display: none;
+    }
 
     &.gradient-background {
       background: linear-gradient(var(--header-gradient-background-color));

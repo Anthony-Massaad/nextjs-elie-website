@@ -13,6 +13,7 @@ interface Props {
 const RootWrapper: FC<Props> = ({ children }) => {
   const [overflowCss, setOverflowCSS] = useState("hidden");
   const [joinedClassStates, setJoinedClassStates] = useState("");
+  const [isHome, setIsHome] = useState(false);
   const { colorScheme } = useContext(ColorSchemeContext);
   const { appIsFullyLoaded } = useContext(AppBooleanStateContext);
   const pathName = usePathname();
@@ -32,9 +33,11 @@ const RootWrapper: FC<Props> = ({ children }) => {
     if (pathName !== "/") {
       // flip for backbutton
       setOverflowCSS("auto");
+      setIsHome(false);
     } else {
       // flip for initials
       setOverflowCSS("hidden");
+      setIsHome(true);
     }
   }, [pathName]);
 
@@ -44,8 +47,12 @@ const RootWrapper: FC<Props> = ({ children }) => {
   }, [classStates]);
 
   return (
-    <div id="wrapper" className={`${overflowCss}${joinedClassStates}`}>
-      <div className="bottom-left-blur"></div>
+    <div
+      id="wrapper"
+      className={`${
+        isHome && appIsFullyLoaded ? "background-blur " : ""
+      }${overflowCss}${joinedClassStates}`}
+    >
       {children}
     </div>
   );

@@ -171,3 +171,10 @@ export const informations: InformationInterface[] = [
     infos: ["January 2023 - March 2023"],
   },
 ];
+
+export const journeyMapImages: string[] = [
+  "/assets/youtubeMusic/Carousel1Img1.png",
+  "/assets/youtubeMusic/Carousel1Img2.png",
+  "/assets/youtubeMusic/Carousel1Img3.png",
+  "/assets/youtubeMusic/Carousel1Img4.png",
+];
