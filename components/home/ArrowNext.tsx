@@ -1,16 +1,17 @@
-import HomeContext from "@/contexts/HomeContext";
 import { ClassStates } from "@/globals/interfaces";
 import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
+import { NavigationContext } from "@/providers/NavigationProvider";
 import { joinClassStates } from "@/utils/helper";
 import { FC, useContext, useEffect, useMemo, useState } from "react";
 
 const ArrowNext: FC = () => {
-  const { indexChange } = useContext(HomeContext);
   const { homeContentIndex } = useContext(HomeContentContext);
   const { appIsFullyLoaded, introFadeContent } = useContext(
     AppBooleanStateContext
   );
+
+  const { indexChange } = useContext(NavigationContext);
 
   const [arrowNextJoinedClassStates, setArrowNextJoinedClassStates] =
     useState("");
