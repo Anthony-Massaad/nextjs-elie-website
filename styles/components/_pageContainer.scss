@@ -1,4 +1,28 @@
 .page-container {
+  .decimal-listing {
+    list-style: decimal !important;
+    padding-left: 2rem;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+  .margin {
+    margin: 2rem 0;
+  }
+
+  .marginy-b {
+    margin-bottom: 2rem;
+  }
+
+  .marginy-t {
+    margin-top: 2rem;
+  }
+  .blue-link {
+    color: #0073ca;
+    text-decoration: underline;
+  }
+
   .next-case-study {
     @extend .d-flex;
     color: #ffffff;

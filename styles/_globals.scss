@@ -1,5 +1,6 @@
 // Initialize css with reset and constants
 // (keyframes that are global to the application)
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";
 @import "./inits/reset";
 @import "./inits/variables";
 @import "./inits/fonts";
@@ -67,6 +68,10 @@ body {
 @import "./components/caseStudyCommons/sideBySideImg";
 @import "./components/caseStudyCommons/contentExample";
 @import "./components/caseStudyCommons/brandDetails";
+@import "./components/caseStudyCommons/postItNotes";
+@import "./components/caseStudyCommons/designConcept";
+@import "./components/caseStudyCommons/circularProgressBar";
+@import "./components/caseStudyCommons/imageCarousel";
 
 // top bar components
 @import "./components/topBar/backButton";

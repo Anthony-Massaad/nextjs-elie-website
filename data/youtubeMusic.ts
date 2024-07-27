@@ -147,3 +147,17 @@ export const learned: RowCellInterface[] = [
     This frustrated many users, which resulted in them going to the competitors. .`,
   },
 ];
+
+export const journeyMapImages: string[] = [
+  "/assets/youtubeMusic/roadMapImg1.png",
+  "/assets/youtubeMusic/roadMapImg2.png",
+  "/assets/youtubeMusic/roadMapImg3.png",
+  "/assets/youtubeMusic/roadMapImg4.png",
+];
+
+export const loFiImages: string[] = [
+  "/assets/youtubeMusic/Carousel1Img1.png",
+  "/assets/youtubeMusic/Carousel1Img2.png",
+  "/assets/youtubeMusic/Carousel1Img3.png",
+  "/assets/youtubeMusic/Carousel1Img4.png",
+];

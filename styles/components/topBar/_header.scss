@@ -9,21 +9,154 @@ header {
   width: 100%;
   background: var(--header-bg-color);
 
-  ul {
+  ul.desktop-ul {
     @extend .d-flex;
-    justify-content: end;
+    margin: 0.5rem 12rem;
+    border-radius: 2rem;
     height: inherit;
     align-items: center;
+    justify-items: center;
+    background-color: var(--color-theme);
+    transition: background-color $default_transition ease-out;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 0px 4px 10px 0px #00000040;
+
+    &.none {
+      display: none;
+    }
+
+    &.gradient-background {
+      background: linear-gradient(var(--header-gradient-background-color));
+    }
+
+    &.solid-background {
+      background: var(--header-background-color);
+    }
+
+    @include lg-breakpoint {
+      display: none;
+    }
+
+    a {
+      color: var(--txt-color);
+      font-size: 16px;
+      margin: 0 1.5rem;
+      position: relative;
+
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        width: 100%;
+        height: 2px;
+        background-color: var(--txt-color);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+      }
+    }
   }
 
-  a {
-    color: var(--txt-color);
-    font-size: 16px;
-    margin-right: 4rem;
-    transition: color 0.3s ease;
+  .hamburger-nav {
+    z-index: 9998;
+    position: fixed;
+    width: 100%;
 
-    &:hover {
-      color: var(--txt-hover-color);
+    &.none {
+      display: none;
+    }
+
+    .hamburger-button {
+      @extend .d-flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      transition: background-color $default_transition ease-out;
+
+      &.gradient-background {
+        background: linear-gradient(var(--header-gradient-background-color));
+      }
+
+      &.solid-background {
+        background: var(--header-background-color);
+      }
+
+      path {
+        stroke: var(--txt-color);
+      }
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      transition: background-color $default_transition ease-out;
+
+      &.gradient-background {
+        background: linear-gradient(var(--header-gradient-background-color));
+      }
+
+      &.solid-background {
+        background: var(--header-background-color);
+      }
+    }
+
+    ul {
+      padding: 25px;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 50px;
+      li {
+        margin-bottom: 0.5rem;
+        a {
+          width: 100%;
+          display: block;
+          padding: 0.5rem;
+          color: inherit;
+          color: var(--txt-color);
+          text-align: center;
+          font-size: 2rem;
+
+          &:hover {
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -0.3rem;
+            width: 100%;
+            height: 2px;
+            background-color: var(--txt-color);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+          }
+        }
+      }
     }
   }
 }

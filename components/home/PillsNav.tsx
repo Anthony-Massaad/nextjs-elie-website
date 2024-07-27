@@ -1,13 +1,13 @@
-import HomeContext from "@/contexts/HomeContext";
 import homeContent from "@/data/homeContent";
 import { ClassStates } from "@/globals/interfaces";
 import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
+import { NavigationContext } from "@/providers/NavigationProvider";
 import { joinClassStates } from "@/utils/helper";
 import { FC, useContext, useEffect, useMemo, useState } from "react";
 
 const PillsNav: FC = () => {
-  const { indexChange } = useContext(HomeContext);
+  const { indexChange } = useContext(NavigationContext);
   const { homeContentIndex } = useContext(HomeContentContext);
   const { appIsFullyLoaded, introFadeContent } = useContext(
     AppBooleanStateContext

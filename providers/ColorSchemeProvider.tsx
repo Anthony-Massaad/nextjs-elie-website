@@ -57,6 +57,12 @@ const ColorSchemeProvider: FC<Props> = ({ children }) => {
         homeContent[homeContentIndex]?.sectionNextColor,
       [colorStylingNames.sectionNextGradientBorderColor]:
         homeContent[homeContentIndex].gradient?.sectionNextColor,
+      [colorStylingNames.headerBackgroundColor]:
+        homeContent[homeContentIndex].headerBackgroundColor,
+      [colorStylingNames.headerGradientBackgroundColor]:
+        homeContent[homeContentIndex].gradient?.headerBackgroundColor,
+      [colorStylingNames.blurWrapperBackground]:
+        homeContent[homeContentIndex].gradient?.blurBackground,
     };
   }, [homeContentIndex]);
 
