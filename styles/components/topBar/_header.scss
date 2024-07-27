@@ -9,7 +9,7 @@ header {
   width: 100%;
   background: var(--header-bg-color);
 
-  ul {
+  ul.desktop-ul {
     @extend .d-flex;
     margin: 0.5rem 12rem;
     border-radius: 2rem;
@@ -37,31 +37,31 @@ header {
     @include lg-breakpoint {
       display: none;
     }
-  }
 
-  a {
-    color: var(--txt-color);
-    font-size: 16px;
-    margin: 0 1.5rem;
-    position: relative;
+    a {
+      color: var(--txt-color);
+      font-size: 16px;
+      margin: 0 1.5rem;
+      position: relative;
 
-    &:hover {
-      &::after {
-        transform: scaleX(1);
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
       }
-    }
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.3rem;
-      width: 100%;
-      height: 2px;
-      background-color: var(--txt-color);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s ease; /* Ensure smooth transition */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        width: 100%;
+        height: 2px;
+        background-color: var(--txt-color);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+      }
     }
   }
 
@@ -69,6 +69,11 @@ header {
     z-index: 9998;
     position: fixed;
     width: 100%;
+
+    &.none {
+      display: none;
+    }
+
     .hamburger-button {
       @extend .d-flex;
       align-items: center;
@@ -82,7 +87,15 @@ header {
       width: 55px;
       height: 55px;
       border-radius: 50%;
-      background: var(--hamburger-button-bg);
+      transition: background-color $default_transition ease-out;
+
+      &.gradient-background {
+        background: linear-gradient(var(--header-gradient-background-color));
+      }
+
+      &.solid-background {
+        background: var(--header-background-color);
+      }
 
       path {
         stroke: var(--txt-color);
@@ -95,32 +108,52 @@ header {
       right: 0;
       bottom: 0;
       width: 100%;
-      background: var(--hamburger-button-bg);
       height: 100vh;
+      transition: background-color $default_transition ease-out;
+
+      &.gradient-background {
+        background: linear-gradient(var(--header-gradient-background-color));
+      }
+
+      &.solid-background {
+        background: var(--header-background-color);
+      }
     }
 
     ul {
       padding: 25px;
       position: absolute;
-      width: 180px;
+      width: 100%;
+      height: 100vh;
       top: 50px;
       li {
         margin-bottom: 0.5rem;
         a {
-          transition: color $default_transition ease;
-          display: block;
           width: 100%;
+          display: block;
           padding: 0.5rem;
           color: inherit;
-          border-radius: 25px;
-          color: var(--header-link-unhover-color);
+          color: var(--txt-color);
+          text-align: center;
+          font-size: 2rem;
 
           &:hover {
-            color: var(--txt-color);
+            &::after {
+              transform: scaleX(1);
+            }
           }
 
-          &.active {
-            color: var(--txt-color);
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -0.3rem;
+            width: 100%;
+            height: 2px;
+            background-color: var(--txt-color);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
           }
         }
       }

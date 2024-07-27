@@ -29,28 +29,9 @@ const variantsUl: Variants = {
   },
 } as const;
 
-const variantsLi: Variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    pointerEvents: "auto",
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    pointerEvents: "none",
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-} as const;
-
 const sidebarVarients: Variants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -58,7 +39,7 @@ const sidebarVarients: Variants = {
     },
   }),
   closed: {
-    clipPath: "circle(20px at 40px 40px)",
+    clipPath: "circle(20px at calc(100% - 40px) 40px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -166,9 +147,16 @@ const Header: FC = () => {
 
   const handleNavChange = (e: any, link: string) => {
     e.preventDefault();
+    setIsHamburgerOpen(false);
     setLinkTo(link);
     triggerTransition();
     setSwitchNav(true);
+  };
+
+  const handleMobileProjectChange = (e: any) => {
+    e.preventDefault();
+    setIsHamburgerOpen(false);
+    indexChange(1);
   };
 
   useEffect(() => {
@@ -188,38 +176,47 @@ const Header: FC = () => {
             animate={isHamburgerOpen ? "open" : "closed"}
             ref={containerRef}
             aria-label="hidden"
-            className="hamburger-nav"
+            className={`hamburger-nav ${!display ? "none " : ""}`}
           >
-            <motion.div className="background" variants={sidebarVarients} />
-            <motion.ul variants={variantsUl}>
-              {Object.entries(links).map(([name, link], index) => (
-                <motion.li
-                  variants={variantsLi}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  key={index}
-                  initial="closed"
-                  animate={mainControls}
-                >
-                  <motion.div>
-                    <Link
-                      href={link}
-                      onClick={(e: any) =>
-                        name === "project"
-                          ? indexChange(1)
-                          : handleNavChange(e, link)
-                      }
-                    >
-                      {name}
-                    </Link>
-                  </motion.div>
-                </motion.li>
-              ))}
-            </motion.ul>
-            <HamburgerButton toggleHamburgerButton={toggleHamburgerButton} />
+            <motion.div
+              className={`background${navigationClasses}`}
+              variants={sidebarVarients}
+            >
+              <motion.ul variants={variantsUl} className={navigationClasses}>
+                {Object.entries(links).map(([name, link], index) => (
+                  <motion.li
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    key={index}
+                  >
+                    <motion.div>
+                      <Link
+                        href={link}
+                        onClick={(e: any) =>
+                          name === "project"
+                            ? handleMobileProjectChange(e)
+                            : handleNavChange(e, link)
+                        }
+                      >
+                        {name}
+                      </Link>
+                    </motion.div>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+
+            <HamburgerButton
+              toggleHamburgerButton={toggleHamburgerButton}
+              className={`${navigationClasses}`}
+            />
           </motion.nav>
         ) : (
-          <ul className={`${!display ? "none " : ""}${navigationClasses}`}>
+          <ul
+            className={`desktop-ul ${
+              !display ? "none " : ""
+            }${navigationClasses}`}
+          >
             {Object.entries(links).map(([name, link], index) => (
               <li key={index}>
                 <Link

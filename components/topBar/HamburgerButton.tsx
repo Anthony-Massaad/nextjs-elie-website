@@ -5,15 +5,16 @@ import { FC } from "react";
 
 interface Props {
   toggleHamburgerButton: () => void;
+  className: string;
 }
 
-const HamburgerButton: FC<Props> = ({ toggleHamburgerButton }) => {
+const HamburgerButton: FC<Props> = ({ toggleHamburgerButton, className }) => {
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={toggleHamburgerButton}
-      className="hamburger-button"
+      className={`hamburger-button ${className}`}
     >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <motion.path
