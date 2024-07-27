@@ -4,7 +4,8 @@ export interface HomeContentStructure {
   title: string;
   bodyDescription: string;
   buttonText: string;
-  vidSrc: string;
+  vidSrc?: string;
+  imgSrc?: string;
   colorTheme: string;
   titleColor: string;
   bodyTextcolor: string;
@@ -31,11 +32,13 @@ const homeContent: HomeContentStructure[] = [
   {
     title: `Hello!`,
     bodyDescription: `
-                My name is Elie. I am a product designer Designer that love solving complex problems into simple, 
-                intuitive, and beautiful designs that stands out and make users lives easier. 
+                My name is Elie, and I am a product designer. I love using both qualitative and quantitative data to 
+                create story-driven designs that transform complex problems into simple, 
+                intuitive, and beautiful solutions. My goal is to create designs that stand out and make users' 
+                lives easier.
             `,
     buttonText: `Let's Connect!`,
-    vidSrc: `/assets/images/sampleImage.png`,
+    imgSrc: `/assets/images/aboutPfp.png`,
     colorTheme: `#DC0038`,
     titleColor: `#ffffff`,
     bodyTextcolor: `#ffffff`,
@@ -53,7 +56,7 @@ const homeContent: HomeContentStructure[] = [
   {
     title: `Pursuit`,
     bodyDescription: `
-    Designing an end to end app for Pro Golfers to use an electroencephalogram device to measure their training performance.
+    Designing an end to end app for Pro Golfers to use an electroencephalogram device to measure and enhance mental focus and relaxation during training sessions. their training performance.
             `,
     buttonText: `View Case Study`,
     vidSrc: `/assets/pursuit-front-cover.mp4`,
@@ -102,8 +105,7 @@ const homeContent: HomeContentStructure[] = [
   {
     title: `Youtube Music`,
     bodyDescription: `
-    Adding a new feature for to make it easier for users to collaborate with their friends.
-            `,
+      Enhancing and elevating the overall experience of YouTube Music to meet its potential by adding new features.            `,
     buttonText: `View Case Study`,
     vidSrc: `/assets/youtube-music-front-cover.mp4`,
     colorTheme: `#DC0038`,

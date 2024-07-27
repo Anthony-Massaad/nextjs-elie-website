@@ -1,6 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { useContext, useEffect, useState } from "react";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
+import { TransitionContext } from "@/providers/TransitionProvider";
 
 const useSectionInView = (
   index: number,
@@ -14,6 +15,8 @@ const useSectionInView = (
     const margin = (windowHeight / 1440) * -200;
     return `${margin}px 0px ${margin}px 0px`;
   };
+
+  const { routerSliderAnimations } = useContext(TransitionContext);
 
   const [rootMargin, setRootMargin] = useState(
     horizontalBreakPoint ? "" : calculateRootMargin()
@@ -37,6 +40,11 @@ const useSectionInView = (
 
   useEffect(() => {
     if (isNavToSection) return;
+    if (
+      routerSliderAnimations.isSlideOpen ||
+      routerSliderAnimations.isSlideReveal
+    )
+      return;
     if (inView) {
       setHomeContentIndex(index);
     }

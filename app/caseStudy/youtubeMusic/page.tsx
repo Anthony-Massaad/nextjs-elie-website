@@ -8,12 +8,13 @@ import ImageCarousel from "@/components/caseStudyCommons/ImageCarousel";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import RowCell from "@/components/caseStudyCommons/RowCell";
 import SideBySideVideo from "@/components/caseStudyCommons/SideBySideVideo";
-import { journeyMapImages } from "@/data/glamourNails";
 import {
   beforeAfter,
   featuresExample,
   informations,
+  journeyMapImages,
   learned,
+  loFiImages,
   musicMobileAppEx,
   userNeeds,
 } from "@/data/youtubeMusic";
@@ -191,7 +192,7 @@ const YoutubeMusic: FC = () => {
             <SlideReveal>
               <h2 className="marginy-t">Low-Fidelity Sketches</h2>
             </SlideReveal>
-            <ImageCarousel images={journeyMapImages} />
+            <ImageCarousel images={loFiImages} />
           </div>
           <SlideReveal>
             <h1 className="marginy-t">

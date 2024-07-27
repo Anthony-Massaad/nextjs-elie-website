@@ -109,18 +109,18 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
   };
 
   const parentSectionsRef = useRef<HTMLDivElement>(null);
-  const videoRefs = useRef<HTMLVideoElement[]>([]);
+  const mediaRefs = useRef<HTMLVideoElement[] | HTMLImageElement[]>([]);
   useEffect(() => {
-    if (!videoRefs.current.length) return;
+    if (!mediaRefs.current.length) return;
 
     const playPauseVideos = async () => {
-      videoRefs.current.forEach(async (video, index) => {
-        if (video) {
+      mediaRefs.current.forEach(async (media, index) => {
+        if (media instanceof HTMLVideoElement) {
           try {
             if (homeContentIndex === index) {
-              await Promise.resolve(video.play());
+              await Promise.resolve(media.play());
             } else {
-              await Promise.resolve(video.pause());
+              await Promise.resolve(media.pause());
             }
           } catch (error) {}
         }
@@ -213,30 +213,40 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
           </div>
         </div>
         <div
-          className={`video-container${
+          className={`media-container${
             homeContentIndex === index ? "" : " overlay"
           }`}
           ref={ref}
         >
-          <video
-            ref={(el) => (videoRefs.current[index] = el as HTMLVideoElement)}
-            className={` section-image${sectionImageJoinedClassStates}`}
-            style={{
-              boxShadow: `${
-                homeContentIndex === index
-                  ? "0px 2px 30px 0px #f4f4f440"
-                  : "none"
-              }`,
-            }}
-            width={500}
-            height={400}
-            autoPlay
-            loop
-            muted
-          >
-            <source src={item.vidSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {item.vidSrc ? (
+            <video
+              ref={(el) => (mediaRefs.current[index] = el as HTMLVideoElement)}
+              className={`section-media${sectionImageJoinedClassStates}`}
+              style={{
+                boxShadow: `${
+                  homeContentIndex === index
+                    ? "0px 2px 30px 0px #f4f4f440"
+                    : "none"
+                }`,
+              }}
+              width={500}
+              height={400}
+              autoPlay
+              loop
+              muted
+            >
+              <source src={item.vidSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={item.imgSrc}
+              ref={(el) => (mediaRefs.current[index] = el as HTMLImageElement)}
+              className={`section-media${sectionImageJoinedClassStates}`}
+              width={500}
+              height={400}
+            />
+          )}
         </div>
       </section>
     );
