@@ -163,3 +163,12 @@ export const pursuitLearned: RowCellInterface[] = [
     It’s important to stay flexible and iterate designs.`,
   },
 ];
+
+export const userFlows: string[] = [
+  "/assets/pursuit/userFlow1.png",
+  "/assets/pursuit/userFlow2.png",
+  "/assets/pursuit/userFlow3.png",
+  "/assets/pursuit/userFlow4.png",
+  "/assets/pursuit/userFlow5.png",
+  "/assets/pursuit/userFlow6.png",
+];

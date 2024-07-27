@@ -1,4 +1,9 @@
 .page-container {
+  .decimal-listing {
+    list-style: decimal !important;
+    padding-left: 2rem;
+  }
+
   p {
     margin: 1rem 0;
   }
