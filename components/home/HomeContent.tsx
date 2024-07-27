@@ -184,7 +184,6 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
         className={`section${sectionJoinedClassStates}`}
         id={`panel-${index}`}
         key={index}
-        ref={ref}
       >
         <div className="section-info">
           <div
@@ -217,6 +216,7 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
           className={`video-container${
             homeContentIndex === index ? "" : " overlay"
           }`}
+          ref={ref}
         >
           <video
             ref={(el) => (videoRefs.current[index] = el as HTMLVideoElement)}

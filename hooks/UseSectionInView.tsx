@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { HomeContentContext } from "@/providers/HomeContentProvider";
 
 const useSectionInView = (
   index: number,
@@ -7,17 +8,20 @@ const useSectionInView = (
   isNavToSection: boolean,
   threshold: number = 1
 ) => {
+  const { horizontalBreakPoint } = useContext(HomeContentContext);
   const calculateRootMargin = () => {
     const windowHeight = window.innerHeight;
     const margin = (windowHeight / 1440) * -200;
     return `${margin}px 0px ${margin}px 0px`;
   };
 
-  const [rootMargin, setRootMargin] = useState(calculateRootMargin());
+  const [rootMargin, setRootMargin] = useState(
+    horizontalBreakPoint ? "" : calculateRootMargin()
+  );
 
   useEffect(() => {
     const handleResize = () => {
-      setRootMargin(calculateRootMargin());
+      setRootMargin(horizontalBreakPoint ? "" : calculateRootMargin());
     };
     window.addEventListener("resize", handleResize);
     return () => {

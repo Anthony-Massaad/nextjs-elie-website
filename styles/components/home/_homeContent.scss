@@ -75,6 +75,14 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   height: 100%;
+
+  @include lg-breakpoint {
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    align-items: baseline;
+  }
 }
 
 .section {
@@ -100,6 +108,17 @@
     padding-top: 8rem;
     height: auto;
     padding-right: 0;
+    justify-content: flex-end;
+    align-items: center;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    flex: 0 0 100%;
   }
 
   &.fade-in {
@@ -264,7 +283,6 @@
       @include lg-breakpoint {
         max-width: 31.25rem;
         max-height: 25rem;
-        height: 100%;
         width: 100%;
       }
     }
