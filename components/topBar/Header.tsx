@@ -15,7 +15,7 @@ import HamburgerButton from "./HamburgerButton";
 import { motion, useAnimation, Variants } from "framer-motion";
 
 const links: { [key: string]: string } = {
-  project: "#top-project",
+  project: "",
   about: "/about",
   contact: "/contact",
 };
