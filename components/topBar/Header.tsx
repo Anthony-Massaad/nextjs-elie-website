@@ -96,7 +96,6 @@ const Header: FC = () => {
   }, [isHamburgerOpen]);
 
   useEffect(() => {
-    console.log(path);
     if (path !== "/") {
       setDisplay(false);
     } else {

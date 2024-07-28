@@ -1,5 +1,5 @@
 import { useInView } from "react-intersection-observer";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
 import { TransitionContext } from "@/providers/TransitionProvider";
 
@@ -10,27 +10,18 @@ const useSectionInView = (
   threshold: number = 1
 ) => {
   const { horizontalBreakPoint } = useContext(HomeContentContext);
+
+  const { routerSliderAnimations } = useContext(TransitionContext);
+
   const calculateRootMargin = () => {
     const windowHeight = window.innerHeight;
     const margin = (windowHeight / 1440) * -200;
     return `${margin}px 0px ${margin}px 0px`;
   };
 
-  const { routerSliderAnimations } = useContext(TransitionContext);
-
   const [rootMargin, setRootMargin] = useState(
-    horizontalBreakPoint ? "" : calculateRootMargin()
+    window.innerWidth <= horizontalBreakPoint ? "" : calculateRootMargin()
   );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setRootMargin(horizontalBreakPoint ? "" : calculateRootMargin());
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const { ref, inView } = useInView({
     threshold: threshold,
@@ -49,6 +40,19 @@ const useSectionInView = (
       setHomeContentIndex(index);
     }
   }, [inView, isNavToSection, rootMargin]);
+
+  useEffect(() => {
+    console.log(rootMargin);
+    const handleResize = () => {
+      setRootMargin(
+        window.innerWidth <= horizontalBreakPoint ? "" : calculateRootMargin()
+      );
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return { ref, inView };
 };
