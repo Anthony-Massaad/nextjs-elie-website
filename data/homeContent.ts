@@ -34,8 +34,7 @@ const homeContent: HomeContentStructure[] = [
     bodyDescription: `
                 My name is Elie, and I am a product designer. I love using both qualitative and quantitative data to 
                 create story-driven designs that transform complex problems into simple, 
-                intuitive, and beautiful solutions. My goal is to create designs that stand out and make users' 
-                lives easier.
+                intuitive, and beautiful solutions.
             `,
     buttonText: `Let's Connect!`,
     imgSrc: `/assets/images/aboutPfp.png`,
