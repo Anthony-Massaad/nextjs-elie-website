@@ -22,4 +22,8 @@
       fill: transparent;
     }
   }
+
+  @include lg-breakpoint {
+    transform: scale(0.8);
+  }
 }

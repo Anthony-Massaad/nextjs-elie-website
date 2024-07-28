@@ -71,7 +71,9 @@ header {
     width: 100%;
 
     &.none {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
     }
 
     .hamburger-button {
@@ -87,18 +89,10 @@ header {
       width: 55px;
       height: 55px;
       border-radius: 50%;
-      transition: background-color $default_transition ease-out;
-
-      &.gradient-background {
-        background: linear-gradient(var(--header-gradient-background-color));
-      }
-
-      &.solid-background {
-        background: var(--header-background-color);
-      }
+      background: transparent;
 
       path {
-        stroke: var(--txt-color);
+        stroke: var(--initials-color);
       }
     }
 

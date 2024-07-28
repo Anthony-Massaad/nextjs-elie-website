@@ -106,9 +106,10 @@
 
   @include lg-breakpoint {
     flex-direction: column-reverse;
-    padding-top: 4rem;
+    padding-top: 6rem;
     height: auto;
     padding-right: 0;
+    gap: 2rem;
     justify-content: flex-end;
     align-items: center;
 
