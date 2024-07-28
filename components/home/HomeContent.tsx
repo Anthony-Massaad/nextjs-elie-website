@@ -234,6 +234,8 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
               autoPlay
               loop
               muted
+              playsInline={false}
+              controls={false}
             >
               <source src={item.vidSrc} type="video/mp4" />
               Your browser does not support the video tag.

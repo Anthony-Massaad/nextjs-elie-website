@@ -31,7 +31,7 @@ const variantsUl: Variants = {
 
 const sidebarVarients: Variants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at calc(100% - 0px) 0px`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -39,7 +39,7 @@ const sidebarVarients: Variants = {
     },
   }),
   closed: {
-    clipPath: "circle(20px at calc(100% - 40px) 40px)",
+    clipPath: "circle(0px at calc(100% - 0px) 0px",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -104,13 +104,6 @@ const Header: FC = () => {
   }, [path]);
 
   useEffect(() => {
-    if (window.innerWidth <= horizontalBreakPoint) {
-      setIsMobileHeader(true);
-      setIsHamburgerOpen(false);
-    } else {
-      setIsMobileHeader(false);
-      setIsHamburgerOpen(false);
-    }
     const handleResize = (): void => {
       if (window.innerWidth <= horizontalBreakPoint) {
         setIsMobileHeader(true);
@@ -121,6 +114,7 @@ const Header: FC = () => {
       }
     };
     window.addEventListener("resize", handleResize);
+    handleResize();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -181,7 +175,7 @@ const Header: FC = () => {
               className={`background${navigationClasses}`}
               variants={sidebarVarients}
             >
-              <motion.ul variants={variantsUl} className={navigationClasses}>
+              <motion.ul variants={variantsUl}>
                 {Object.entries(links).map(([name, link], index) => (
                   <motion.li
                     whileHover={{ scale: 1.1 }}
