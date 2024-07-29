@@ -18,7 +18,7 @@ const VideoExample: FC<Props> = ({ classname = "", videoSrc, text, media }) => {
     <div className={`content-example ${classname}`}>
       <SlideReveal>
         <div className={media}>
-          <video autoPlay loop muted>
+          <video autoPlay loop muted playsInline controls={false}>
             {memoizedSource}
             Your browser does not support the video tag.
           </video>

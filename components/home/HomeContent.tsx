@@ -234,7 +234,7 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
               autoPlay
               loop
               muted
-              playsInline={false}
+              playsInline
               controls={false}
             >
               <source src={item.vidSrc} type="video/mp4" />

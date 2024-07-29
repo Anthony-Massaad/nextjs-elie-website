@@ -31,17 +31,17 @@ html {
     font-size: $default_font_size - 6px;
   }
 
-  @include height-breakpoint-lg {
-    font-size: $default_font_size - 1px;
-  }
+  // @include height-breakpoint-lg {
+  //   font-size: $default_font_size - 1px;
+  // }
 
-  @include height-breakpoint-md {
-    font-size: $default_font_size - 2px;
-  }
+  // @include height-breakpoint-md {
+  //   font-size: $default_font_size - 2px;
+  // }
 
-  @include height-breakpoint-sm {
-    font-size: $default_font_size - 3px;
-  }
+  // @include height-breakpoint-sm {
+  //   font-size: $default_font_size - 3px;
+  // }
 }
 
 body {

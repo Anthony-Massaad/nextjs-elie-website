@@ -22,7 +22,7 @@ const MemoizedVideo: FC<VideoProps> = ({ src, text }) => {
   return (
     <SlideReveal>
       {text && <p>{text}</p>}
-      <video autoPlay loop muted>
+      <video autoPlay loop muted playsInline controls={false}>
         {memoizedSource}
         Your browser does not support the video tag.
       </video>

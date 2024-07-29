@@ -37,7 +37,7 @@ const homeContent: HomeContentStructure[] = [
                 intuitive, and beautiful solutions.
             `,
     buttonText: `Let's Connect!`,
-    imgSrc: `/assets/images/aboutPfp.png`,
+    imgSrc: `/assets/homePfp.png`,
     colorTheme: `#DC0038`,
     titleColor: `#ffffff`,
     bodyTextcolor: `#ffffff`,

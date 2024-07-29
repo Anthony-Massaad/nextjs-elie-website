@@ -40,18 +40,24 @@
   }
   100% {
     top: 1.25rem;
-    left: 4rem;
+    left: var(--left-padding);
     transform: translate(auto, auto) scale(1) rotate(-360deg);
   }
 }
 
 .top-left-container {
+  --left-padding: 4rem;
   position: fixed;
   top: 1.25rem;
   z-index: 1001;
   transform: rotate(-360deg);
   white-space: nowrap;
   padding-left: 4rem;
+
+  @include lg-breakpoint {
+    --left-padding: 1rem;
+    padding-left: var(--left-padding);
+  }
 
   &.flip {
     .top-left-front {
@@ -107,9 +113,5 @@
     backface-visibility: hidden; /* Hide the back face when flipping */
     opacity: 0;
     visibility: hidden;
-  }
-
-  @include lg-breakpoint {
-    padding-left: 1rem;
   }
 }
