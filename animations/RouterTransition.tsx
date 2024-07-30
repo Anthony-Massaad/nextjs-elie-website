@@ -48,7 +48,7 @@ const RouterTransition: FC<Props> = ({ children }) => {
         position: "relative",
         width: "100%",
         height: "100%",
-        zIndex: 1005,
+        zIndex: 2005,
       }}
     >
       {routerSliderAnimations.isSlideOpen ||
@@ -75,7 +75,7 @@ const RouterTransition: FC<Props> = ({ children }) => {
             right: 0,
             height: "100%",
             background: "var(--color-theme)",
-            zIndex: 1005,
+            zIndex: 2005,
           }}
         />
       ) : null}

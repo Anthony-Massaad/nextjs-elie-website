@@ -6,6 +6,7 @@ import PageContainer from "@/components/PageContainer";
 import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
 import ImageCarousel from "@/components/caseStudyCommons/ImageCarousel";
 import Introduction from "@/components/caseStudyCommons/Introduction";
+import PostItNotes from "@/components/caseStudyCommons/PostItNotes";
 import RowCell from "@/components/caseStudyCommons/RowCell";
 import SideBySideVideo from "@/components/caseStudyCommons/SideBySideVideo";
 import {
@@ -183,9 +184,11 @@ const Pursuit: FC = () => {
           <SlideReveal>
             <h2 className="marginy-t">User Flows</h2>
           </SlideReveal>
-          <SlideReveal>
-            <ImageCarousel images={userFlows} />
-          </SlideReveal>
+          <PostItNotes
+            src="/assets/pursuit/userFlow1.png"
+            link="https://www.figma.com/board/FbiYPLoQIhl5lpr2KezkVa/Pursuit-User-Flow?node-id=0-1&t=qLIVEAXRDkCyGAWY-0"
+            linkText="*Click here for all user flows"
+          />
           <SlideReveal>
             <h2 className="marginy-t">Mid-Fidelity Wireframes</h2>
           </SlideReveal>

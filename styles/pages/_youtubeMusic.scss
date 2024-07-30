@@ -9,10 +9,6 @@
     width: 100%;
   }
 
-  .margin {
-    margin: 1.5rem 0;
-  }
-
   .reddit-post-img-container {
     @extend .d-flex;
     align-items: center;
@@ -30,22 +26,23 @@
     }
   }
 
+  .ex-container {
+    padding-bottom: 5rem;
+  }
+
   ul {
     list-style: disc;
     padding-left: 2rem;
   }
 
-  .layer {
-    padding: 3rem 0;
-
-    .intro {
-      margin: 3rem 0;
-    }
-  }
-
   h1 {
     color: $titleColor;
   }
+
+  img {
+    margin-bottom: $inbetween_text;
+  }
+
   .layer-2 {
     background-color: $offset-white;
     color: #030303 !important;
@@ -63,25 +60,12 @@
     }
 
     ul {
-      margin: 2rem 0;
-
-      &.results {
-        li {
-          margin-bottom: 1rem;
-        }
-      }
-
       &.testing {
         list-style-type: decimal;
-      }
-
-      li {
-        margin-bottom: 0.2rem;
       }
     }
 
     .feature-example {
-      margin-top: 1.5rem;
       img {
         max-width: 200px;
       }

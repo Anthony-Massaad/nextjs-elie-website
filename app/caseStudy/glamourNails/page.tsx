@@ -447,7 +447,7 @@ const GlamourNails: FC = () => {
             </SlideReveal>
             <div className="more-info">
               <SlideReveal>
-                <h3>Methodology</h3>
+                <h2>Methodology</h2>
               </SlideReveal>
               <SlideReveal>
                 <ul>
@@ -471,7 +471,7 @@ const GlamourNails: FC = () => {
             />
             <div className="more-info">
               <SlideReveal>
-                <h3>Testing Results:</h3>
+                <h2>Testing Results:</h2>
               </SlideReveal>
               <SlideReveal>
                 <ul>

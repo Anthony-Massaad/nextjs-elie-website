@@ -4,6 +4,9 @@
   padding-bottom: 2rem;
 
   .introduction {
+    h1 {
+      margin: 0 0 2rem 0;
+    }
     .intro-description {
       @extend .d-flex;
       z-index: 15;

@@ -184,6 +184,9 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
         className={`section${sectionJoinedClassStates}`}
         id={`panel-${index}`}
         key={index}
+        style={{
+          zIndex: `${homeContentIndex === index ? "100" : "0"}`,
+        }}
       >
         <div className="section-info">
           <div

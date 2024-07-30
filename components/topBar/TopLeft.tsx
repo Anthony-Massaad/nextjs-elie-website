@@ -46,24 +46,30 @@ const TopLeft: FC = () => {
 
   return (
     <div
-      className={`top-left-container${joinedClassStates}${
-        topLeftFlip ? " flip" : ""
-      }`}
-      onAnimationEnd={() => {
-        if (moveInitials) {
-          setMoveInitials(false);
-          setAppIsFullyLoaded(true);
-          setIntroFadeContent(true);
-          setAllowButtonClick(true);
-          setAllowHomeScroll(true);
-        }
-      }}
+      className={`top-left-screen-container ${
+        appIsFullyLoaded ? "height-60" : "height-100p"
+      } ${topLeftFlip ? "z-index-max" : ""}`}
     >
-      <div className="top-left-front">
-        <Initials />
-      </div>
-      <div className="top-left-back">
-        <BackButton />
+      <div
+        className={`top-left-container${joinedClassStates}${
+          topLeftFlip ? " flip" : ""
+        }`}
+        onAnimationEnd={() => {
+          if (moveInitials) {
+            setMoveInitials(false);
+            setAppIsFullyLoaded(true);
+            setIntroFadeContent(true);
+            setAllowButtonClick(true);
+            setAllowHomeScroll(true);
+          }
+        }}
+      >
+        <div className="top-left-front">
+          <Initials />
+        </div>
+        <div className="top-left-back">
+          <BackButton />
+        </div>
       </div>
     </div>
   );

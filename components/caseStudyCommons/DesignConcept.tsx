@@ -10,7 +10,7 @@ const DesignConcept: FC<Props> = ({ headerTitle, src }) => {
   return (
     <div className="design-concept">
       <SlideReveal>
-        {headerTitle && <h3>{headerTitle}</h3>}
+        {headerTitle && <h2>{headerTitle}</h2>}
         <div className="img-container">
           <img src={src} alt="" />
         </div>

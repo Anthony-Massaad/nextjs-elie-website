@@ -1,15 +1,7 @@
 .layer {
-  padding: 3rem 0;
-
-  .intro {
-    margin: 3rem 0;
-
-    @include md-lg-breakpoint {
-      margin: 1rem 0 !important;
-    }
-
-    @include sm-breakpoint {
-      margin: 0 0 1rem 0 !important;
+  h1 {
+    &:nth-child(1) {
+      margin-top: $sub_section_margin;
     }
   }
 }

@@ -1,6 +1,9 @@
 // Variable Constants
 $default_transition: 0.3s !default;
 $default_font_size: 16px !default;
+$new_section_margin: (100px / $default_font_size) * 1rem;
+$sub_section_margin: (50px / $default_font_size) * 1rem;
+$inbetween_text: (30px / $default_font_size) * 1rem;
 
 @mixin sm-breakpoint {
   @media only screen and (max-width: 480px) {

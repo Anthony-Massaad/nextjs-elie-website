@@ -16,7 +16,7 @@ const BrandDetails: FC<Props> = ({ classname, brandDetails }) => {
           {detail.typography && (
             <div className="detail" key={idx}>
               <SlideReveal>
-                <h3>{detail.typography.title}</h3>
+                <h2>{detail.typography.title}</h2>
               </SlideReveal>
               {map(detail.typography.body, (body, index) => (
                 <SlideReveal>
@@ -29,7 +29,7 @@ const BrandDetails: FC<Props> = ({ classname, brandDetails }) => {
           {detail.colors && (
             <div className="detail" key={idx}>
               <SlideReveal>
-                <h3>Colors</h3>
+                <h2>Colors</h2>
               </SlideReveal>
               <SlideReveal>
                 <div className="colors">

@@ -45,7 +45,15 @@
     background-color: $offset-white;
   }
 
+  .layer-1 {
+    @extend .layer;
+  }
+
   .layer-2 {
+    @extend .layer;
+  }
+
+  .layer-3 {
     @extend .layer;
   }
 
@@ -77,14 +85,6 @@
     background: #fa427a;
   }
 
-  .more-info {
-    margin: 2rem auto;
-
-    ul {
-      margin: 3rem 0;
-    }
-  }
-
   .side-by-side-images {
     @extend .d-grid;
     margin: 5rem 0;
@@ -111,26 +111,6 @@
       padding-left: 4rem;
       min-height: 60px;
       align-items: center;
-    }
-    // li {
-    //   position: relative;
-    //   &::before {
-    //     content: "";
-    //     position: absolute;
-    //     width: 3rem;
-    //     height: 3rem;
-    //     background: url("/assets/RedX.png");
-    //     background-size: cover;
-    //   }
-    // }
-  }
-
-  .more-info {
-    ul {
-      margin: 1.5rem 0;
-      li {
-        margin-bottom: 2rem;
-      }
     }
   }
 }

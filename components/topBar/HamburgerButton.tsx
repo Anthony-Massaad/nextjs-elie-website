@@ -11,8 +11,6 @@ interface Props {
 const HamburgerButton: FC<Props> = ({ toggleHamburgerButton, className }) => {
   return (
     <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
       onClick={toggleHamburgerButton}
       className={`hamburger-button ${className}`}
     >

@@ -1,6 +1,7 @@
 .stats {
   @extend .d-grid;
   text-align: center;
+  margin: 0 0 $inbetween_text 0;
   .stat {
     padding: 0.5rem;
     min-width: 22%;

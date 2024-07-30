@@ -162,7 +162,7 @@ const Header: FC = () => {
 
   return (
     <header className={`${moveFromRight ? "move-from-right" : ""} `}>
-      <>
+      <div className="nav-container">
         {isMobileHeader ? (
           <motion.nav
             initial={false}
@@ -226,7 +226,7 @@ const Header: FC = () => {
             ))}
           </ul>
         )}
-      </>
+      </div>
     </header>
   );
 };

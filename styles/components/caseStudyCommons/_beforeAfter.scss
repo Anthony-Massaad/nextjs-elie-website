@@ -9,7 +9,7 @@
       @extend .d-flex;
       flex-direction: column;
       p {
-        margin-bottom: 3rem;
+        margin-bottom: $inbetween_text;
       }
       div {
         text-align: center;

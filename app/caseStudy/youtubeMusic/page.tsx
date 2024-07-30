@@ -231,7 +231,7 @@ const YoutubeMusic: FC = () => {
         <div className="results-container">
           <Container>
             <SlideReveal>
-              <h3>Testing Results:</h3>
+              <h2>Testing Results:</h2>
             </SlideReveal>
             <SlideReveal>
               <ul className="results">

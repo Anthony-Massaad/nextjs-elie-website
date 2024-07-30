@@ -1,6 +1,5 @@
 .name-initials {
   --path-fill: var(--initials-color);
-  transform: scale(0.9);
 
   path {
     transition:
@@ -24,6 +23,8 @@
   }
 
   @include lg-breakpoint {
-    transform: scale(0.7);
+    svg {
+      width: 50px;
+    }
   }
 }

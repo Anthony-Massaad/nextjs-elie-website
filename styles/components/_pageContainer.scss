@@ -1,23 +1,18 @@
 .page-container {
+  padding-bottom: 6rem;
   .decimal-listing {
     list-style: decimal !important;
     padding-left: 2rem;
   }
 
+  .no-margin {
+    margin: 0 !important;
+  }
+
   p {
-    margin: 1rem 0;
-  }
-  .margin {
-    margin: 2rem 0;
+    margin: 0 0 $inbetween_text 0;
   }
 
-  .marginy-b {
-    margin-bottom: 2rem;
-  }
-
-  .marginy-t {
-    margin-top: 2rem;
-  }
   .blue-link {
     color: #0073ca;
     text-decoration: underline;
@@ -31,7 +26,7 @@
     font-size: 1.25rem;
     max-width: 400px;
     width: 100%;
-    margin: 6rem auto;
+    margin: 0 auto;
 
     div {
       left: 1.25rem;
@@ -57,13 +52,17 @@
     }
   }
 
+  h2 {
+    margin: $sub_section_margin 0 $inbetween_text 0;
+  }
+
   h1 {
     font-family: Silka;
     font-size: 4rem;
     font-style: normal;
     font-weight: 600;
-    margin-bottom: 2rem;
     position: relative;
     z-index: 15;
+    margin: calc($new_section_margin / 2) 0 $inbetween_text 0;
   }
 }

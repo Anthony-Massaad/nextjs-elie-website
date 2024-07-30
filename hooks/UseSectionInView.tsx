@@ -7,7 +7,7 @@ const useSectionInView = (
   index: number,
   setHomeContentIndex: (index: number) => void,
   isNavToSection: boolean,
-  threshold: number = 1
+  threshold: number = 0.8
 ) => {
   const { horizontalBreakPoint } = useContext(HomeContentContext);
 
@@ -42,7 +42,6 @@ const useSectionInView = (
   }, [inView, isNavToSection, rootMargin]);
 
   useEffect(() => {
-    console.log(rootMargin);
     const handleResize = () => {
       setRootMargin(
         window.innerWidth <= horizontalBreakPoint ? "" : calculateRootMargin()
