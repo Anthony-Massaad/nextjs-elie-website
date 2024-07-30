@@ -58,7 +58,7 @@ const GlamourNails: FC = () => {
         <div className="layer-2">
           <Container>
             <SlideReveal>
-              <h1>Defining the Business Problems</h1>
+              <h1 className="margin-top-sub">Defining the Business Problems</h1>
             </SlideReveal>
             <SlideReveal>
               <p className="intro">
@@ -84,7 +84,7 @@ const GlamourNails: FC = () => {
         <div className="layer-3">
           <Container>
             <SlideReveal>
-              <h1>Discovering User Needs</h1>
+              <h1 className="margin-top-sub">Discovering User Needs</h1>
             </SlideReveal>
             <SlideReveal>
               <p className="intro">
@@ -110,7 +110,9 @@ const GlamourNails: FC = () => {
         <div className="layer-4">
           <Container>
             <SlideReveal>
-              <h1>Enhancing the experience, not removing</h1>
+              <h1 className="margin-top-sub margin-b-0">
+                Enhancing the experience, not removing
+              </h1>
             </SlideReveal>
             <div className="enhancment">
               <SlideReveal>
@@ -162,7 +164,7 @@ const GlamourNails: FC = () => {
                   </p>
                 </SlideReveal>
                 <SlideReveal>
-                  <ul>
+                  <ul className="margin-b-0">
                     <li>
                       We can customise the services, prices, and employees
                       selection
@@ -210,7 +212,7 @@ const GlamourNails: FC = () => {
                   <p>This means we want a website builder:</p>
                 </SlideReveal>
                 <SlideReveal>
-                  <ul>
+                  <ul className="margin-b-0">
                     <li>
                       Has the most design flexibility as we wanted to design a
                       unique website
@@ -229,10 +231,10 @@ const GlamourNails: FC = () => {
                 <img
                   src="/assets/glamourNails/websiteBuilderAnalysisTable.png"
                   alt=""
-                  className="website-builder-analysis intro"
+                  className="website-builder-analysis intro margin-b-between"
                 />
               </SlideReveal>
-              <div className="more-info">
+              <div className="padding-b-sub">
                 <SlideReveal>
                   <p>
                     I recommended weblflow because it has everything to
@@ -272,10 +274,10 @@ const GlamourNails: FC = () => {
         <div className="layer-5">
           <Container>
             <SlideReveal>
-              <h1>Designing the initial Concept</h1>
+              <h1 className="margin-top-sub">Designing the initial Concept</h1>
             </SlideReveal>
             <SlideReveal>
-              <p className="intro">
+              <p className="margin-b-0">
                 Websites now follow similar design patterns. Even though it’s
                 important to design a unique website, it is also important to
                 follow critical design patterns to make users’ lives easier.
@@ -344,7 +346,7 @@ const GlamourNails: FC = () => {
                 <p>Additional additions:</p>
               </SlideReveal>
               <SlideReveal>
-                <ul>
+                <ul className="margin-b-0">
                   <li>
                     About us section: I wanted to give visitors a glimpse about
                     the store and the owners. Like many Canadians, the owners
@@ -383,7 +385,7 @@ const GlamourNails: FC = () => {
             </SlideReveal>
             <DesignConcept src="/assets/glamourNails/feedback1.png" />
             <SlideReveal>
-              <ul className="bad-listing intro">
+              <ul className="bad-listing intro margin-b-0">
                 <li>
                   Users were confused about the pellets design. They didn’t know
                   if it had a function to filter the page or why it was there.
@@ -404,32 +406,37 @@ const GlamourNails: FC = () => {
                   I have updated wireframes to reflect the initial feedback:
                 </p>
               </SlideReveal>
-              <SlideReveal>
-                <ul>
-                  <li>
-                    Removed the pellets from the design as it served no purpose
-                  </li>
-                  <li>
-                    Updated the services section with service cards, visuals,
-                    the description, cost, time it would take, and a book now
-                    call to action. This speaks to the users needs of providing
-                    a better understanding about the service. The section also
-                    has quick filters to filter through the different services.
-                    This is consistent with other design principles that google
-                    uses.
-                  </li>
-                  <li>
-                    Added the location, hours of operation, and phone number.
-                  </li>
-                </ul>
-              </SlideReveal>
+              <div className="padding-b-sub">
+                <SlideReveal>
+                  <ul>
+                    <li>
+                      Removed the pellets from the design as it served no
+                      purpose
+                    </li>
+                    <li>
+                      Updated the services section with service cards, visuals,
+                      the description, cost, time it would take, and a book now
+                      call to action. This speaks to the users needs of
+                      providing a better understanding about the service. The
+                      section also has quick filters to filter through the
+                      different services. This is consistent with other design
+                      principles that google uses.
+                    </li>
+                    <li>
+                      Added the location, hours of operation, and phone number.
+                    </li>
+                  </ul>
+                </SlideReveal>
+              </div>
             </div>
           </Container>
         </div>
         <div className="layer-6">
           <Container>
             <SlideReveal>
-              <h1>Creating a Brand and putting it all together</h1>
+              <h1 className="margin-top-sub margin-b-0">
+                Creating a Brand and putting it all together
+              </h1>
             </SlideReveal>
             <BrandDetails brandDetails={brandDetailsLayer} />
             <SlideReveal>
@@ -443,7 +450,7 @@ const GlamourNails: FC = () => {
         <div className="layer-7">
           <Container>
             <SlideReveal>
-              <h1>Prototype and Testing</h1>
+              <h1 className="margin-b-0">Prototype and Testing</h1>
             </SlideReveal>
             <div className="more-info">
               <SlideReveal>
@@ -474,7 +481,7 @@ const GlamourNails: FC = () => {
                 <h2>Testing Results:</h2>
               </SlideReveal>
               <SlideReveal>
-                <ul>
+                <ul className="margin-b-0">
                   <li>
                     All users have successfully went thought the services
                     sections in both the mobile and desktop versions. The loved

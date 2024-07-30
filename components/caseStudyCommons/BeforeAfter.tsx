@@ -12,7 +12,12 @@ const BeforeAfter: FC<Props> = ({ beforeAfterLst }) => {
     <div className="before-after-container">
       {map(beforeAfterLst, (element, idx) => (
         <SlideReveal key={idx}>
-          <div className="before-after">
+          <div
+            className="before-after"
+            style={{
+              marginBottom: beforeAfterLst.length !== idx + 1 ? "4rem" : "0",
+            }}
+          >
             <div className="sect">
               <p>
                 <strong>Problem: </strong>

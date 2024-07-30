@@ -68,7 +68,7 @@ const YoutubeMusic: FC = () => {
             </p>
           </SlideReveal>
           <SlideReveal>
-            <p className="margin">
+            <p className="margin-0">
               To gain deeper insights, I conducted a feature analysis to compare
               the streaming service offerings of YouTube Music with its
               competitors.
@@ -87,7 +87,7 @@ const YoutubeMusic: FC = () => {
             />
           </SlideReveal>
           <SlideReveal>
-            <p className="margin">
+            <p className="margin-0">
               <strong>Feature Analysis Conclusion:</strong> YouTube Music lacks
               several essential features that its competitors offer and that
               users demand. This limitation impairs its ability to attract and
@@ -106,7 +106,7 @@ const YoutubeMusic: FC = () => {
       <Layer classnames="user-needs">
         <Container>
           <SlideReveal>
-            <h1>Discovering User Needs</h1>
+            <h1 className="margin-top-sub">Discovering User Needs</h1>
           </SlideReveal>
           <SlideReveal>
             <p className="intro">
@@ -137,11 +137,11 @@ const YoutubeMusic: FC = () => {
             />
           </SlideReveal>
           <SlideReveal>
-            <p>User's needs:</p>
+            <p className="margin-b-0">User's needs:</p>
           </SlideReveal>
           <RowCell rowCells={userNeeds} />
           <SlideReveal>
-            <p>
+            <p className="margin-b-sub">
               <strong>Discovering users needs conclusion:</strong> the
               interviews echo the findings of the feature analysis, illustrating
               how YouTube Music's deficiency in basic features is perceived as
@@ -153,7 +153,9 @@ const YoutubeMusic: FC = () => {
       <div className="layer features-container">
         <Container>
           <SlideReveal>
-            <h1>Exploring the user’s Journey and designing low-fidelity</h1>
+            <h1 className="margin-top-sub">
+              Exploring the user’s Journey and designing low-fidelity
+            </h1>
           </SlideReveal>
           <div>
             <SlideReveal>
@@ -166,7 +168,7 @@ const YoutubeMusic: FC = () => {
               </p>
             </SlideReveal>
             <SlideReveal>
-              <p>
+              <p className="margin-0">
                 I scoped and prioritized features that could be addressed
                 through design solutions, focusing particularly on those
                 available on the mobile app. Many of these mobile app features
@@ -181,7 +183,7 @@ const YoutubeMusic: FC = () => {
             </SlideReveal>
             <ImageCarousel images={journeyMapImages} />
             <SlideReveal>
-              <p className="margin">
+              <p className="margin-t-between margin-b-0">
                 After identifying and prioritizing the features to implement, I
                 used low-fidelity wireframes for design exploration. This
                 approach allowed for quicker iteration, leveraging YouTube
@@ -234,7 +236,7 @@ const YoutubeMusic: FC = () => {
               <h2>Testing Results:</h2>
             </SlideReveal>
             <SlideReveal>
-              <ul className="results">
+              <ul className="results margin-b-sub">
                 <li>
                   Users communicated that they like the collaborative feature as
                   many other music streaming apps have had it, especially
@@ -263,7 +265,7 @@ const YoutubeMusic: FC = () => {
       <div className="layer learned">
         <Container>
           <SlideReveal>
-            <h1>What I have Learned</h1>
+            <h1 className="margin-top-sub">What I have Learned</h1>
           </SlideReveal>
           <RowCell rowCells={learned} />
         </Container>

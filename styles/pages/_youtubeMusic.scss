@@ -55,10 +55,6 @@
     }
     color: #030303 !important;
 
-    .results-container {
-      padding: 3rem;
-    }
-
     ul {
       &.testing {
         list-style-type: decimal;
@@ -66,6 +62,7 @@
     }
 
     .feature-example {
+      padding-top: 0;
       img {
         max-width: 200px;
       }

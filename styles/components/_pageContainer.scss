@@ -5,11 +5,44 @@
     padding-left: 2rem;
   }
 
-  .no-margin {
+  .margin-0 {
     margin: 0 !important;
   }
 
-  p {
+  .margin-b-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .margin-top-sub {
+    margin-top: $sub_section_margin !important;
+  }
+
+  .margin-b-sub {
+    margin-bottom: $sub_section_margin !important;
+  }
+
+  .margin-b-between {
+    margin-bottom: $inbetween_text !important;
+  }
+
+  .margin-t-between {
+    margin-top: $inbetween_text !important;
+  }
+
+  .padding-b-sub {
+    padding-bottom: $sub_section_margin !important;
+  }
+
+  .padding-t-sub {
+    padding-top: $sub_section_margin !important;
+  }
+
+  .padding-sub {
+    padding: $sub_section_margin !important;
+  }
+
+  p,
+  ul {
     margin: 0 0 $inbetween_text 0;
   }
 
@@ -63,6 +96,6 @@
     font-weight: 600;
     position: relative;
     z-index: 15;
-    margin: calc($new_section_margin / 2) 0 $inbetween_text 0;
+    margin: $new_section_margin 0 $inbetween_text 0;
   }
 }

@@ -1,10 +1,10 @@
 .design-concept {
+  margin-bottom: $inbetween_text;
   .img-container {
     text-align: center;
     img {
       width: 100%;
       max-width: 800px;
-      margin: $inbetween_text 0;
     }
   }
 }

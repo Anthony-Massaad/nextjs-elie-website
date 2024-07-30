@@ -106,7 +106,7 @@ const Pursuit: FC = () => {
             </p>
           </SlideReveal>
           <SlideReveal>
-            <p>
+            <p className="margin-0">
               <strong>Performance analytics conclusion:</strong> The devices
               that athletes are using track overall health metrics such as heart
               rate, recovery and more; however, There is no device that tracks
@@ -132,7 +132,7 @@ const Pursuit: FC = () => {
             </p>
           </SlideReveal>
           <SlideReveal>
-            <p>
+            <p className="margin-0">
               <strong>Golf Analytics Devices Conclusion:</strong> In the future,
               integrating TrackMan to measure the correlation between focus and
               golf performance could be highly beneficial. However, most elite
@@ -153,7 +153,7 @@ const Pursuit: FC = () => {
             </p>
           </SlideReveal>
           <SlideReveal>
-            <p>
+            <p className="margin-0">
               This is a great opportunity for Pursuit as athletes are yearning
               to find tools and data to improve their focus and mental
               performance on the golf course.
@@ -173,7 +173,7 @@ const Pursuit: FC = () => {
             </p>
           </SlideReveal>
           <SlideReveal>
-            <ul className="decimal-listing">
+            <ul className="decimal-listing margin-0">
               <li>User Flows: Finalize how screens will flow</li>
               <li>
                 Low/Mid-Fidelity Wireframes: Identify and approve initial
@@ -201,26 +201,28 @@ const Pursuit: FC = () => {
             </h1>
           </SlideReveal>
           <SlideReveal>
-            <p className="intro">
+            <p className="intro margin-0">
               To ensure the success of the Minimum Viable Product (MVP), the
               business owners and I have prioritised and defined the following
               requirements for the product with product owners:
             </p>
           </SlideReveal>
-          {map(businessRequirementsImages, (requirement, idx) => (
-            <SideBySideVideo
-              sideBySideLst={requirement}
-              key={idx}
-              classname="business-requirement"
-            />
-          ))}
+          <div className="padding-b-sub">
+            {map(businessRequirementsImages, (requirement, idx) => (
+              <SideBySideVideo
+                sideBySideLst={requirement}
+                key={idx}
+                classname="business-requirement"
+              />
+            ))}
+          </div>
         </Container>
       </div>
 
       <div className="layer">
         <Container>
           <SlideReveal>
-            <h1>Discovering User Needs</h1>
+            <h1 className="margin-top-sub">Discovering User Needs</h1>
           </SlideReveal>
           <SlideReveal>
             <p className="intro">
@@ -232,7 +234,7 @@ const Pursuit: FC = () => {
         </Container>
       </div>
 
-      <div className="layer white">
+      <div className="layer white padding-t-sub">
         {map(userNeedsImages, (needs, idx) => (
           <SideBySideVideo
             sideBySideLst={needs}
@@ -243,7 +245,7 @@ const Pursuit: FC = () => {
 
         <Container>
           <SlideReveal>
-            <h1>Prototype and Testing</h1>
+            <h1 className="margin-b-0">Prototype and Testing</h1>
           </SlideReveal>
           <SlideReveal>
             <h2>Testing Methodology and Goals</h2>
@@ -262,7 +264,7 @@ const Pursuit: FC = () => {
             <p>Our user testing goals included:</p>
           </SlideReveal>
           <SlideReveal>
-            <ul>
+            <ul className="margin-0">
               <li>Providing an easy and fluid onboarding experience</li>
               <li>
                 Simplifying the process of starting a golf course training match
@@ -315,13 +317,13 @@ const Pursuit: FC = () => {
             </ul>
           </SlideReveal>
           <SlideReveal>
-            <p>
+            <p className="margin-0">
               Further testing is required once the implementation is complete to
               evaluate functionality and data accuracy.
             </p>
           </SlideReveal>
           <SlideReveal>
-            <h1 className="marginy-t">Brand Colours</h1>
+            <h1 className="margin-b-0">Brand Colours</h1>
           </SlideReveal>
           <BrandDetails brandDetails={brandDetailsLayer} />
         </Container>
@@ -330,7 +332,7 @@ const Pursuit: FC = () => {
       <div className="layer learned">
         <Container>
           <SlideReveal>
-            <h1>What I have Learned</h1>
+            <h1 className="margin-top-sub">What I have Learned</h1>
           </SlideReveal>
           <RowCell rowCells={pursuitLearned} />
           <LinkPage link={"/caseStudy/glamourNails"}>

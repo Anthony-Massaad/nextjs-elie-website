@@ -1,5 +1,5 @@
 .content-example {
-  padding: 1rem 4rem 2rem 4rem;
+  padding: $sub_section_margin 4rem $sub_section_margin 4rem;
 
   div {
     width: fit-content;
@@ -32,5 +32,6 @@
     font-size: 1.15rem;
     font-weight: 600;
     margin-top: 0.2rem;
+    margin-bottom: 0;
   }
 }
