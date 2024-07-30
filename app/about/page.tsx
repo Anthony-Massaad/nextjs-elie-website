@@ -25,6 +25,8 @@ const About: FC = () => {
               width="305"
               height="407"
               alt="image"
+              layout="responsive"
+              objectFit="contain"
             />
             <div className="about">
               <h2>
