@@ -1,6 +1,6 @@
 import SlideReveal from "@/animations/SlideReveal";
 import { FC } from "react";
-
+import Image from "next/image";
 interface Props {
   classname?: string;
   imgSrc: string;
@@ -13,7 +13,16 @@ const ContentExample: FC<Props> = ({ classname = "", imgSrc, text, media }) => {
     <div className={`content-example ${classname}`}>
       <SlideReveal>
         <div className={media}>
-          <img src={imgSrc} alt="" />
+          <Image
+            src={imgSrc}
+            alt=""
+            width={500}
+            height={500}
+            quality={100}
+            layout="responsive"
+            objectFit="contain"
+            loading="lazy"
+          />
           {text && <p>*{text}</p>}
         </div>
       </SlideReveal>

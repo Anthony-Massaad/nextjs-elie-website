@@ -1,6 +1,5 @@
 "use client";
 
-import RouterTransition from "@/animations/RouterTransition";
 import SlideReveal from "@/animations/SlideReveal";
 import Container from "@/components/Container";
 import PageContainer from "@/components/PageContainer";
@@ -26,6 +25,7 @@ import PostItNotes from "@/components/caseStudyCommons/PostItNotes";
 import Link from "next/link";
 import DesignConcept from "@/components/caseStudyCommons/DesignConcept";
 import CircularProgressBar from "@/components/caseStudyCommons/CircularProgressBar";
+import Image from "next/image";
 
 const GlamourNails: FC = () => {
   const { headerStyle, topLeftStyle } = headingStyling();
@@ -228,10 +228,16 @@ const GlamourNails: FC = () => {
                 <h2>The website Competitive Analysis</h2>
               </SlideReveal>
               <SlideReveal>
-                <img
+                <Image
                   src="/assets/glamourNails/websiteBuilderAnalysisTable.png"
                   alt=""
                   className="website-builder-analysis intro margin-b-between"
+                  width={500}
+                  height={500}
+                  quality={100}
+                  layout="responsive"
+                  objectFit="contain"
+                  loading="lazy"
                 />
               </SlideReveal>
               <div className="padding-b-sub">
@@ -441,8 +447,26 @@ const GlamourNails: FC = () => {
             <BrandDetails brandDetails={brandDetailsLayer} />
             <SlideReveal>
               <div className="side-by-side-images">
-                <img src="/assets/glamourNails/fullDesktop.png" alt="" />
-                <img src="/assets/glamourNails/fullMobile.png" alt="" />
+                <Image
+                  src="/assets/glamourNails/fullDesktop.png"
+                  alt=""
+                  width={500}
+                  height={500}
+                  quality={100}
+                  layout="responsive"
+                  objectFit="contain"
+                  loading="lazy"
+                />
+                <Image
+                  src="/assets/glamourNails/fullMobile.png"
+                  alt=""
+                  width={500}
+                  height={500}
+                  quality={100}
+                  layout="responsive"
+                  objectFit="contain"
+                  loading="lazy"
+                />
               </div>
             </SlideReveal>
           </Container>

@@ -4,7 +4,6 @@ import Container from "@/components/Container";
 import LinkPage from "@/components/LinkPage";
 import PageContainer from "@/components/PageContainer";
 import BrandDetails from "@/components/caseStudyCommons/BrandDetails";
-import ImageCarousel from "@/components/caseStudyCommons/ImageCarousel";
 import Introduction from "@/components/caseStudyCommons/Introduction";
 import PostItNotes from "@/components/caseStudyCommons/PostItNotes";
 import RowCell from "@/components/caseStudyCommons/RowCell";
@@ -17,10 +16,10 @@ import {
   userNeeds,
   userNeedsImages,
   pursuitLearned,
-  userFlows,
 } from "@/data/pursuit";
 import headingStyling from "@/hooks/headerStyling";
 import { map } from "lodash";
+import Image from "next/image";
 import { FC, useEffect } from "react";
 
 const Pursuit: FC = () => {
@@ -76,10 +75,16 @@ const Pursuit: FC = () => {
             </ul>
           </SlideReveal>
           <SlideReveal>
-            <img
-              className="margin"
+            <Image
               src="/assets/pursuit/initialDiscovery.png"
               alt=""
+              className="margin"
+              width={500}
+              height={500}
+              quality={100}
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
             />
           </SlideReveal>
           <SlideReveal>
@@ -193,7 +198,17 @@ const Pursuit: FC = () => {
             <h2 className="marginy-t">Mid-Fidelity Wireframes</h2>
           </SlideReveal>
           <SlideReveal>
-            <img className="margin" src="/assets/pursuit/mid-fi.png" alt="" />
+            <Image
+              src="/assets/pursuit/mid-fi.png"
+              alt=""
+              className="margin"
+              width={500}
+              height={500}
+              quality={100}
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
+            />
           </SlideReveal>
           <SlideReveal>
             <h1>

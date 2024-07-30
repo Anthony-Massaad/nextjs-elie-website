@@ -1,6 +1,6 @@
 import homeContent, { HomeContentStructure } from "@/data/homeContent";
 import { colorStylingNames } from "@/globals/constants";
-import { ClassStates, TextAnimations } from "@/globals/interfaces";
+import { ClassStates } from "@/globals/interfaces";
 import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
 import { ColorSchemeContext } from "@/providers/ColorSchemeProvider";
 import { HomeContentContext } from "@/providers/HomeContentProvider";
@@ -20,6 +20,7 @@ import {
 import PillsNav from "./PillsNav";
 import useSectionInView from "@/hooks/UseSectionInView";
 import { NavigationContext } from "@/providers/NavigationProvider";
+import Image from "next/image";
 
 interface HomeContentProps {}
 
@@ -244,12 +245,16 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
               Your browser does not support the video tag.
             </video>
           ) : (
-            <img
-              src={item.imgSrc}
-              ref={(el) => (mediaRefs.current[index] = el as HTMLImageElement)}
+            <Image
+              src={item.imgSrc as string}
               className={`section-media${sectionImageJoinedClassStates}`}
+              alt=""
               width={500}
               height={400}
+              quality={100}
+              objectFit="contain"
+              loading="lazy"
+              ref={(el) => (mediaRefs.current[index] = el as HTMLImageElement)}
             />
           )}
         </div>

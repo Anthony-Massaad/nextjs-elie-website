@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import SlideReveal from "@/animations/SlideReveal";
+import Image from "next/image";
 
 interface CarouselProps {
   images: string[];
@@ -51,7 +52,15 @@ const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
         >
           {images.map((image, index) => (
             <div key={index}>
-              <img src={image} alt={`Slide ${index + 1}`} />
+              <Image
+                src={image}
+                alt={`Slide ${index + 1}`}
+                width={500}
+                height={500}
+                quality={100}
+                layout="responsive"
+                loading="lazy"
+              />
             </div>
           ))}
         </Carousel>

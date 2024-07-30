@@ -3,6 +3,7 @@ import { FC } from "react";
 import Container from "../Container";
 import SlideReveal from "@/animations/SlideReveal";
 import { map } from "lodash";
+import Image from "next/image";
 
 interface Props {
   sideBySideLst: SideBySideImgVidInterface[];
@@ -22,7 +23,16 @@ const SideBySideImg: FC<Props> = ({ sideBySideLst, classname = "" }) => {
             >
               <SlideReveal>
                 {item.text && <p>{item.text}</p>}
-                <img src={item.src} alt="" />
+                <Image
+                  src={item.src}
+                  alt=""
+                  width={500}
+                  height={500}
+                  quality={100}
+                  layout="responsive"
+                  objectFit="contain"
+                  loading="lazy"
+                />
               </SlideReveal>
             </div>
           ))}

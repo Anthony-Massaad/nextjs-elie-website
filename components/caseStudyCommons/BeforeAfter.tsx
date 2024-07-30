@@ -2,7 +2,7 @@ import SlideReveal from "@/animations/SlideReveal";
 import { BeforeAfterInterface } from "@/globals/interfaces";
 import { map } from "lodash";
 import { FC } from "react";
-
+import Image from "next/image";
 interface Props {
   beforeAfterLst: BeforeAfterInterface[];
 }
@@ -24,7 +24,16 @@ const BeforeAfter: FC<Props> = ({ beforeAfterLst }) => {
                 {element.problem.text}
               </p>
               <div>
-                <img src={element.problem.imgSrc} />
+                <Image
+                  src={element.problem.imgSrc}
+                  alt=""
+                  width={500}
+                  height={500}
+                  quality={100}
+                  layout="responsive"
+                  objectFit="contain"
+                  loading="lazy"
+                />
               </div>
             </div>
             <div className="sect arrow">
@@ -49,7 +58,16 @@ const BeforeAfter: FC<Props> = ({ beforeAfterLst }) => {
                 {element.solution.text}
               </p>
               <div>
-                <img src={element.solution.imgSrc} />
+                <Image
+                  src={element.solution.imgSrc}
+                  alt=""
+                  width={500}
+                  height={500}
+                  quality={100}
+                  layout="responsive"
+                  objectFit="contain"
+                  loading="lazy"
+                />
               </div>
             </div>
             {beforeAfterLst.length !== idx + 1 && (

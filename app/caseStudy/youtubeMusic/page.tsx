@@ -20,6 +20,7 @@ import {
 } from "@/data/youtubeMusic";
 import headingStyling from "@/hooks/headerStyling";
 import { FC, useEffect } from "react";
+import Image from "next/image";
 
 const YoutubeMusic: FC = () => {
   const { headerStyle, topLeftStyle } = headingStyling();
@@ -54,9 +55,15 @@ const YoutubeMusic: FC = () => {
             </h2>
           </SlideReveal>
           <SlideReveal>
-            <img
+            <Image
               src="/assets/youtubeMusic/youtubeMusicPosition.png"
-              className="margin"
+              alt=""
+              width={500}
+              height={500}
+              quality={100}
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
             />
           </SlideReveal>
           <SlideReveal>
@@ -81,9 +88,15 @@ const YoutubeMusic: FC = () => {
             </h2>
           </SlideReveal>
           <SlideReveal>
-            <img
+            <Image
               src="/assets/youtubeMusic/ytMusicFeatures.png"
-              className="margin"
+              alt=""
+              width={500}
+              height={500}
+              quality={100}
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
             />
           </SlideReveal>
           <SlideReveal>
@@ -98,7 +111,16 @@ const YoutubeMusic: FC = () => {
             <h2>Youtube Music’s SWOT Analysis</h2>
           </SlideReveal>
           <SlideReveal>
-            <img src="/assets/youtubeMusic/SWOT.png" className="margin" />
+            <Image
+              src="/assets/youtubeMusic/SWOT.png"
+              alt=""
+              width={500}
+              height={500}
+              quality={100}
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
+            />
           </SlideReveal>
         </Container>
       </Layer>
@@ -121,9 +143,15 @@ const YoutubeMusic: FC = () => {
           <SlideReveal>
             <p>My Reddit post to get user interviewers for this Project</p>
             <div className="reddit-post-img-container">
-              <img
+              <Image
                 src="/assets/youtubeMusic/redditPost.png"
-                className="margin"
+                alt=""
+                width={500}
+                height={500}
+                quality={100}
+                layout="responsive"
+                objectFit="contain"
+                loading="lazy"
               />
             </div>
           </SlideReveal>
@@ -131,9 +159,15 @@ const YoutubeMusic: FC = () => {
             <p>Synthesizing interview Results using an affinity diagram</p>
           </SlideReveal>
           <SlideReveal>
-            <img
+            <Image
               src="/assets/youtubeMusic/interviewResults.png"
-              className="margin"
+              alt=""
+              width={500}
+              height={500}
+              quality={100}
+              layout="responsive"
+              objectFit="contain"
+              loading="lazy"
             />
           </SlideReveal>
           <SlideReveal>
