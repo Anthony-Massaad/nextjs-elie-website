@@ -56,6 +56,12 @@ body {
   height: 100vh;
   font-style: normal;
   overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 @import "./components/container";

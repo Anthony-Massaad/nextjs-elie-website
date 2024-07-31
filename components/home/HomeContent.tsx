@@ -86,14 +86,14 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
 
         document.documentElement.style.setProperty(
           "--section-padding-top",
-          `${60 + (70 * 380) / windowWidth}px`
+          `${60 + (1 * 380) / windowWidth}px`
         );
         const singleImage = document.querySelector<HTMLElement>(
           ".section-media"
         ) as HTMLElement;
         document.documentElement.style.setProperty(
           "--pill-top-positioning",
-          `${singleImage.offsetTop + singleImage.offsetHeight + 60 + 8}px`
+          `${singleImage.offsetTop + singleImage.offsetHeight + 30 + 8}px`
         );
       }
     };

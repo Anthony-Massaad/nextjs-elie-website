@@ -79,6 +79,8 @@
   @include lg-breakpoint {
     flex-direction: row;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: auto;
+    vertical-align: top;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     align-items: baseline;
@@ -109,7 +111,7 @@
     padding-top: var(--section-padding-top);
     height: auto;
     padding-right: 0;
-    gap: 2rem;
+    gap: 3rem;
     justify-content: flex-end;
     align-items: center;
 
