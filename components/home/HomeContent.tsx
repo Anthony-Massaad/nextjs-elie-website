@@ -25,7 +25,7 @@ import Image from "next/image";
 interface HomeContentProps {}
 
 const HomeContent: FC<HomeContentProps> = ({}) => {
-  const { homeContentIndex, setHomeContentIndex } =
+  const { homeContentIndex, setHomeContentIndex, horizontalBreakPoint } =
     useContext(HomeContentContext);
 
   const { isNavToSection } = useContext(NavigationContext);
@@ -76,6 +76,32 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
         : "",
     };
   }, [colorScheme]);
+
+  useEffect(() => {
+    const handleResize = (): void => {
+      if (window.innerWidth <= horizontalBreakPoint) {
+        const windowWidth = window.innerWidth;
+        const ratio = window.screen.width * window.devicePixelRatio;
+        console.log(ratio);
+
+        document.documentElement.style.setProperty(
+          "--section-padding-top",
+          `${60 + (70 * 380) / windowWidth}px`
+        );
+        const singleImage = document.querySelector<HTMLElement>(
+          ".section-media"
+        ) as HTMLElement;
+        document.documentElement.style.setProperty(
+          "--pill-top-positioning",
+          `${singleImage.offsetTop + singleImage.offsetHeight + 60 + 8}px`
+        );
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const classes = joinClassStates(sectionClassStates);
@@ -182,7 +208,7 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
     );
     return (
       <section
-        className={`section${sectionJoinedClassStates}`}
+        className={`content-section section${sectionJoinedClassStates}`}
         id={`panel-${index}`}
         key={index}
         style={{

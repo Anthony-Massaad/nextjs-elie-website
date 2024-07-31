@@ -33,6 +33,6 @@
     transform: rotate(-90deg) translateX(-50%);
     left: 50%;
     right: auto;
-    top: calc(8rem + 22.5rem);
+    top: calc(var(--pill-top-positioning));
   }
 }

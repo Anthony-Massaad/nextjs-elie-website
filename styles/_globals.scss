@@ -21,6 +21,8 @@
 }
 
 html {
+  --section-padding-top: 0;
+
   font-size: $default_font_size;
 
   @include lg-breakpoint {

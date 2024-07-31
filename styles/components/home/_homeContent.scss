@@ -106,7 +106,7 @@
 
   @include lg-breakpoint {
     flex-direction: column-reverse;
-    padding-top: 8rem;
+    padding-top: var(--section-padding-top);
     height: auto;
     padding-right: 0;
     gap: 2rem;
