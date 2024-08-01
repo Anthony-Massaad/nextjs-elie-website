@@ -45,7 +45,7 @@ const homeContent: HomeContentStructure[] = [
     backgroundColor: `#0E0E0E`,
     headerBackgroundColor: `#363636`,
     smileyColor: `#363636`,
-    href: `${pathNames.aboutMe}`,
+    href: `${pathNames.contact}`,
     gradient: {
       blurBackground: `45deg,
       rgba(220, 0, 56, 0.1) 0%,

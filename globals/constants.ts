@@ -21,6 +21,7 @@ interface PathNames {
   pursuit: string;
   youtubeMusic: string;
   aboutMe: string;
+  contact: string;
 }
 
 interface RelativePathDirectories {
@@ -50,6 +51,7 @@ export const pathNames: PathNames = {
   pursuit: "pursuit",
   youtubeMusic: "youtubeMusic",
   aboutMe: "about",
+  contact: "contact",
 };
 
 export const relativePathDirectories: RelativePathDirectories = {

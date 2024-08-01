@@ -37,6 +37,7 @@
 
       p {
         line-height: 1.5;
+        font-size: 1.5rem;
       }
 
       @include breakpoint-700 {
@@ -62,6 +63,12 @@
 
         div {
           width: 100%;
+        }
+        @include sm-breakpoint {
+          img {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
 
@@ -105,6 +112,10 @@
         padding: 1rem;
         cursor: pointer;
         color: #fff;
+
+        @include sm-breakpoint {
+          font-size: 1.5rem;
+        }
       }
     }
   }
