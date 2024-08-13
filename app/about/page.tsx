@@ -25,7 +25,6 @@ const About: FC = () => {
               width="305"
               height="407"
               alt="image"
-              quality={100}
               style={{
                 height: "407px",
                 width: "305px",
@@ -39,6 +38,7 @@ const About: FC = () => {
                   width="50"
                   height="50"
                   alt="hand peace"
+                  priority
                 />
               </h2>
               <p>

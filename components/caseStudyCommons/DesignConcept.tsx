@@ -19,7 +19,9 @@ const DesignConcept: FC<Props> = ({ headerTitle, src }) => {
             height={500}
             quality={100}
             layout="responsive"
-            objectFit="contain"
+            style={{
+              objectFit: "contain",
+            }}
             loading="lazy"
           />
         </div>

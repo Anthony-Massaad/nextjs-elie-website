@@ -20,7 +20,9 @@ const ContentExample: FC<Props> = ({ classname = "", imgSrc, text, media }) => {
             height={500}
             quality={100}
             layout="responsive"
-            objectFit="contain"
+            style={{
+              objectFit: "contain",
+            }}
             loading="lazy"
           />
           {text && <p>*{text}</p>}

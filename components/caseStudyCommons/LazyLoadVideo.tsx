@@ -22,7 +22,6 @@ const LazyLoadVideo: FC<Props> = ({ src }) => {
   // Update isLoaded state when inView changes
   useEffect(() => {
     if (inView) {
-      console.log("hit");
       setIsLoaded(true);
     }
   }, [inView]);

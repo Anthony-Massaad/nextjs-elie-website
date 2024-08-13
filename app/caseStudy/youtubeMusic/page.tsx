@@ -62,8 +62,10 @@ const YoutubeMusic: FC = () => {
               height={500}
               quality={100}
               layout="responsive"
-              objectFit="contain"
               loading="lazy"
+              style={{
+                objectFit: "contain",
+              }}
             />
           </SlideReveal>
           <SlideReveal>
@@ -95,7 +97,9 @@ const YoutubeMusic: FC = () => {
               height={500}
               quality={100}
               layout="responsive"
-              objectFit="contain"
+              style={{
+                objectFit: "contain",
+              }}
               loading="lazy"
             />
           </SlideReveal>
@@ -118,7 +122,9 @@ const YoutubeMusic: FC = () => {
               height={500}
               quality={100}
               layout="responsive"
-              objectFit="contain"
+              style={{
+                objectFit: "contain",
+              }}
               loading="lazy"
             />
           </SlideReveal>
@@ -150,7 +156,9 @@ const YoutubeMusic: FC = () => {
                 height={500}
                 quality={100}
                 layout="responsive"
-                objectFit="contain"
+                style={{
+                  objectFit: "contain",
+                }}
                 loading="lazy"
               />
             </div>
@@ -166,7 +174,9 @@ const YoutubeMusic: FC = () => {
               height={500}
               quality={100}
               layout="responsive"
-              objectFit="contain"
+              style={{
+                objectFit: "contain",
+              }}
               loading="lazy"
             />
           </SlideReveal>

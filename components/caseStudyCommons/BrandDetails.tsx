@@ -1,6 +1,6 @@
 import SlideReveal from "@/animations/SlideReveal";
 import { BrandDetailsInterface } from "@/globals/interfaces";
-import { map } from "lodash";
+import { map, random } from "lodash";
 import { FC } from "react";
 
 interface Props {
@@ -14,20 +14,20 @@ const BrandDetails: FC<Props> = ({ classname, brandDetails }) => {
       {map(brandDetails, (detail, idx) => (
         <>
           {detail.typography && (
-            <div className="detail" key={idx}>
+            <div className="detail" key={`detail-${idx}`}>
               <SlideReveal>
                 <h2>{detail.typography.title}</h2>
               </SlideReveal>
               {map(detail.typography.body, (body, index) => (
                 <SlideReveal>
-                  <p key={index}>{body}</p>
+                  <p key={`body-${index}`}>{body}</p>
                 </SlideReveal>
               ))}
             </div>
           )}
 
           {detail.colors && (
-            <div className="detail" key={idx}>
+            <div className="detail" key={`detail-${idx + 5}`}>
               <SlideReveal>
                 <h2>Colors</h2>
               </SlideReveal>
@@ -35,7 +35,7 @@ const BrandDetails: FC<Props> = ({ classname, brandDetails }) => {
                 <div className="colors">
                   {map(detail.colors, (color, idx) => (
                     <div
-                      key={idx}
+                      key={`color-${idx}`}
                       style={{ backgroundColor: color.color }}
                       className="color-block"
                     ></div>

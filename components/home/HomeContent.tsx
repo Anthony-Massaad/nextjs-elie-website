@@ -82,7 +82,6 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
       if (window.innerWidth <= horizontalBreakPoint) {
         const windowWidth = window.innerWidth;
         const ratio = window.screen.width * window.devicePixelRatio;
-        console.log(ratio);
 
         document.documentElement.style.setProperty(
           "--section-padding-top",
@@ -277,9 +276,10 @@ const HomeContent: FC<HomeContentProps> = ({}) => {
               alt=""
               width={500}
               height={400}
-              quality={100}
-              objectFit="contain"
-              loading="lazy"
+              style={{
+                objectFit: "contain",
+              }}
+              priority
               ref={(el) => (mediaRefs.current[index] = el as HTMLImageElement)}
             />
           )}

@@ -31,7 +31,9 @@ const BeforeAfter: FC<Props> = ({ beforeAfterLst }) => {
                   height={500}
                   quality={100}
                   layout="responsive"
-                  objectFit="contain"
+                  style={{
+                    objectFit: "contain",
+                  }}
                   loading="lazy"
                 />
               </div>
@@ -65,7 +67,9 @@ const BeforeAfter: FC<Props> = ({ beforeAfterLst }) => {
                   height={500}
                   quality={100}
                   layout="responsive"
-                  objectFit="contain"
+                  style={{
+                    objectFit: "contain",
+                  }}
                   loading="lazy"
                 />
               </div>

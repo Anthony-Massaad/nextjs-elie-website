@@ -83,8 +83,10 @@ const Pursuit: FC = () => {
               height={500}
               quality={100}
               layout="responsive"
-              objectFit="contain"
               loading="lazy"
+              style={{
+                objectFit: "contain",
+              }}
             />
           </SlideReveal>
           <SlideReveal>
@@ -206,8 +208,10 @@ const Pursuit: FC = () => {
               height={500}
               quality={100}
               layout="responsive"
-              objectFit="contain"
               loading="lazy"
+              style={{
+                objectFit: "contain",
+              }}
             />
           </SlideReveal>
           <SlideReveal>

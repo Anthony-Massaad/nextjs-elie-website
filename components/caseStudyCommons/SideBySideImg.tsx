@@ -30,7 +30,9 @@ const SideBySideImg: FC<Props> = ({ sideBySideLst, classname = "" }) => {
                   height={500}
                   quality={100}
                   layout="responsive"
-                  objectFit="contain"
+                  style={{
+                    objectFit: "contain",
+                  }}
                   loading="lazy"
                 />
               </SlideReveal>

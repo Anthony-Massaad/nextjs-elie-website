@@ -24,6 +24,14 @@ interface PathNames {
   contact: string;
 }
 
+export interface RerouteIndexes {
+  glamourNails: number;
+  pursuit: number;
+  youtubeMusic: number;
+  aboutMe: number;
+  contact: number;
+}
+
 interface RelativePathDirectories {
   caseStudy: string;
 }
@@ -52,6 +60,14 @@ export const pathNames: PathNames = {
   youtubeMusic: "youtubeMusic",
   aboutMe: "about",
   contact: "contact",
+};
+
+export const rerouteIndexes: RerouteIndexes = {
+  glamourNails: 2,
+  pursuit: 1,
+  youtubeMusic: 3,
+  contact: 0,
+  aboutMe: 0,
 };
 
 export const relativePathDirectories: RelativePathDirectories = {

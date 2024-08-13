@@ -4,8 +4,11 @@ import TopLeft from "../topBar/TopLeft";
 import LoadBar from "./LoadBar";
 import { usePathname, useRouter } from "next/navigation";
 import { AppBooleanStateContext } from "@/providers/AppBooleanStates";
-import { delay, isEmpty } from "lodash";
+import { delay, isEmpty, last, split } from "lodash";
 import { TransitionContext } from "@/providers/TransitionProvider";
+import { RerouteIndexes, rerouteIndexes } from "@/globals/constants";
+import { HomeContentContext } from "@/providers/HomeContentProvider";
+import { NavigationContext } from "@/providers/NavigationProvider";
 
 interface Props {
   children: ReactNode;
@@ -17,9 +20,12 @@ const AppContents: FC<Props> = ({ children }) => {
   );
   const { routerSliderAnimations, triggerTransition } =
     useContext(TransitionContext);
+  const { setHomeContentIndex } = useContext(HomeContentContext);
   const pathName = usePathname();
+  const { indexChange } = useContext(NavigationContext);
   const router = useRouter();
   const [designatedReloadRoute, setDesignatedReloadRoute] = useState("");
+  const [designatedReloadIndex, setDesignatedReloadIndex] = useState(-1);
 
   const reroute = async (path: string) => {
     await new Promise(() => router.push(path));
@@ -41,9 +47,13 @@ const AppContents: FC<Props> = ({ children }) => {
       introFadeContent &&
       !isEmpty(designatedReloadRoute)
     ) {
-      console.log("route");
       delay(
         () => {
+          if (designatedReloadIndex !== -1) {
+            setHomeContentIndex(designatedReloadIndex);
+            indexChange(designatedReloadIndex);
+            setDesignatedReloadIndex(-1);
+          }
           triggerTransition();
         },
         300,
@@ -54,7 +64,11 @@ const AppContents: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     if (pathName !== "/") {
-      console.log("reroute");
+      const lastWord = last(split(pathName, "/")) as string;
+      if (lastWord in rerouteIndexes) {
+        const routeIndex = rerouteIndexes[lastWord as keyof RerouteIndexes];
+        setDesignatedReloadIndex(routeIndex);
+      }
       setDesignatedReloadRoute(pathName);
       reroute("/");
     }

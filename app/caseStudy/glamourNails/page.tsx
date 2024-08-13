@@ -236,8 +236,10 @@ const GlamourNails: FC = () => {
                   height={500}
                   quality={100}
                   layout="responsive"
-                  objectFit="contain"
                   loading="lazy"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
               </SlideReveal>
               <div className="padding-b-sub">
@@ -454,8 +456,10 @@ const GlamourNails: FC = () => {
                   height={500}
                   quality={100}
                   layout="responsive"
-                  objectFit="contain"
                   loading="lazy"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
                 <Image
                   src="/assets/glamourNails/fullMobile.png"
@@ -464,8 +468,10 @@ const GlamourNails: FC = () => {
                   height={500}
                   quality={100}
                   layout="responsive"
-                  objectFit="contain"
                   loading="lazy"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
               </div>
             </SlideReveal>
